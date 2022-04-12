@@ -1,0 +1,72 @@
+// $tablet-port: 600px;
+$tablet-desktop: 900px;
+// $desktop: 1200px;
+$desktop-big: 1800px;
+
+@mixin respond($breakpoint) {
+  @media only screen and (min-width: (($breakpoint / 16px) * 1em)) {
+    @content;
+  }
+}
+
+// original function (had to remove calc in order to make the function work)
+/* @mixin respond($breakpoint) {
+    @if $breakpoint <= $tab-land {
+      // 1rem AND 1em in media query definition are always equal to default browser font-size (-> 16px)
+      // recommendation: em is best unit for media query after some experiences;
+      // max-width is calculated based on passed-in breakpoint and default browser font-size (-> 16px)
+      @media (max-width: calc(calc($breakpoint / 16px) * 1em)) {
+        // @content contains all childs, so media query mixin acts like wrapper
+        @content;
+      }
+    } @else {
+      // for big desktops, min-width is needed
+      @media (min-width: calc(calc($breakpoint / 16px) * 1em)) {
+        @content;
+      }
+    }
+  } */
+
+@mixin absoluteCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin navi-button-size-position {
+  left: 32px;
+  top: 16px;
+  height: 60px; //change here then change &__menuIcon > margin-top
+  width: 60px;
+  border-radius: 50%;
+  position: fixed;
+}
+
+@mixin p_title {
+  font-size: 4.5rem;
+  font-weight: 600;
+}
+
+@mixin flex_column {
+  display: flex;
+  flex-basis: 100%;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+
+@mixin icon_size {
+  width: 5rem;
+  height: 5rem;
+  margin: 2rem;
+}
+
+@mixin inner_container {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  height: 100%;
+}

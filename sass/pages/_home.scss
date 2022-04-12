@@ -1,0 +1,44 @@
+.section {
+  &__news {
+    background-color: var(--bg_color-lowTransparency-0);
+
+    width: 100%;
+    padding: var(--padding) 0;
+
+    &_container {
+      @include flex_column;
+      @include inner_container;
+      height: 100%;
+
+      background-color: var(--bg_color-lowTransparency-1);
+      padding: calc(var(--padding) - 0.5rem) 0;
+    }
+    &_title {
+      @include p_title;
+      min-height: 0; // to avoid overflowing
+    }
+    img {
+      height: 25rem;
+      width: 25rem;
+      min-height: 0;
+    }
+    &_carousel {
+    }
+
+    &__gallery {
+      background-color: var(--color-white);
+      height: 800px;
+    }
+  }
+}
+
+.click_scroll {
+  width: 16rem;
+  max-width: 100%;
+  &:hover {
+    cursor: pointer;
+  }
+  &_ToGallery:hover {
+    cursor: pointer;
+  }
+}

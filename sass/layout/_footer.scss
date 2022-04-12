@@ -1,0 +1,30 @@
+.footer {
+  background-color: var(--color-1-lowSaturation);
+  height: 15vh;
+
+  &__flex {
+    @include inner_container;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    text-align: center;
+    &_left {
+      flex: 40%;
+      justify-self: center;
+      margin: 0 auto;
+      &_icons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+    }
+    &_logo {
+      height: 7rem;
+      flex: 20%;
+    }
+    &_right {
+      flex: 40%;
+    }
+  }
+}

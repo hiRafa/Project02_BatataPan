@@ -1,0 +1,11 @@
+.icon {
+  fill: currentColor;
+
+  &__circle-down {
+    @include icon_size;
+  }
+  &__social {
+    width: 4rem;
+    height: 3rem;
+  }
+}

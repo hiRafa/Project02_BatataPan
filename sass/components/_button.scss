@@ -1,0 +1,23 @@
+button {
+  width: 30%;
+  font-size: 2rem;
+  padding: 1rem 4rem;
+  font-weight: 600;
+  border-radius: 1.2rem;
+  background-color: var(--color-1-highLight);
+  color: var(--color-white);
+  border: none;
+  align-self: center;
+  white-space: nowrap;
+  min-width: 200px;
+  &:hover {
+    background-color: var(--color-1);
+    color: var(--color-black);
+    cursor: pointer;
+  }
+  &:active {
+    background-color: var(--color-1-darkest);
+    color: var(--color-white);
+    border: var(--color-1);
+  }
+}

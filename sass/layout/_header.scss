@@ -1,0 +1,23 @@
+.header {
+  background-image: url(/images/bread_banner.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--color-1-darkest);
+  height: 100vh;
+  color: var(--color-white);
+  &__container {
+    @include flex_column;
+    @include inner_container;
+    &_top {
+      height: 5vh;
+    }
+    &_logo {
+      width: 100%;
+      max-width: 20rem;
+    }
+    &_h1 {
+      gap: 1rem;
+    }
+  }
+}

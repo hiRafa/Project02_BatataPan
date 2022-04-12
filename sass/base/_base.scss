@@ -1,0 +1,39 @@
+:root {
+  --color-1: #ffc14d; // rgb(255,193,77) hsl(39.1,100%,65.1%)
+  --color-1-highLight: #ffae17;
+  --color-1-lowSaturation: #bf9039;
+  --color-1-medium: #e6ad45;
+  --color-1-darkest: #403013;
+
+  --color-grey-light-1: #f7f7f7;
+  --color-grey-light-2: #eee;
+  --color-grey-dark: #777;
+  --color-grey-dark-2: #999;
+  --color-grey-dark-3: #333;
+
+  --color-white: #fff;
+  --color-black: #000;
+
+  --shadow-dark: 0 2rem 6rem (var(--color-black), 0.3);
+  --bg_color-lowTransparency-0: rgba(255, 193, 77, 0.1);
+  --bg_color-lowTransparency-1: rgba(255, 193, 77, 0.4);
+  --padding: 4rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: var(--color-white);
+  color: var(--color-1-medium);
+}
