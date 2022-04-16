@@ -37,3 +37,75 @@
   background-color: var(--color-white);
   color: var(--color-1-medium);
 }
+
+//setting general fontsize based on screens
+html {
+  // This defines what 1rem is
+  font-size: 62.5%; //1 rem = 10px; 10px/16px
+
+  @include respond($tablet-desktop) {
+    font-size: 81.25%; //1 rem = 13px; 13px/16px
+  }
+  @include respond($desktop-big) {
+    font-size: 100%; //  1rem = 16px; 16px/16px
+  }
+  color: var(--color-1-darkest);
+  scroll-behavior: smooth; // replaces JS coding and makes it more simple
+}
+
+//balancing the font size in case the user changes the base pixels from 16px
+body {
+  font-size: 1.6rem; // 16/10
+  text-align: center;
+  @include respond($tablet-desktop) {
+    font-size: 1.23rem; // 16/13
+  }
+  @include respond($desktop-big) {
+    font-size: 1rem; // 16/16
+  }
+}
+
+//setting font size for everything else
+@for $i from 1 through 6 {
+  h#{7 - $i} {
+    font-size: $i * 1.6rem;
+  }
+}
+
+p {
+  font-size: 2.5rem;
+}
+
+a {
+  &:link,
+  &:visited {
+    color: currentColor;
+  }
+}
+
+svg {
+  fill: currentColor;
+}
+
+li {
+  list-style: none;
+}
+
+// Background and container for body elements except footer and nav
+.body {
+  &__company {
+    background-color: var(--bg_color-lowTransparency-0);
+    header,
+    section {
+      @include inner_container($height-custom);
+    }
+  }
+}
+
+.section {
+  transition: transform 1s, opacity 1s;
+  &-hidden {
+    opacity: 0;
+    transform: translateY(8rem);
+  }
+}

@@ -1,0 +1,155 @@
+.company {
+  &__header {
+    padding: 3rem;
+  }
+  &__grid {
+    @include grid1-2;
+  }
+}
+
+// Company SECTIONS background, size, etc.
+.section {
+  &__tab {
+    background-color: var(--color-white);
+  }
+  &_form {
+    @include inner_container($height-custom);
+    height: 1000px;
+    background-color: var(--color-1-darkest);
+    padding: 3rem;
+    color: var(--color-1-highLight);
+    height: inherit;
+  }
+}
+
+/* OPERATIONS */
+.tab {
+  //button container
+  &__button__container {
+    @include flex_row;
+  }
+  //content container
+  &__content {
+    display: none;
+    padding: 2.5rem 7rem 6.5rem 7rem;
+
+    &__container {
+      text-align: start;
+      justify-content: center;
+      padding: 0 2rem 2rem;
+    }
+
+    &-active {
+      max-width: 100%;
+      max-height: 100%;
+      display: contents;
+    }
+    &__left {
+      @include tab__content-size-padding;
+      font-weight: bolder;
+    }
+    &__right {
+      @include tab__content-size-padding;
+      // padding bottom for smaller screens
+      padding-bottom: 4rem;
+      @include respond($tablet-port) {
+        padding-bottom: 1.5rem;
+      }
+    }
+    img {
+      @include tab__content-size-padding;
+      width: 300px;
+    }
+    &-top {
+      text-align: center;
+      padding-bottom: 2rem;
+    }
+  }
+}
+
+form {
+  width: 100%;
+  padding: 5rem 10rem;
+  background: #fff;
+  box-shadow: 0 2px 5px #ccc;
+}
+input {
+  width: 70%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  vertical-align: middle;
+}
+
+textarea {
+  width: 100%;
+  font-size: 2rem;
+}
+
+input:hover,
+textarea:hover {
+  outline: none;
+  border: 1px solid var(--color-1-highLight);
+}
+
+.question {
+  padding: 3rem 0 1rem;
+  color: var(--color-1-darkest);
+  &-answer {
+    @include flex_row;
+  }
+  &-answer label {
+    display: block;
+    padding: 0 2rem 1rem 0;
+    font-size: 2.5rem;
+  }
+  &-answer input {
+    width: auto;
+  }
+}
+
+.form__table {
+  .display {
+    &__phone {
+      font-size: 2.5rem;
+
+      @include respond($tablet-port) {
+        display: none;
+      }
+      select {
+        padding: 7px 0;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        background: transparent;
+        margin: 1rem 0 3rem;
+      }
+    }
+    &__tablet-desktop {
+      display: none;
+      @include respond($tablet-port) {
+        width: 80%;
+        display: grid;
+        justify-content: center;
+        margin: 0 auto;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+      }
+      .first-col {
+        text-align: left;
+      }
+      div {
+        padding: 1rem 1rem;
+        border-bottom: 1px solid #ccc;
+        font-size: 2rem;
+        font-weight: 400;
+        input {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.btn-block {
+  margin-top: 20px;
+}

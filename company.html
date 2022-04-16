@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Batata Bakery</title>
+    <!-- Extra METAS to help with Search Engines -->
+    <meta
+      name="description"
+      content="Check our stores and breads we have! We also have amazing seasonal breads"
+    />
+    <!-- The following metas are when sharing a link on FB (example) it shows title, description and image -->
+    <meta property="og:title" content="Batata Bakery!" />
+    <meta
+      property="og:description"
+      content="Breads from all over the world and tasty seasonal breads! Sour dough breads also available!"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://" />
+    <meta property="og:url" content="https/ified.com" />
+    <!-- FONTs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="sass/main.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </head>
+
+  <body class="body body__company">
+    <div class="navi">
+      <input type="checkbox" class="navi__checkbox" id="nav-toggle" />
+      <label for="nav-toggle" class="navi__button">
+        <span class="navi__menuIcon">&nbsp;</span>
+      </label>
+      <div class="navi__bg">&nbsp;</div>
+      <nav class="navi__nav">
+        <ul class="navi__ul">
+          <li class="navi__li">
+            <a href="index.html" class="navi__a">Home & News</a>
+          </li>
+          <li class="navi__li">
+            <a href="#" class="navi__a">Breads</a>
+          </li>
+          <li class="navi__li">
+            <a href="#" class="navi__a">Shops</a>
+          </li>
+          <li class="navi__li">
+            <a href="#" class="navi__a">Company</a>
+          </li>
+        </ul>
+        <a href="#"
+          ><img class="navi__logo" src="images/Untitled-1.png" />&nbsp;</a
+        >
+      </nav>
+    </div>
+
+    <header class="company__header">
+      <h2>Company</h2>
+      <br />
+      <p>株式会社 BATATA Bakery の会社概要についてのご紹介です。</p>
+    </header>
+
+    <main>
+      <section class="section__tab" id="section__tab">
+        <div>
+          <!-- Buttons container -->
+          <div class="tab__button__container">
+            <button
+              class="button__tab--1 button__tab button__tab-active"
+              data-tab="1"
+            >
+              <svg>
+                <use href="images/sprite.svg#icon-bookmarks"></use>
+              </svg>
+              Info
+            </button>
+            <button class="button__tab--2 button__tab" data-tab="2">
+              <svg>
+                <use href="images/sprite.svg#icon-bookmarks"></use>
+              </svg>
+              Recruit
+            </button>
+            <button class="button__tab--3 button__tab" data-tab="3">
+              <svg>
+                <use href="images/sprite.svg#icon-bookmarks"></use>
+              </svg>
+              Partnerships
+            </button>
+          </div>
+
+          <div class="tab__content__container">
+            <!-- Text 1 -->
+            <div class="tab__content tab__content--1 tab__content-active">
+              <div class="company__grid">
+                <div class="tab__content__left">商号</div>
+                <div class="tab__content__right">
+                  株式会社BATATA Bakery / BATATA Bakery Co.,Ltd
+                </div>
+                <div class="tab__content__left">所在地</div>
+                <div class="tab__content__right">
+                  神奈川県横浜市 <br />
+                  <a href=""> Acess Map </a>
+                </div>
+                <div class="tab__content__left">設立年月日</div>
+                <div class="tab__content__right">
+                  1994年5月27日（前身の東横食品工業株式会社は、1948年9月22日設立）
+                </div>
+                <div class="tab__content__left">事業内容</div>
+                <div class="tab__content__right">パン、菓子の製造、販売</div>
+                <div class="tab__content__left">子会社</div>
+                <div class="tab__content__right">
+                  株式会社北海道Batata Bakery
+                </div>
+                <div class="tab__content__left">代表取締役社長</div>
+                <div class="tab__content__right">Mr. Potato Head</div>
+              </div>
+            </div>
+            <!-- Text 2 -->
+            <div class="tab__content tab__content--2">
+              <div class="tab__content-top">
+                <h5>Would you like to work with us?</h5>
+                <p>
+                  Fill out the form below and we will contact you as soon as we
+                  can.
+                </p>
+              </div>
+
+              <div class="company__grid">
+                <div class="tab__content__left">Options</div>
+                <div class="tab__content__right">
+                  <ul>
+                    <li>Part time</li>
+                    <li>Full time</li>
+                  </ul>
+                </div>
+                <div class="tab__content__left">Salary Part time</div>
+                <div class="tab__content__right">¥1,200</div>
+                <div class="tab__content__left">Salary Full time</div>
+                <div class="tab__content__right">¥3,000,000 - ¥6,000,000</div>
+              </div>
+            </div>
+            <!-- Text 3 -->
+            <div class="tab__content tab__content--3">
+              <div class="tab__content-top">
+                <h5>More about our partners and their products!</h5>
+              </div>
+              <div class="company__grid">
+                <div><img src="images/bakery_bg01.webp" /></div>
+                <div class="tab__content__right">
+                  <p>Mama Biscoitos</p>
+                  <span>American cookies, Japanese cookies</span>
+                </div>
+                <div><img src="images/bakery_bg02.webp" /></div>
+                <div class="tab__content__right">
+                  <p>Mediterraneo Breads</p>
+                  <span>Products: Pita Bread, Tortillas</span>
+                </div>
+                <div><img src="images/bakery_bg03.webp" /></div>
+                <div class="tab__content__right">
+                  <p>Sakura Tortas</p>
+                  <span>Cheesecakes, fruits tarts (seasonal)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section_form">
+          <form action="/">
+            <h4>Website Feedback Form</h4>
+            <p class="question">Is this the first time you have visited the website?</p>
+            <div class="question-answer">
+              <label><input type="radio" value="none" name="visited" /> yes</label>
+              <label><input type="radio" value="none" name="visited" /> no</label>
+            </div>
+            <p class="question">What is the PRIMARY reason you came to the site?</p>
+            <textarea rows="5"></textarea>
+            <p class="question">Did you find what you needed?</p>
+            <div class="question-answer">
+              <label><input type="radio" value="none" name="needed" /> Yes, all of it</label>
+              <label><input type="radio" value="none" name="needed" /> Yes, some of it</label>
+              <label><input type="radio" value="none" name="needed" /> No, none of it</label>
+            </div>
+            <p class="question">If you did not find any or all of what you needed, please tell us what information you were looking for.</p>
+            <textarea rows="5"></textarea>
+            <p class="question">Please tell us how easy it is to find information on the site.</p>
+            <div class="question-answer">
+              <label><input type="radio" value="none" name="easy" /> Very Easy</label>
+              <label><input type="radio" value="none" name="easy" /> Easy</label>
+              <label><input type="radio" value="none" name="easy" /> Average</label>
+              <label><input type="radio" value="none" name="easy" /> Difficult</label>
+              <label><input type="radio" value="none" name="easy" /> Very Difficult</label>
+            </div>
+
+            <div class="form__table">
+            <div class=" display__phone">
+              <label for="impression"><p class="question">What is your overall impression of the site?</p></label>
+              <div>Professional</div>
+              <select name="professional" id="professional" form="">
+                <option value="below" class="display__phone_options">Below Expectations</option>
+                <option value="medium" class="display__phone_options">Meets Expectations</option>
+                <option value="exceeds" class="display__phone_options">Exceeds Expectations</option>
+              </select>
+              <div>Informative</div>
+              <select name="" id="" form="">
+                <option value="volvo">Below Expectations</option>
+                <option value="saab">Meets Expectations</option>
+                <option value="opel">Exceeds Expectations</option>
+              </select>
+              <div>Visually Pleasing</div>
+              <select name="" id="" form="">
+                <option value="volvo">Below Expectations</option>
+                <option value="saab">Meets Expectations</option>
+                <option value="opel">Exceeds Expectations</option>
+              </select>          
+            </div>
+            <div class="display__tablet-desktop">
+                <div class="first-col">&nbsp;</div>
+                <div>Below Expectations</div>
+                <div>Meets Expectations</div>
+                <div>Exceeds Expectations</div>
+                <div class="first-col">Professional</div>
+                <div><input type="radio" value="none" name="professional" /></div>
+                <div><input type="radio" value="none" name="professional" /></div>
+                <div><input type="radio" value="none" name="professional" /></div>    
+                <div class="first-col">Informative</div>
+                <div><input type="radio" value="none" name="Informative" /></div>
+                <div><input type="radio" value="none" name="Informative" /></div>
+                <div><input type="radio" value="none" name="Informative" /></div>
+                <div class="first-col">Visually Pleasing</div>
+                <div><input type="radio" value="none" name="Visually" /></div>
+                <div><input type="radio" value="none" name="Visually" /></div>
+                <div><input type="radio" value="none" name="Visually" /></div>
+            
+            </div>
+          </div>
+
+          </div>
+            <p class="question">What is the likelihood that you will visit the website again?</p>
+            <div class="question-answer">
+              <label><input type="radio" value="none" name="likelihood" /> Highly likely</label>
+              <label><input type="radio" value="none" name="likelihood" /> Very likely</label>
+              <label><input type="radio" value="none" name="likelihood" /> +/- likely</label>
+              <label><input type="radio" value="none" name="likelihood" /> Maybe</label>
+              <label><input type="radio" value="none" name="likelihood" /> Not at all</label>
+            </div>
+            <p class="question">Please add any comments you have for improving the website. We welcome suggestions on specific areas for improvements, features you would like to see added to the site, and examples of what you consider good websites.</p>
+            <textarea rows="5"></textarea>
+            <div class="btn-block">
+              <button type="submit" href="company.html">Send</button>
+
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__flex">
+        <div class="footer__flex_left footer__grid">
+          <h6>Follow us</h6>
+          <br />
+          <div class="footer__flex_left_icons">
+            <a href="#"
+              ><svg class="icon__social">
+                <use href="images/sprite.svg#icon-instagram"></use></svg
+            ></a>
+            <a href="#"
+              ><svg class="icon__social">
+                <use href="images/sprite.svg#icon-youtube"></use></svg
+            ></a>
+          </div>
+        </div>
+        <a href="#"
+          ><img
+            class="footer__flex_logo"
+            src="images/Untitled-1.png"
+          />&nbsp;</a
+        >
+        <h6 class="footer__flex_right">
+          &copy; Batata Bakery All Rights Reserved.
+        </h6>
+      </div>
+    </footer>
+    <script src="scriptBatata.js"></script>
+    <script src="script_company.js"></script>
+  </body>
+</html>

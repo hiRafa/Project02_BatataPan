@@ -1,4 +1,4 @@
-// $tablet-port: 600px;
+$tablet-port: 600px; //for only column grids
 $tablet-desktop: 900px;
 // $desktop: 1200px;
 $desktop-big: 1800px;
@@ -58,15 +58,56 @@ $desktop-big: 1800px;
   align-items: center;
 }
 
+@mixin flex_row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 @mixin icon_size {
   width: 5rem;
   height: 5rem;
   margin: 2rem;
 }
 
-@mixin inner_container {
+$tablet-port: 600px; //for only column grids
+$tablet-desktop: 900px;
+// $desktop: 1200px;
+$desktop-big: 1800px;
+
+@mixin respond($breakpoint) {
+  @media only screen and (min-width: (($breakpoint / 16px) * 1em)) {
+    @content;
+  }
+}
+
+$height-custom: '';
+$height-100: 100%;
+@mixin inner_container($height) {
+  height: $height;
   width: 1200px;
   max-width: 100%;
   margin: 0 auto;
-  height: 100%;
+  max-height: 100%;
+}
+
+@mixin grid1-2 {
+  display: grid;
+  column-gap: 2rem;
+  @include respond($tablet-port) {
+    display: grid;
+    text-align: start;
+    // grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 100%;
+  }
+}
+
+@mixin tab__content-size-padding {
+  font-size: 2rem;
+  padding: 0.5rem 1.5rem;
+  @include respond($tablet-port) {
+    padding: 1.5rem;
+  }
 }

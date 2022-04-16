@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Batata Bakery</title>
+    <!-- Extra METAS to help with Search Engines -->
+    <meta
+      name="description"
+      content="Check our stores and breads we have! We also have amazing seasonal breads"
+    />
+    <!-- The following metas are when sharing a link on FB (example) it shows title, description and image -->
+    <meta property="og:title" content="Batata Bakery!" />
+    <meta
+      property="og:description"
+      content="Breads from all over the world and tasty seasonal breads! Sour dough breads also available!"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://" />
+    <meta property="og:url" content="https/ified.com" />
+    <!-- FONTs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="sass/main.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </head>
+
+  <body>
+    <div class="navi">
+      <input type="checkbox" class="navi__checkbox" id="nav-toggle" />
+      <label for="nav-toggle" class="navi__button">
+        <span class="navi__menuIcon">&nbsp;</span>
+      </label>
+      <div class="navi__bg">&nbsp;</div>
+      <nav class="navi__nav">
+        <ul class="navi__ul">
+          <li class="navi__li">
+            <a class="navi__a" href="#">Home & News</a>
+          </li>
+          <li class="navi__li">
+            <a class="navi__a" href="#">Breads</a>
+          </li>
+          <li class="navi__li">
+            <a href="#" class="navi__a">Shops</a>
+          </li>
+          <li class="navi__li">
+            <a href="company.html" class="navi__a">Company</a>
+          </li>
+        </ul>
+        <a href="#"
+          ><img class="navi__logo" src="images/Untitled-1.png" />&nbsp;</a
+        >
+      </nav>
+    </div>
+
+    <header class="header">
+      <div>
+        <picture>
+          <img
+            class="header__bg"
+            src="images/bakery_bg01.webp"
+            alt="bread background"
+          />
+        </picture>
+      </div>
+      <div class="header__container">
+        <div class="header__container_top">&nbsp;</div>
+        <a href="#"
+          ><img
+            class="header__container_logo"
+            src="images/Untitled-1.png"
+          />&nbsp;</a
+        >
+        <h1 class="header__container_h1">Batata Bakery</h1>
+        <a class="click_scroll_toNews" href="#section__news">
+          <h5>News</h5>
+          <svg class="icon icon__circle-down">
+            <use href="images/sprite.svg#icon-circle-down"></use>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="section section__news" id="section__news">
+        <div class="section__news_container">
+          <p class="section__news_title">This Month Specials</p>
+          <img class="section__news_carousel" src="images/Untitled-1.png" />
+          <button class="button__more">More breads!</button>
+          <a class="click_scroll_toGallery" href="#section__gallery">
+            <h5>Gallery</h5>
+            <svg class="icon icon__circle-down">
+              <use href="images/sprite.svg#icon-circle-down"></use>
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      <section class="section section__gallery" id="section__gallery">
+        <p>GRID</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__flex">
+        <div class="footer__flex_left footer__grid">
+          <h6>Follow us</h6>
+          <br />
+          <div class="footer__flex_left_icons">
+            <a href="#"
+              ><svg class="icon__social">
+                <use href="images/sprite.svg#icon-instagram"></use></svg
+            ></a>
+            <a href="#"
+              ><svg class="icon__social">
+                <use href="images/sprite.svg#icon-youtube"></use></svg
+            ></a>
+          </div>
+        </div>
+        <a href="#"
+          ><img
+            class="footer__flex_logo"
+            src="images/Untitled-1.png"
+          />&nbsp;</a
+        >
+        <h6 class="footer__flex_right">
+          &copy; Batata Bakery All Rights Reserved.
+        </h6>
+      </div>
+    </footer>
+    <script src="scriptBatata.js"></script>
+  </body>
+</html>
