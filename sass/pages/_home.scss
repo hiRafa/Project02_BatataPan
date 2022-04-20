@@ -6,7 +6,6 @@
     padding: var(--padding) 0;
 
     &_container {
-      @include flex_column;
       @include inner_container($height-100);
       background-color: var(--bg_color-lowTransparency-1);
       padding: calc(var(--padding) - 0.5rem) 0;
@@ -15,12 +14,28 @@
       @include p_title;
       min-height: 0; // to avoid overflowing
     }
-    img {
-      height: 25rem;
-      width: 25rem;
-      min-height: 0;
-    }
+
     &_carousel {
+      margin: 0 auto;
+      width: 30rem;
+      height: 30rem;
+      position: relative;
+      /* IN THE END */
+      overflow: hidden;
+      &_slide {
+        /* THIS creates the animation! */
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: transform 1s;
+
+        width: 100%;
+        height: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
     }
   }
   &__gallery {
@@ -41,4 +56,50 @@
   &:active {
     color: blue;
   }
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50rem;
+
+  align-items: center;
+  justify-content: center;
+
+  /* THIS creates the animation! */
+  transition: transform 1s;
+}
+
+.slide > img {
+  /* Only for images that have different size than slide */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider__btn {
+  position: relative;
+  top: 50%;
+  z-index: 10;
+
+  border: none;
+  background: rgba(255, 255, 255, 0.7);
+  font-family: inherit;
+  color: #333;
+  border-radius: 50%;
+  height: 5.5rem;
+  width: 5.5rem;
+  font-size: 3.25rem;
+  cursor: pointer;
+}
+
+.slider__btn--left {
+  left: 6%;
+  transform: translate(-50%, -50%);
+}
+
+.slider__btn--right {
+  right: 6%;
+  transform: translate(50%, -50%);
 }

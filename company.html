@@ -47,7 +47,7 @@
             <a href="#" class="navi__a">Breads</a>
           </li>
           <li class="navi__li">
-            <a href="#" class="navi__a">Shops</a>
+            <a href="shops.html" class="navi__a">Shops</a>
           </li>
           <li class="navi__li">
             <a href="#" class="navi__a">Company</a>
@@ -150,17 +150,32 @@
                 <h5>More about our partners and their products!</h5>
               </div>
               <div class="company__grid">
-                <div><img src="images/bakery_bg01.webp" /></div>
+                <div><img data-src="images/bakery_bg01.webp" loading="lazy"/></div> <!-- loading="lazy" doesnt work on IE and Safari-->
                 <div class="tab__content__right">
                   <p>Mama Biscoitos</p>
                   <span>American cookies, Japanese cookies</span>
                 </div>
-                <div><img src="images/bakery_bg02.webp" /></div>
+                <div> <img src="images/bakery_bg02.webp"  /></div>
                 <div class="tab__content__right">
                   <p>Mediterraneo Breads</p>
                   <span>Products: Pita Bread, Tortillas</span>
                 </div>
-                <div><img src="images/bakery_bg03.webp" /></div>
+                <div > <img src="images/bakery_bg03_LQ.jpg" data-src="images/bakery_bg03.webp" class="lazy-img" /></div>
+                <div class="tab__content__right">
+                  <p>Sakura Tortas</p>
+                  <span>Cheesecakes, fruits tarts (seasonal)</span>
+                </div>
+                <div><img src="images/bakery_bg03_LQ.jpg" data-src="images/bakery_bg03.webp" class="lazy-img"/></div>
+                <div class="tab__content__right">
+                  <p>Sakura Tortas</p>
+                  <span>Cheesecakes, fruits tarts (seasonal)</span>
+                </div>
+                <div><img src="images/bakery_bg03_LQ.jpg" data-src="images/bakery_bg03.webp" class="lazy-img"/></div>
+                <div class="tab__content__right">
+                  <p>Sakura Tortas</p>
+                  <span>Cheesecakes, fruits tarts (seasonal)</span>
+                </div>
+                <div><img src="images/bakery_bg03_LQ.jpg" data-src="images/bakery_bg03.webp" class="lazy-img"/></div>
                 <div class="tab__content__right">
                   <p>Sakura Tortas</p>
                   <span>Cheesecakes, fruits tarts (seasonal)</span>
@@ -283,6 +298,7 @@
         <h6 class="footer__flex_right">
           &copy; Batata Bakery All Rights Reserved.
         </h6>
+        
       </div>
     </footer>
     <script src="scriptBatata.js"></script>

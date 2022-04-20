@@ -53,7 +53,6 @@ $desktop-big: 1800px;
   flex-basis: 100%;
   flex-direction: column;
   gap: 40px;
-  justify-content: space-between;
   text-align: center;
   align-items: center;
 }
@@ -65,22 +64,10 @@ $desktop-big: 1800px;
   flex-wrap: wrap;
 }
 
-@mixin icon_size {
-  width: 5rem;
-  height: 5rem;
-  margin: 2rem;
-}
-
 $tablet-port: 600px; //for only column grids
 $tablet-desktop: 900px;
 // $desktop: 1200px;
 $desktop-big: 1800px;
-
-@mixin respond($breakpoint) {
-  @media only screen and (min-width: (($breakpoint / 16px) * 1em)) {
-    @content;
-  }
-}
 
 $height-custom: '';
 $height-100: 100%;

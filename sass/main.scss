@@ -5,6 +5,7 @@
 @import 'base/base'; //includes typrography
 
 //components
+@import 'components/animations';
 @import 'components/button';
 @import 'components/icons';
 
@@ -18,3 +19,4 @@
 //pages
 @import 'pages/home';
 @import 'pages/company';
+@import 'pages/shops';

@@ -80,7 +80,7 @@ const allSections = document.querySelectorAll('.section');
 
 const revealSection = function (entries, observer) {
   const [entry] = entries;
-  console.log(entry);
+  // console.log(entry);
   if (!entry.isIntersecting) return;
   entry.target.classList.remove('section-hidden');
 };
@@ -93,3 +93,71 @@ allSections.forEach(function (section) {
   sectionObserver.observe(section);
   section.classList.add('section-hidden');
 });
+
+const imgHQ = document.querySelectorAll('img[data-src]');
+const loadImg = function (entries, observer) {
+  entries.forEach(entry => {
+    // console.log(entry);
+    if (!entry.isIntersecting) return;
+
+    // Replace src with data-src
+    entry.target.src = entry.target.dataset.src;
+
+    entry.target.addEventListener('load', function () {
+      entry.target.classList.remove('lazy-img');
+    });
+    observer.unobserve(entry.target);
+  });
+};
+
+const imgObserver = new IntersectionObserver(loadImg, {
+  root: null,
+  threshold: 0,
+  rootMargin: '-200px',
+});
+
+imgHQ.forEach(img => imgObserver.observe(img));
+
+//  ------------------  Slider
+
+// const slider = document.querySelector('.section__news_carousel');
+// slider.style.overflow = 'visible';
+
+const slides = document.querySelectorAll('.section__news_carousel_slide');
+
+const btnLeft = document.querySelector('.slider__btn--left');
+const btnRight = document.querySelector('.slider__btn--right');
+
+let currentSlide = 0;
+const maxSlide = slides.length;
+
+const goToSlide = function () {
+  slides.forEach(
+    (s, i) =>
+      (s.style.transform = `translateX(${
+        100 * (i - (currentSlide % maxSlide))
+      }%)`)
+  );
+};
+goToSlide(0); //Slide Reset
+
+const slideForward = function () {
+  if (currentSlide === maxSlide - 1) {
+    currentSlide = 0;
+  } else {
+    currentSlide++;
+  }
+  goToSlide(currentSlide);
+};
+
+const slideBackward = function () {
+  if (currentSlide === 0) {
+    currentSlide = maxSlide - 1;
+  } else {
+    currentSlide--;
+  }
+  goToSlide(currentSlide);
+};
+
+btnRight.addEventListener('click', slideForward);
+btnLeft.addEventListener('click', slideBackward);

@@ -30,7 +30,7 @@
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 ::selection {
@@ -38,7 +38,7 @@
   color: var(--color-1-medium);
 }
 
-//setting general fontsize based on screens
+//setting general fontsize based on screens. Also responding to zooming in and out
 html {
   // This defines what 1rem is
   font-size: 62.5%; //1 rem = 10px; 10px/16px
@@ -53,16 +53,19 @@ html {
   scroll-behavior: smooth; // replaces JS coding and makes it more simple
 }
 
-//balancing the font size in case the user changes the base pixels from 16px
+//balancing the font size in case the user changes the base pixels from 16px to any other value
 body {
   font-size: 1.6rem; // 16/10
-  text-align: center;
   @include respond($tablet-desktop) {
     font-size: 1.23rem; // 16/13
   }
   @include respond($desktop-big) {
     font-size: 1rem; // 16/16
   }
+  text-align: center;
+  box-sizing: border-box;
+  //I see your confusion.  Well, actually the *  universal selector targets all types of elements; it is not the root css selector.
+  // When we set box-sizing to inherit on all types of elements, we are basically saying that we want the box-sizing to inherit whatever the parent's box-sizing is.  Since we set the box-sizing property to border-box on the <body>  element (which is one of the document's top-most nodes), the property is effectively passed on to all child / grandchild elements.
 }
 
 //setting font size for everything else
@@ -108,4 +111,8 @@ li {
     opacity: 0;
     transform: translateY(8rem);
   }
+}
+
+.lazy-img {
+  filter: blur(50px);
 }

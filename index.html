@@ -47,7 +47,7 @@
             <a class="navi__a" href="#">Breads</a>
           </li>
           <li class="navi__li">
-            <a href="#" class="navi__a">Shops</a>
+            <a href="shops.html" class="navi__a">Shops</a>
           </li>
           <li class="navi__li">
             <a href="company.html" class="navi__a">Company</a>
@@ -91,7 +91,30 @@
       <section class="section section__news" id="section__news">
         <div class="section__news_container">
           <p class="section__news_title">This Month Specials</p>
-          <img class="section__news_carousel" src="images/Untitled-1.png" />
+          <div class="section__news_carousel">
+            <div>
+              <img
+                class="section__news_carousel_slide"
+                src="images/bread_french_x1.webp"
+              />
+            </div>
+            <div>
+              <img
+                class="section__news_carousel_slide"
+                src="images/bread_pineapple_x1.webp"
+              />
+            </div>
+            <div class="section__news_carousel_slide">
+              <img src="images/bread_sakura_x1.webp" />
+            </div>
+            <div class="section__news_carousel_slide">
+              <img src="images/bread_zucchini_x1.webp" />
+            </div>
+          </div>
+          <div class="slider_buttons">
+            <button class="slider__btn slider__btn--left">&larr;</button>
+            <button class="slider__btn slider__btn--right">&rarr;</button>
+          </div>
           <button class="button__more">More breads!</button>
           <a class="click_scroll_toGallery" href="#section__gallery">
             <h5>Gallery</h5>
@@ -102,9 +125,7 @@
         </div>
       </section>
 
-      <section class="section section__gallery" id="section__gallery">
-        <p>GRID</p>
-      </section>
+      <section class="section section__gallery" id="section__gallery"></section>
     </main>
 
     <footer class="footer">
@@ -114,11 +135,11 @@
           <br />
           <div class="footer__flex_left_icons">
             <a href="#"
-              ><svg class="icon__social">
+              ><svg class="icon__socialmedia">
                 <use href="images/sprite.svg#icon-instagram"></use></svg
             ></a>
             <a href="#"
-              ><svg class="icon__social">
+              ><svg class="icon__socialmedia">
                 <use href="images/sprite.svg#icon-youtube"></use></svg
             ></a>
           </div>

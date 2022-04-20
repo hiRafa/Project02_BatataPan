@@ -1,0 +1,24 @@
+.filter {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  align-items: center;
+  background-color: var(--color-white);
+  width: 100%;
+  margin-bottom: 5rem;
+  @include respond($tablet-port) {
+    grid-template-columns: repeat(3, 1fr);
+    @include inner_container($height-custom);
+  }
+  &__shops {
+    padding: 3rem;
+    font-size: 3rem;
+    &-1top {
+      grid-row: 1 / 2;
+      grid-column: 1 / -1;
+      background-color: aqua;
+      padding: 1rem;
+      height: 100%;
+    }
+  }
+}
