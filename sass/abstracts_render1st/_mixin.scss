@@ -98,3 +98,8 @@ $height-100: 100%;
     padding: 1.5rem;
   }
 }
+
+@mixin slider_buttons {
+  padding: 0; // fixing button padding
+  border-radius: 50%;
+}

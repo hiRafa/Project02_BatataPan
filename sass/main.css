@@ -30,6 +30,7 @@
   --shadow-dark: 0 2rem 6rem (var(--color-black), 0.3);
   --bg_color-lowTransparency-0: rgba(255, 193, 77, 0.1);
   --bg_color-lowTransparency-1: rgba(255, 193, 77, 0.4);
+  --bg_color-lowTransparency-2: rgba(255, 193, 77, 0.7);
   --padding: 4rem;
 }
 
@@ -543,6 +544,20 @@ button:active {
 }
 
 .section__news_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100%;
   width: 1200px;
   max-width: 100%;
@@ -550,6 +565,7 @@ button:active {
   max-height: 100%;
   background-color: var(--bg_color-lowTransparency-1);
   padding: calc(var(--padding) - 0.5rem) 0;
+  overflow: hidden;
 }
 
 .section__news_title {
@@ -559,30 +575,75 @@ button:active {
 }
 
 .section__news_carousel {
-  margin: 0 auto;
-  width: 30rem;
-  height: 30rem;
   position: relative;
+  margin: 0 auto;
+  width: 25rem;
+  height: 25rem;
   /* IN THE END */
-  overflow: hidden;
+}
+
+@media only screen and (min-width: 37.5em) {
+  .section__news_carousel {
+    width: 45rem;
+    height: 45rem;
+  }
 }
 
 .section__news_carousel_slide {
-  /* THIS creates the animation! */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: absolute;
+  padding: 3% 3%;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   -webkit-transition: -webkit-transform 1s;
   transition: -webkit-transform 1s;
   transition: transform 1s;
   transition: transform 1s, -webkit-transform 1s;
-  width: 100%;
-  height: 100%;
+  /* THIS creates the animation! */
+}
+
+@media only screen and (min-width: 37.5em) {
+  .section__news_carousel_slide {
+    padding: 5% 5%;
+  }
 }
 
 .section__news_carousel_slide img {
-  width: 100%;
-  height: 100%;
+  width: 70%;
+  height: 70%;
+}
+
+@media only screen and (min-width: 37.5em) {
+  .section__news_carousel_slide img {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+.section__news .slider__btn {
+  padding: 0;
+  border-radius: 50%;
+  z-index: 1;
+  font-family: inherit;
+  background: var(--bg_color-lowTransparency-2);
+  color: var(--color-1-darkest);
+  min-width: 5rem;
+  font-size: 3.25rem;
 }
 
 .section__gallery {
@@ -607,57 +668,46 @@ button:active {
   color: blue;
 }
 
-.slide {
+.dots {
   position: absolute;
-  top: 0;
-  width: 100%;
-  height: 50rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  /* THIS creates the animation! */
-  -webkit-transition: -webkit-transform 1s;
-  transition: -webkit-transform 1s;
-  transition: transform 1s;
-  transition: transform 1s, -webkit-transform 1s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 1;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  left: 50%;
+  bottom: -2rem;
 }
 
-.slide > img {
-  /* Only for images that have different size than slide */
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+@media only screen and (min-width: 37.5em) {
+  .dots {
+    bottom: 0.5rem;
+  }
 }
 
-.slider__btn {
-  position: relative;
-  top: 50%;
-  z-index: 10;
-  border: none;
-  background: rgba(255, 255, 255, 0.7);
-  font-family: inherit;
-  color: #333;
+.dots-dot {
+  padding: 0;
   border-radius: 50%;
-  height: 5.5rem;
-  width: 5.5rem;
-  font-size: 3.25rem;
-  cursor: pointer;
+  opacity: 0.7;
+  height: 2rem;
+  width: 2rem;
+  min-width: 0;
+  margin-right: 1.75rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  /* Only necessary when overlying images */
+  /* box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.7); */
 }
 
-.slider__btn--left {
-  left: 6%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+.dots-dot:last-child {
+  margin: 0;
 }
 
-.slider__btn--right {
-  right: 6%;
-  -webkit-transform: translate(50%, -50%);
-          transform: translate(50%, -50%);
+.dots-dot--active {
+  /* background-color: #fff; */
+  background-color: #888;
+  opacity: 1;
 }
 
 .company__header {

@@ -123,41 +123,85 @@ imgHQ.forEach(img => imgObserver.observe(img));
 // const slider = document.querySelector('.section__news_carousel');
 // slider.style.overflow = 'visible';
 
-const slides = document.querySelectorAll('.section__news_carousel_slide');
+const sliderFunction = function () {
+  const slides = document.querySelectorAll('.section__news_carousel_slide');
 
-const btnLeft = document.querySelector('.slider__btn--left');
-const btnRight = document.querySelector('.slider__btn--right');
+  const btnLeft = document.querySelector('.slider__btn--left');
+  const btnRight = document.querySelector('.slider__btn--right');
+  const dotContainer = document.querySelector('.dots');
 
-let currentSlide = 0;
-const maxSlide = slides.length;
+  let currentSlide = 0;
+  const maxSlide = slides.length;
 
-const goToSlide = function () {
-  slides.forEach(
-    (s, i) =>
-      (s.style.transform = `translateX(${
-        100 * (i - (currentSlide % maxSlide))
-      }%)`)
-  );
+  const createDots = function () {
+    slides.forEach(function (_, i) {
+      dotContainer.insertAdjacentHTML(
+        'beforeend',
+        `<button class="dots-dot" data-slide="${i}"></button>`
+      );
+    });
+  };
+
+  const activateDot = function (i) {
+    document
+      .querySelectorAll('.dots-dot')
+      .forEach(dot => dot.classList.remove('dots-dot--active'));
+    document
+      .querySelector(`.dots-dot[data-slide="${i}"]`)
+      .classList.add('dots-dot--active');
+  };
+
+  const goToSlide = function (slide) {
+    slides.forEach(
+      (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
+    );
+  };
+
+  const slideForward = function () {
+    if (currentSlide === maxSlide - 1) {
+      currentSlide = 0;
+    } else {
+      currentSlide++;
+    }
+    goToSlide(currentSlide);
+    activateDot(currentSlide);
+  };
+
+  const slideBackward = function () {
+    if (currentSlide === 0) {
+      currentSlide = maxSlide - 1;
+    } else {
+      currentSlide--;
+    }
+    goToSlide(currentSlide);
+    activateDot(currentSlide);
+  };
+
+  btnRight.addEventListener('click', slideForward);
+  btnLeft.addEventListener('click', slideBackward);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') slideBackward();
+    e.key === 'ArrowRight' && slideForward();
+  });
+
+  // ----------- Dots functions
+  const initializeSliderDots = function () {
+    goToSlide(0); //Slide Reset
+    createDots(0);
+    activateDot(0);
+  };
+  initializeSliderDots();
+
+  dotContainer.addEventListener('click', function (e) {
+    if (e.target.classList.contains('dots-dot')) {
+      console.log('dot');
+      // const slide = e.target.dataset.slide;
+      const { slide } = e.target.dataset;
+      // currentSlide = +e.target.dataset.slide;
+      goToSlide(slide);
+      activateDot(slide);
+    }
+  });
 };
-goToSlide(0); //Slide Reset
-
-const slideForward = function () {
-  if (currentSlide === maxSlide - 1) {
-    currentSlide = 0;
-  } else {
-    currentSlide++;
-  }
-  goToSlide(currentSlide);
-};
-
-const slideBackward = function () {
-  if (currentSlide === 0) {
-    currentSlide = maxSlide - 1;
-  } else {
-    currentSlide--;
-  }
-  goToSlide(currentSlide);
-};
-
-btnRight.addEventListener('click', slideForward);
-btnLeft.addEventListener('click', slideBackward);
+sliderFunction();
