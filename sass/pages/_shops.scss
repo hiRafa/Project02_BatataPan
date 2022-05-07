@@ -1,24 +1,102 @@
 .filter {
+  @include inner_container($height-custom);
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  align-items: center;
-  background-color: var(--color-white);
-  width: 100%;
-  margin-bottom: 5rem;
-  @include respond($tablet-port) {
-    grid-template-columns: repeat(3, 1fr);
-    @include inner_container($height-custom);
+  grid-template-rows: 1fr;
+  padding: 10vh 0;
+  overflow: hidden;
+
+  &-1top {
+    color: var(--color-1);
+    background-color: var(--color-1-darkest);
+    padding: 2rem;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  &-bottom {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    align-items: center;
+    background-color: var(--color-white);
+    overflow: scroll;
+    height: 55vh;
+    @include respond($tablet-port) {
+      grid-template-columns: repeat(3, 1fr);
+      overflow: visible;
+      height: 100%;
+    }
   }
   &__shops {
-    padding: 3rem;
+    padding: 2rem;
     font-size: 3rem;
-    &-1top {
-      grid-row: 1 / 2;
-      grid-column: 1 / -1;
-      background-color: aqua;
-      padding: 1rem;
+    @include respond($tablet-port) {
+      padding: 3rem;
+    }
+    cursor: pointer;
+    &:hover {
+      background: var(--bg_color-lowTransparency-0);
+    }
+    &:active {
+      background: var(--bg_color-lowTransparency-2);
+    }
+  }
+}
+
+.section__shops {
+  @include flex_column;
+  height: 100%;
+  background-color: var(--color-white);
+}
+
+.shop {
+  @include flex_row;
+  flex-wrap: nowrap;
+  color: white;
+  height: 400px;
+  background-color: var(--color-1-darkest);
+  text-align: left;
+
+  &-left {
+    margin-left: 80vh;
+    @include respond($tablet-desktop) {
+      margin-left: 50vh;
+    }
+  }
+  &-right {
+    margin-right: 80vh;
+    @include respond($tablet-desktop) {
+      margin-left: 50vh;
+    }
+  }
+
+  &__info {
+    height: 100%;
+    width: 250px;
+    @include respond($tablet-port) {
+      width: 400px;
+    }
+
+    a {
+      color: var(--color-1-highLight);
+      &:hover {
+        color: var(--color-white);
+      }
+      &:active {
+        color: var(--color-1-lowSaturation);
+      }
+    }
+    p {
+      padding: 2rem;
+    }
+  }
+  &__image {
+    height: 100%;
+    min-width: 800px;
+    img {
       height: 100%;
+      width: 100%;
+      min-width: 500px;
     }
   }
 }

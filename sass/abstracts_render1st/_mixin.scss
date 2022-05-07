@@ -73,10 +73,10 @@ $height-custom: '';
 $height-100: 100%;
 @mixin inner_container($height) {
   height: $height;
+  max-height: 100%;
   width: 1200px;
   max-width: 100%;
   margin: 0 auto;
-  max-height: 100%;
 }
 
 @mixin grid1-2 {

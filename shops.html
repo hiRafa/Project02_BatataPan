@@ -29,6 +29,8 @@
     <!-- CSS -->
     <link rel="stylesheet" href="sass/main.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- JS -->
+    <script defer src="scriptBatata.js"></script>
   </head>
 
   <body>
@@ -63,27 +65,62 @@
       <div>
         <picture>
           <img
-            class="header__bg"
+            class="header__bg header__bg-shops"
             src="images/bakery_bg01.webp"
             alt="bread background"
           />
         </picture>
       </div>
-      <div class="header__container">
-        <div class="header__container_filter filter">
-          <div class="filter__shops-1top"><h4>Our Locations</h4></div>
+
+      <div class="filter">
+        <div class="filter-1top"><h4>Our Locations</h4></div>
+        <div class="filter-bottom">
           <div class="filter__shops filter__shops-2">Tokyo (vegan)</div>
           <div class="filter__shops filter__shops-3">Kinshicho</div>
           <div class="filter__shops filter__shops-4">Tachikawa</div>
           <div class="filter__shops filter__shops-5">Shinagawa</div>
           <div class="filter__shops filter__shops-6">Yokohama</div>
+          <div class="filter__shops filter__shops-4">Funabashi</div>
+          <div class="filter__shops filter__shops-5">Fujimino</div>
+          <div class="filter__shops filter__shops-6">Saitama</div>
           <div class="filter__shops filter__shops-7">All</div>
         </div>
       </div>
     </header>
 
     <main>
-      <section class="section section" id="section__news"></section>
+      <section class="section section__shops" id="section__shops">
+        <div class="shop shop-left">
+          <div class="shop__info">
+            <p>Tokyo</p>
+            <p>
+              Hours: 8:00 ~ 20:00<br />
+
+              <a href="https://goo.gl/maps/koGmZFq93JYPCN3N7" target="”_blank”">
+                << Map >></a
+              >
+            </p>
+          </div>
+          <div class="shop__image">
+            <img src="images/bakery01_LQ.jpg" />
+          </div>
+        </div>
+        <div class="shop shop-right">
+          <div class="shop__image">
+            <img src="images/bakery02_LQ.jpg" />
+          </div>
+          <div class="shop__info">
+            <p>Tokyo</p>
+            <p>
+              Hours: 8:00 ~ 20:00<br />
+
+              <a href="https://goo.gl/maps/koGmZFq93JYPCN3N7" target="”_blank”">
+                << Map >></a
+              >
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
@@ -93,11 +130,11 @@
           <br />
           <div class="footer__flex_left_icons">
             <a href="#"
-              ><svg class="icon__social">
+              ><svg class="icon__socialmedia">
                 <use href="images/sprite.svg#icon-instagram"></use></svg
             ></a>
             <a href="#"
-              ><svg class="icon__social">
+              ><svg class="icon__socialmedia">
                 <use href="images/sprite.svg#icon-youtube"></use></svg
             ></a>
           </div>
@@ -113,6 +150,5 @@
         </h6>
       </div>
     </footer>
-    <script src="scriptBatata.js"></script>
   </body>
 </html>
