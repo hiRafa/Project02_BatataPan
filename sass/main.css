@@ -77,10 +77,10 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
   text-align: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-size: 1.6rem;
 }
 
 @media only screen and (min-width: 56.25em) {
@@ -1002,23 +1002,23 @@ textarea:hover {
   }
 }
 
-.filter__shops {
+.filter__button {
+  cursor: pointer;
   padding: 2rem;
   font-size: 3rem;
-  cursor: pointer;
 }
 
 @media only screen and (min-width: 37.5em) {
-  .filter__shops {
+  .filter__button {
     padding: 3rem;
   }
 }
 
-.filter__shops:hover {
+.filter__button:hover {
   background: var(--bg_color-lowTransparency-0);
 }
 
-.filter__shops:active {
+.filter__button:active {
   background: var(--bg_color-lowTransparency-2);
 }
 

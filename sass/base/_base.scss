@@ -56,6 +56,12 @@ html {
 
 //balancing the font size in case the user changes the base pixels from 16px to any other value
 body {
+  text-align: center;
+  box-sizing: border-box;
+  // I see your confusion.  Well, actually the *  universal selector targets all types of elements; it is not the root css selector.
+  // When we set box-sizing to inherit on all types of elements, we are basically saying that we want the box-sizing to inherit whatever the parent's box-sizing is.
+  // Since we set the box-sizing property to border-box on the <body>  element (which is one of the document's top-most nodes), the property is effectively passed on to all child / grandchild elements.
+
   font-size: 1.6rem; // 16/10
   @include respond($tablet-desktop) {
     font-size: 1.23rem; // 16/13
@@ -63,10 +69,6 @@ body {
   @include respond($desktop-big) {
     font-size: 1rem; // 16/16
   }
-  text-align: center;
-  box-sizing: border-box;
-  //I see your confusion.  Well, actually the *  universal selector targets all types of elements; it is not the root css selector.
-  // When we set box-sizing to inherit on all types of elements, we are basically saying that we want the box-sizing to inherit whatever the parent's box-sizing is.  Since we set the box-sizing property to border-box on the <body>  element (which is one of the document's top-most nodes), the property is effectively passed on to all child / grandchild elements.
 }
 
 //setting font size for everything else

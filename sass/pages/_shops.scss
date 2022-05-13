@@ -27,13 +27,14 @@
       height: 100%;
     }
   }
-  &__shops {
+  &__button {
+    cursor: pointer;
     padding: 2rem;
     font-size: 3rem;
     @include respond($tablet-port) {
       padding: 3rem;
     }
-    cursor: pointer;
+
     &:hover {
       background: var(--bg_color-lowTransparency-0);
     }
