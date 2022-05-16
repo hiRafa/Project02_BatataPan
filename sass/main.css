@@ -1039,7 +1039,6 @@ textarea:hover {
           align-items: center;
   height: 100%;
   background-color: var(--color-white);
-  padding: 4rem 0;
 }
 
 .shop {
@@ -1118,10 +1117,5 @@ textarea:hover {
   height: 100%;
   width: 100%;
   min-width: 500px;
-}
-
-.shop-active {
-  background-color: var(--color-1-darkest);
-  color: var(--color-1-highLight);
 }
 /*# sourceMappingURL=main.css.map */

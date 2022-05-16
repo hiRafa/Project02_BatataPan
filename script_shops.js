@@ -135,118 +135,65 @@ const filterOption = document.querySelector('.filter');
 //   parentElement.insertAdjacentHTML('afterbegin', markup);
 // };
 
-fetch('data.json', {
-  /* second option inside curly brackets is to send data, delete data, post data back into the database*/
-})
-  .then(resp => resp.json()) // generates a promise
-  .then(shopsData => {
-    console.log(shopsData.shops);
+// const filterTodo = function (e) {
+//   //selecting all items of the list
+//   const shops = sectionShopsHTML.childNodes;
+//   console.log(shops);
 
-    let allShopsArray = shopsData.shops;
-    let getShopName = [];
-    let getOpenHr = [];
-    let getCloseHr = [];
-    const getAddressLink = [];
+//   // checking on each item if they contain completed or not or if they are all
+//   shops.forEach(function (e, item) {
+//     switch (
+//       e.target.value //the value is in the html element
+//     ) {
+//       case 'all':
+//         item.style.display = 'flex';
+//         break;
+//       case 'kinshicho': {
+//         if (item.classList.contains('kinshicho')) {
+//           item.style.display = 'flex';
+//         } else {
+//           item.style.display = 'none';
+//         }
+//         break;
+//       }
+//       case 'tachikawa': {
+//         if (item.classList.contains('tachikawa')) {
+//           // since we only added "completed" class to nodes, it is not possible to check for uncompleted. therefore we need to invert the condition with !
+//           item.style.display = 'flex';
+//         } else {
+//           item.style.display = 'none';
+//         }
+//         break;
+//       }
+//     }
+//   });
+// };
 
-    // ------------------------- SAMPLE
-    // for (let i = 0; i < allShopsArray.length; i++) {
-    //   getShopName += `<li> ${allShopsArray[i].shopName} </li>`;
-    //   document.getElementById('shops_nameList').innerHTML = getShopName;
-    //   // console.log(allShopsArray[i].shopName);
+// renderShops(sectionShopsHTML);
+// filterTodo();
 
-    //   getOpenHr += `<li> ${allShopsArray[i].openHr} </li>`;
-    //   document.getElementById('shops_openList').innerHTML = getOpenHr;
-
-    //   getCloseHr += `<li> ${allShopsArray[i].closeHr} </li>`;
-    //   document.getElementById('shops_closeList').innerHTML = getCloseHr;
-    // }
-    // ------------------------- SAMPLE
-
-    for (let i = 0; i < allShopsArray.length; i++) {
-      getShopName.push(allShopsArray[i].shopName);
-      getOpenHr.push(allShopsArray[i].openHr);
-      getCloseHr.push(allShopsArray[i].closeHr);
-      getAddressLink.push(allShopsArray[i].address);
-      // console.log(` You are at ${allShopsArray[i]} shop`); // Useless. returns You are at [object Object] shop
-    }
-    console.log(` You are at ${getShopName} shop`);
-    console.log(getShopName);
-    console.log(getOpenHr);
-    console.log(getCloseHr);
-    console.log(getAddressLink);
-
-    
-  });
-
-
-
-// --------------------------------------------------------------------------
-// ------------------ FILTER
-// --------------------------------------------------------------------------
-const filterOptionsContainer = document.querySelector('.filter-bottom');
 const filterShopsBtn = document.querySelectorAll('.filter__button');
 const shops = document.querySelectorAll('.shop');
+// const search = document.getElementById(search);
 
-filterOptionsContainer.addEventListener('click', e => {
-  const filterOption = e.target;
-  const dataFilterButton = e.target.dataset.filter;
+for (i = 0; i < filterShopsBtn.length; i++) {
+  filterShopsBtn[i].addEventListener('click', e => {
+    e.preventDefault();
 
-  // Clear class shop-active
-  filterShopsBtn.forEach(t => t.classList.remove('shop-active'));
+    const filter = e.target.dataset.filter;
+    console.log(filter);
+    console.log(filterShopsBtn);
 
-  // Start adding class shop-active according to selection
-  // DRY
-  const showShopAndActiveButton = function (selectedShop) {
-    selectedShop.style.display = 'flex';
-    filterOption.classList.add('shop-active');
-  };
-  shops.forEach(selectedShop => {
-    if (dataFilterButton === 'all') {
-      showShopAndActiveButton(selectedShop); // DRY
-      // selectedShop.style.display = 'flex';
-      // filterOption.classList.add('shop-active');
-    } else {
-      if (selectedShop.classList.contains(dataFilterButton)) {
-        showShopAndActiveButton(selectedShop); // DRY
-        // selectedShop.style.display = 'flex';
-        // filterOption.classList.add('shop-active');
+    shops.forEach(product => {
+      if (filter === 'all') {
+        product.style.display = 'flex';
       } else {
-        selectedShop.style.display = 'none';
+        if (product.classList.contains(filter)) {
+          product.style.display = 'flex';
+        } else {
+          product.style.display = 'none';
+        }
       }
-    }
+    });
   });
-});
-
-// --------------------------------------------------------------------------
-//----------------------- Filter Original BACK UP (by Zino, Ewomazino Akpareva)
-// --------------------------------------------------------------------------
-
-// const filterShopsBtn = document.querySelectorAll('.filter__button');
-// const shops = document.querySelectorAll('.shop');
-// // const search = document.getElementById(search);
-// for (i = 0; i < filterShopsBtn.length; i++) {
-//   filterShopsBtn[i].addEventListener('click', e => {
-//     e.preventDefault();
-//     console.log(`Hello ${getShopName}`);
-
-//     const filterOption = e.target;
-//     const filter = e.target.dataset.filter;
-
-//     // console.log(filterOption.innerText);
-//     // console.log(filter);
-//     // console.log(filterShopsBtn);
-
-//     shops.forEach(selectedShop => {
-//       if (filter === 'all') {
-//         selectedShop.style.display = 'flex';
-//       } else {
-//         if (selectedShop.classList.contains(filter)) {
-//           selectedShop.style.display = 'flex';
-//           filterOption.classList.add('shop-active');
-//         } else {
-//           selectedShop.style.display = 'none';
-//         }
-//       }
-//     });
-//   });
-// }
+}
