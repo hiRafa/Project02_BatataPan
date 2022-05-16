@@ -48,6 +48,7 @@
   @include flex_column;
   height: 100%;
   background-color: var(--color-white);
+  padding: 4rem 0;
 }
 
 .shop {
@@ -99,5 +100,9 @@
       width: 100%;
       min-width: 500px;
     }
+  }
+  &-active {
+    background-color: var(--color-1-darkest);
+    color: var(--color-1-highLight);
   }
 }
