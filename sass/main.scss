@@ -1,7 +1,7 @@
-//abstracts (mixins need to be processed before)
-@import 'abstracts_render1st/mixin';
+// Order of import matters;
 
 //base
+@import 'base/mixin'; // (mixins need to be processed before)
 @import 'base/base'; //includes typrography
 
 //components
@@ -10,14 +10,15 @@
 @import 'components/icons';
 
 //layout
-
+@import 'layout/sections';
+@import 'layout/filter';
 @import 'layout/nav';
-@import 'layout/grid-container';
 @import 'layout/footer';
 @import 'layout/header';
 @import 'layout/slider';
 
 //pages
+@import 'pages/breads';
 @import 'pages/home';
 @import 'pages/company';
 @import 'pages/shops';

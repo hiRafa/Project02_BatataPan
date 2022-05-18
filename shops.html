@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="sass/main.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- JS -->
-    <script defer src="scriptBatata.js"></script>
+
     <script defer src="script_shops.js"></script>
   </head>
 
@@ -47,7 +47,7 @@
             <a class="navi__a" href="index.html">Home & News</a>
           </li>
           <li class="navi__li">
-            <a class="navi__a" href="#">Breads</a>
+            <a class="navi__a" href="breads.html">Breads</a>
           </li>
           <li class="navi__li">
             <a class="navi__a" href="#">Shops</a>
@@ -62,7 +62,7 @@
       </nav>
     </div>
 
-    <header class="header">
+    <header class="header header-shops">
       <div>
         <picture>
           <img
@@ -76,41 +76,22 @@
       <div class="filter">
         <div class="filter-1top"><h4>Our Locations</h4></div>
         <div class="filter-bottom">
-          <option class="filter__button" data-filter="tokyo">
-            Tokyo (vegan)
-          </option>
-          <option class="filter__button" data-filter="kinshicho">
-            Kinshicho
-          </option>
-          <option class="filter__button" data-filter="tachikawa">
-            Tachikawa
-          </option>
-          <option class="filter__button" data-filter="shinagawa">
-            Shinagawa
-          </option>
-          <option class="filter__button" data-filter="yokohama">
-            Yokohama
-          </option>
-          <option class="filter__button" data-filter="funabashi">
-            Funabashi
-          </option>
-          <option class="filter__button" data-filter="fujimino">
-            Fujimino
-          </option>
-          <option class="filter__button" data-filter="saitama">Saitama</option>
-          <option class="filter__button shop-active" data-filter="all">
+          <div class="filter__button" data-filter="tokyo">Tokyo (vegan)</div>
+          <div class="filter__button" data-filter="kinshicho">Kinshicho</div>
+          <div class="filter__button" data-filter="tachikawa">Tachikawa</div>
+          <div class="filter__button" data-filter="shinagawa">Shinagawa</div>
+          <div class="filter__button" data-filter="yokohama">Yokohama</div>
+          <div class="filter__button" data-filter="funabashi">Funabashi</div>
+          <div class="filter__button" data-filter="fujimino">Fujimino</div>
+          <div class="filter__button" data-filter="saitama">Saitama</div>
+          <div class="filter__button filter__button-active" data-filter="all">
             All
-          </option>
+          </div>
         </div>
       </div>
     </header>
 
     <main>
-      <section>
-        <ul id="shops_nameList"></ul>
-        <ul id="shops_openList"></ul>
-        <ul id="shops_closeList"></ul>
-      </section>
       <section class="section section__shops">
         <div class="shop shop-left tokyo">
           <div class="shop__info">
@@ -245,11 +226,11 @@
           <br />
           <div class="footer__flex_left_icons">
             <a href="#"
-              ><svg class="icon__socialmedia">
+              ><svg class="icon-socialmedia">
                 <use href="images/sprite.svg#icon-instagram"></use></svg
             ></a>
             <a href="#"
-              ><svg class="icon__socialmedia">
+              ><svg class="icon-socialmedia">
                 <use href="images/sprite.svg#icon-youtube"></use></svg
             ></a>
           </div>

@@ -27,6 +27,32 @@ $desktop-big: 1800px;
     }
   } */
 
+$height-custom: '';
+$height-100: 100%;
+@mixin inner_container($height) {
+  height: $height;
+  max-height: 100%;
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@mixin flex_column {
+  display: flex;
+  flex-basis: 100%;
+  flex-direction: column;
+  row-gap: 40px;
+  text-align: center;
+  align-items: center;
+}
+
+@mixin flex_row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 @mixin absoluteCenter {
   position: absolute;
   top: 50%;
@@ -46,37 +72,6 @@ $desktop-big: 1800px;
 @mixin p_title {
   font-size: 4.5rem;
   font-weight: 600;
-}
-
-@mixin flex_column {
-  display: flex;
-  flex-basis: 100%;
-  flex-direction: column;
-  gap: 40px;
-  text-align: center;
-  align-items: center;
-}
-
-@mixin flex_row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-$tablet-port: 600px; //for only column grids
-$tablet-desktop: 900px;
-// $desktop: 1200px;
-$desktop-big: 1800px;
-
-$height-custom: '';
-$height-100: 100%;
-@mixin inner_container($height) {
-  height: $height;
-  max-height: 100%;
-  width: 1200px;
-  max-width: 100%;
-  margin: 0 auto;
 }
 
 @mixin grid1-2 {
@@ -102,4 +97,8 @@ $height-100: 100%;
 @mixin slider_buttons {
   padding: 0; // fixing button padding
   border-radius: 50%;
+}
+
+@mixin border-top {
+  border-top: 3px solid var(--color-1-darkest);
 }

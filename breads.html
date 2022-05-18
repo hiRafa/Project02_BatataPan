@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- JS -->
     <script defer src="scriptBatata.js"></script>
-    <script defer src="script_shops.js"></script>
+    <script defer src="script_breads.js"></script>
   </head>
 
   <body>
@@ -50,7 +50,7 @@
             <a class="navi__a" href="#">Breads</a>
           </li>
           <li class="navi__li">
-            <a class="navi__a" href="#">Shops</a>
+            <a class="navi__a" href="shops.html">Shops</a>
           </li>
           <li class="navi__li">
             <a class="navi__a" href="company.html">Company</a>
@@ -73,168 +73,195 @@
         </picture>
       </div>
 
-      <div class="filter">
-        <div class="filter-1top"><h4>Our Locations</h4></div>
-        <div class="filter-bottom">
-          <option class="filter__button" data-filter="tokyo">
-            Tokyo (vegan)
-          </option>
-          <option class="filter__button" data-filter="kinshicho">
-            Kinshicho
-          </option>
-          <option class="filter__button" data-filter="tachikawa">
-            Tachikawa
-          </option>
-          <option class="filter__button" data-filter="shinagawa">
-            Shinagawa
-          </option>
-          <option class="filter__button" data-filter="yokohama">
-            Yokohama
-          </option>
-          <option class="filter__button" data-filter="funabashi">
-            Funabashi
-          </option>
-          <option class="filter__button" data-filter="fujimino">
-            Fujimino
-          </option>
-          <option class="filter__button" data-filter="saitama">Saitama</option>
-          <option class="filter__button shop-active" data-filter="all">
-            All
-          </option>
+      <div class="filter filter__bread">
+        <div class="filter__bread-top"><h4>Our Breads</h4></div>
+        <div class="filter__bread-center">
+          <div class="filter__bread-center left">
+            <div><h5>Allergies</h5></div>
+            <div class="checkbox__container">
+              <button class="checkbox__container_option">
+                <label for="glutenfree" data-filter="glutenfree">
+                  <input type="checkbox" id="glutenfree" name="glutenfree" />
+                  Gluten Free</label
+                >
+              </button>
+              <button class="checkbox__container_option">
+                <label for="lactosefree">
+                  <input type="checkbox" id="lactosefree" name="lactosefree" />
+                  Lactose Free</label
+                >
+              </button>
+            </div>
+          </div>
+
+          <div class="filter__bread-center center">
+            <div><h5>Flavors</h5></div>
+            <div class="checkbox__container">
+              <button class="checkbox__container_option">
+                <label for="plain" data-filter="plain">
+                  <input type="checkbox" id="plain" name="plain" />
+                  Plain</label
+                >
+              </button>
+
+              <button class="checkbox__container_option">
+                <label for="bacon">
+                  <input type="checkbox" id="bacon" name="bacon" />
+                  Bacon</label
+                >
+              </button>
+              <button class="checkbox__container_option">
+                <label for="cheese">
+                  <input type="checkbox" id="cheese" name="cheese" />
+                  Cheese</label
+                >
+              </button>
+              <button class="checkbox__container_option">
+                <label for="sausage">
+                  <input type="checkbox" id="sausage" name="sausage" />
+                  Sausage</label
+                >
+              </button>
+            </div>
+          </div>
+
+          <div class="filter__bread-center center">
+            <div><h5>Sweets</h5></div>
+            <div class="checkbox__container">
+              <button class="checkbox__container_option">
+                <label for="chocolate">
+                  <input type="checkbox" id="chocolate" name="chocolate" />
+                  Chocolate</label
+                >
+              </button>
+
+              <button class="checkbox__container_option">
+                <label for="fruits">
+                  <input type="checkbox" id="fruits" name="fruits" />
+                  Fruits</label
+                >
+              </button>
+
+              <button class="checkbox__container_option">
+                <label for="cream">
+                  <input type="checkbox" id="cream" name="cream" />
+                  Cream</label
+                >
+              </button>
+            </div>
+          </div>
+
+          <div class="filter__bread-center right">
+            <div><h5>No Animals</h5></div>
+
+            <div class="checkbox__container">
+              <button class="checkbox__container_option">
+                <label for="eggsfree" data-filter="eggsfree">
+                  <input type="checkbox" id="eggsfree" name="eggsfree" />
+                  Eggs Free
+                </label>
+              </button>
+              <button class="checkbox__container_option">
+                <label for="milkfree">
+                  <input type="checkbox" id="milkfree" name="milkfree" />
+                  Milk Free</label
+                >
+              </button>
+              <button class="checkbox__container_option">
+                <label for="meatfree">
+                  <input type="checkbox" id="meatfree" name="meatfree" />
+                  Meat Free</label
+                >
+              </button>
+            </div>
+          </div>
         </div>
+
+        <div class="filter__bread-bottom">
+          <div><h5>Specials</h5></div>
+
+          <div class="checkbox__container">
+            <button class="checkbox__container_option">
+              <label class="seasonal" data-filter="seasonal">
+                <input type="checkbox" id="seasonal" name="seasonal" />
+                Seasonal
+              </label>
+            </button>
+            <button class="checkbox__container_option">
+              <label for="frozen">
+                <input type="checkbox" id="frozen" name="frozen" />
+                Frozen</label
+              >
+            </button>
+          </div>
+        </div>
+
+        <div class="filter__bread-empty"></div>
       </div>
     </header>
 
     <main>
-      <section>
-        <ul id="shops_nameList"></ul>
-        <ul id="shops_openList"></ul>
-        <ul id="shops_closeList"></ul>
-      </section>
-      <section class="section section__shops">
-        <div class="shop shop-left tokyo">
-          <div class="shop__info">
-            <p>Tokyo</p>
-            <p>
-              Hours: 8:00 ~ 20:00<br />
-
-              <a href="https://goo.gl/maps/koGmZFq93JYPCN3N7" target="”_blank”">
-                << Map >></a
-              >
-            </p>
+      <section class="section section__breads">
+        <div class="bread__card">
+          <h5>Potato Bread</h5>
+          <img src="images/bread_pineapple_x1.webp" />
+          <div class="bread__card-type">
+            <p class="bread_type cheese">Cheese</p>
+            <p class="bread_type glutenfree">Gluten Free</p>
+            <p class="bread_type glutenfree">Gluten Free</p>
+            <p class="bread_type glutenfree">Gluten Free</p>
+            <p class="bread_type glutenfree">Gluten Free</p>
           </div>
-          <div class="shop__image">
-            <img src="images/bakery01_LQ.jpg" />
+          <div class="bread__card-icon">
+            <svg class="icon icon-flickr">
+              <use href="images/sprite.svg#icon-flickr"></use>
+            </svg>
           </div>
         </div>
 
-        <div class="shop shop-right kinshicho">
-          <div class="shop__image">
-            <img src="images/bakery02_LQ.jpg" />
+        <div class="bread__card"></div>
+
+        <div class="bread__card">
+          <h5>Potato Bread</h5>
+          <img src="images/bread_pineapple_x1.webp" />
+          <div class="bread__card-type">
+            <p class="bread_type cheese">Cheese</p>
+            <p class="bread_type glutenfree">Gluten Free</p>
+            <p class="bread_type glutenfree">Gluten Free</p>
+            <p class="bread_type glutenfree">Gluten Free</p>
+            <p class="bread_type glutenfree">Gluten Free</p>
           </div>
-          <div class="shop__info">
-            <p>Kinshicho</p>
-            <p>
-              Hours: 8:00 ~ 20:00<br />
-              <a href="https://goo.gl/maps/koGmZFq93JYPCN3N7" target="”_blank”">
-                << Map >></a
-              >
-            </p>
+          <div class="bread__card-icon">
+            <svg class="icon icon-flickr">
+              <use href="images/sprite.svg#icon-flickr"></use>
+            </svg>
           </div>
         </div>
 
-        <div class="shop shop-left tachikawa">
-          <div class="shop__info">
-            <p>Tachikawa</p>
-            <p>
-              Hours: 8:00 ~ 20:00<br />
-
-              <a href="https://goo.gl/maps/koGmZFq93JYPCN3N7" target="”_blank”">
-                << Map >></a
-              >
-            </p>
+        <div class="bread__card"></div>
+        <div class="bread__card"></div>
+        <div class="bread__card">
+          <h5>Plain Bread</h5>
+          <img src="images/bread_pineapple_x1.webp" />
+          <div class="bread__card-type">
+            <p class="bread_type cheese">Cheese</p>
+            <p class="bread_type glutenfree">Gluten Free</p>
+            <p class="bread_type glutenfree">Chocolate</p>
+            <p class="bread_type glutenfree">Gluten Free</p>
+            <p class="bread_type glutenfree">Gluten Free</p>
           </div>
-          <div class="shop__image">
-            <img src="images/bakery01_LQ.jpg" />
-          </div>
-        </div>
-
-        <div class="shop shop-right shinagawa">
-          <div class="shop__image">
-            <img src="images/bakery02_LQ.jpg" />
-          </div>
-          <div class="shop__info">
-            <p>Shinagawa</p>
-            <p>
-              Hours: 8:00 ~ 20:00<br />
-              <a href="https://goo.gl/maps/koGmZFq93JYPCN3N7" target="”_blank”">
-                << Map >></a
-              >
-            </p>
+          <div class="bread__card-icon">
+            <svg class="icon icon-flickr">
+              <use href="images/sprite.svg#icon-flickr"></use>
+            </svg>
           </div>
         </div>
-
-        <div class="shop shop-left yokohama">
-          <div class="shop__info">
-            <p>Yokohama</p>
-            <p>
-              Hours: 8:00 ~ 20:00<br />
-
-              <a href="https://goo.gl/maps/koGmZFq93JYPCN3N7" target="”_blank”">
-                << Map >></a
-              >
-            </p>
-          </div>
-          <div class="shop__image">
-            <img src="images/bakery01_LQ.jpg" />
-          </div>
-        </div>
-
-        <div class="shop shop-right funabashi">
-          <div class="shop__image">
-            <img src="images/bakery02_LQ.jpg" />
-          </div>
-          <div class="shop__info">
-            <p>Funabashi</p>
-            <p>
-              Hours: 8:00 ~ 20:00<br />
-              <a href="https://goo.gl/maps/koGmZFq93JYPCN3N7" target="”_blank”">
-                << Map >></a
-              >
-            </p>
-          </div>
-        </div>
-
-        <div class="shop shop-left fujimino">
-          <div class="shop__info">
-            <p>Fujimino</p>
-            <p>
-              Hours: 8:00 ~ 20:00<br />
-
-              <a href="https://goo.gl/maps/koGmZFq93JYPCN3N7" target="”_blank”">
-                << Map >></a
-              >
-            </p>
-          </div>
-          <div class="shop__image">
-            <img src="images/bakery01_LQ.jpg" />
-          </div>
-        </div>
-
-        <div class="shop shop-right saitama">
-          <div class="shop__image">
-            <img src="images/bakery02_LQ.jpg" />
-          </div>
-          <div class="shop__info">
-            <p>Saitama</p>
-            <p>
-              Hours: 8:00 ~ 20:00<br />
-              <a href="https://goo.gl/maps/koGmZFq93JYPCN3N7" target="”_blank”">
-                << Map >></a
-              >
-            </p>
-          </div>
-        </div>
+        <div class="bread__card"></div>
+        <div class="bread__card"></div>
+        <div class="bread__card"></div>
+        <div class="bread__card"></div>
+        <div class="bread__card"></div>
+        <div class="bread__card"></div>
       </section>
     </main>
 
@@ -245,11 +272,11 @@
           <br />
           <div class="footer__flex_left_icons">
             <a href="#"
-              ><svg class="icon__socialmedia">
+              ><svg class="icon-socialmedia">
                 <use href="images/sprite.svg#icon-instagram"></use></svg
             ></a>
             <a href="#"
-              ><svg class="icon__socialmedia">
+              ><svg class="icon-socialmedia">
                 <use href="images/sprite.svg#icon-youtube"></use></svg
             ></a>
           </div>

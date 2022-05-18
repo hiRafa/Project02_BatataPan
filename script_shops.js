@@ -168,17 +168,36 @@ fetch('data.json', {
       getCloseHr.push(allShopsArray[i].closeHr);
       getAddressLink.push(allShopsArray[i].address);
       // console.log(` You are at ${allShopsArray[i]} shop`); // Useless. returns You are at [object Object] shop
+      console.log(getAddressLink[i]);
     }
+
     console.log(` You are at ${getShopName} shop`);
     console.log(getShopName);
     console.log(getOpenHr);
     console.log(getCloseHr);
     console.log(getAddressLink);
 
-    
+    // Logic for shops cards
+    // If odds apply html right
+    // if even apply html left.
+    // use arrays as they are separetely or access the info as objects?
+    // like this:
+    /*
+        // let { recipe } = data.data;
+        let recipe = data.data.recipe;
+        recipe = {
+          id: recipe.id,
+          title: recipe.title,
+          publisher: recipe.publisher,
+          sourceUrl: recipe.source_url,
+          image: recipe.image_url,
+          servings: recipe.servings,
+          cookingTime: recipe.cooking_time,
+          ingredients: recipe.ingredients,
+        };
+        console.log(recipe);
+    */
   });
-
-
 
 // --------------------------------------------------------------------------
 // ------------------ FILTER
@@ -192,13 +211,13 @@ filterOptionsContainer.addEventListener('click', e => {
   const dataFilterButton = e.target.dataset.filter;
 
   // Clear class shop-active
-  filterShopsBtn.forEach(t => t.classList.remove('shop-active'));
+  filterShopsBtn.forEach(t => t.classList.remove('filter__button-active'));
 
   // Start adding class shop-active according to selection
   // DRY
   const showShopAndActiveButton = function (selectedShop) {
     selectedShop.style.display = 'flex';
-    filterOption.classList.add('shop-active');
+    filterOption.classList.add('filter__button-active');
   };
   shops.forEach(selectedShop => {
     if (dataFilterButton === 'all') {
@@ -242,7 +261,7 @@ filterOptionsContainer.addEventListener('click', e => {
 //       } else {
 //         if (selectedShop.classList.contains(filter)) {
 //           selectedShop.style.display = 'flex';
-//           filterOption.classList.add('shop-active');
+//           filterOption.classList.add('filter__button-active');
 //         } else {
 //           selectedShop.style.display = 'none';
 //         }

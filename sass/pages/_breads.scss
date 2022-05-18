@@ -1,0 +1,57 @@
+.section__breads {
+  @include inner_container($height-100);
+  width: 1500px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  gap: 3rem;
+  justify-content: center;
+}
+
+// @supports (display: grid) {
+//   .section__breads {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+//     gap: 2rem;
+//     justify-items: center;
+//     padding: 0 0 5rem;
+//   }
+// }
+
+.bread__card {
+  color: var(--color-white);
+  height: 500px;
+  width: 300px;
+  background-color: var(--color-1-darkest);
+  border-radius: 20px;
+  padding: 0.5rem;
+  &:hover {
+    cursor: pointer;
+  }
+
+  h5 {
+    height: 10%;
+    margin: 0.5rem;
+  }
+  img {
+    height: 40%;
+    margin: 1rem;
+  }
+  div {
+  }
+  p {
+    background-color: var(--color-1);
+    margin: 0.5rem 2rem;
+  }
+  &-type {
+    max-height: 40%;
+    overflow: hidden;
+
+    @include respond($tablet-desktop) {
+      max-height: 30%;
+    }
+  }
+  &-icon {
+    height: 10%;
+  }
+}

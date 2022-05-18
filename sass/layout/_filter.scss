@@ -1,0 +1,126 @@
+.filter {
+  @include inner_container($height-custom);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  padding: 10vh 0 2rem;
+  overflow: hidden;
+
+  // Shops Page
+  &-1top {
+    color: var(--color-1);
+    background-color: var(--color-1-darkest);
+    padding: 2rem;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+  }
+  &-bottom {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    align-items: center;
+    background-color: var(--color-white);
+    overflow: scroll;
+    height: 55vh;
+    @include respond($tablet-port) {
+      grid-template-columns: repeat(3, 1fr);
+      overflow: visible;
+      height: 100%;
+    }
+  }
+  &__button {
+    cursor: pointer;
+    padding: 2rem;
+    font-size: 3rem;
+    @include respond($tablet-port) {
+      padding: 3rem;
+    }
+
+    &:hover {
+      color: var(--color-1);
+    }
+    &:active {
+      background: var(--bg_color-lowTransparency-2);
+    }
+    &-active {
+      background-color: var(--color-1-darkest);
+      color: var(--color-1-highLight);
+    }
+  }
+
+  // Bread Page
+  &__bread {
+    @include flex_column;
+    background-color: var(--color-white);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    height: 85vh;
+    overflow: scroll;
+    row-gap: 10px;
+
+    @include respond($tablet-desktop) {
+      overflow: hidden;
+    }
+
+    h5 {
+      padding: 1rem;
+    }
+    &-top {
+    }
+    &-center {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap; // change
+      width: 100%;
+
+      @include respond($tablet-desktop) {
+        flex-wrap: nowrap;
+        width: 100%;
+      }
+
+      .left,
+      .center,
+      .right {
+        @include flex_column;
+        @include border-top;
+        row-gap: 0;
+      }
+    }
+    &-bottom {
+      width: 100%;
+      @include border-top;
+    }
+    &-empty {
+      // empty space to create more filter options
+      height: 30vh;
+      width: 100%;
+      background-color: var(--color-1-darkest);
+    }
+
+    .checkbox__container {
+      button {
+        min-width: 260px;
+        width: 25%;
+        &:last-child {
+          margin-bottom: 2rem;
+        }
+      }
+      &_option {
+        background-color: var(--color-1);
+        text-align: left;
+        padding: 0.2rem;
+        margin: 0.5rem;
+        input {
+          width: 2rem;
+          height: 1.2rem;
+        }
+        label {
+          // to make the label ocupy the whole button space and be clickable.
+          display: inline-block;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

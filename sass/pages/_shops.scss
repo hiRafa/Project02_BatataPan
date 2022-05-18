@@ -1,49 +1,3 @@
-.filter {
-  @include inner_container($height-custom);
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  padding: 10vh 0;
-  overflow: hidden;
-
-  &-1top {
-    color: var(--color-1);
-    background-color: var(--color-1-darkest);
-    padding: 2rem;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-  }
-  &-bottom {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    align-items: center;
-    background-color: var(--color-white);
-    overflow: scroll;
-    height: 55vh;
-    @include respond($tablet-port) {
-      grid-template-columns: repeat(3, 1fr);
-      overflow: visible;
-      height: 100%;
-    }
-  }
-  &__button {
-    cursor: pointer;
-    padding: 2rem;
-    font-size: 3rem;
-    @include respond($tablet-port) {
-      padding: 3rem;
-    }
-
-    &:hover {
-      background: var(--bg_color-lowTransparency-0);
-    }
-    &:active {
-      background: var(--bg_color-lowTransparency-2);
-    }
-  }
-}
-
 .section__shops {
   @include flex_column;
   height: 100%;
@@ -100,9 +54,5 @@
       width: 100%;
       min-width: 500px;
     }
-  }
-  &-active {
-    background-color: var(--color-1-darkest);
-    color: var(--color-1-highLight);
   }
 }

@@ -1,0 +1,7 @@
+.section-h100 {
+  @include inner_container($height-100);
+}
+
+.section-hcustom {
+  @include inner_container($height-custom);
+}

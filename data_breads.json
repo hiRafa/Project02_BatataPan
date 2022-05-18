@@ -1,0 +1,19 @@
+{
+  "allBreads": [
+    {
+      "name": "potato bread",
+      "imageURL": "images/bread_pineapple_x1.webp",
+      "types": ["cheese", "gluten free", "potato", "no eggs"]
+    },
+    {
+      "name": "sakura bread",
+      "imageURL": "bread_sakura_x1.webp",
+      "types": ["sweet", "seasonal", "anko"]
+    },
+    {
+      "name": "boule",
+      "imageURL": "bread_sakura_x1.webp",
+      "types": ["plain", "lactose free", "no milk"]
+    }
+  ]
+}

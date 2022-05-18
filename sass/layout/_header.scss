@@ -1,6 +1,8 @@
 .header {
   height: 100vh;
-  color: var(--color-1-darkest);
+  &-shops {
+    height: 80vh;
+  }
 
   &__bg {
     position: absolute;
@@ -16,6 +18,7 @@
       height: 90vh;
     }
   }
+
   &__container {
     @include flex_column;
     @include inner_container($height-100);
