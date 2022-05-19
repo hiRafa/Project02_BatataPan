@@ -1,48 +1,83 @@
+const breadCard = document.querySelectorAll('.bread__card');
+
 fetch('data_breads.json', {
   /* second option inside curly brackets is to send data, delete data, post data back into the database*/
 })
   .then(resp => resp.json()) // generates a promise
   .then(breadsData => {
-    let { allBreads } = breadsData;
-    console.log(allBreads);
+    let getBreads = breadsData.allBreads;
+    console.log(getBreads);
 
     const getBreadTypes = [];
     const returnOneArrayTypesforEachBread = function () {
-      for (let i = 0; i < allBreads.length; i++) {
-        getBreadTypes.push(allBreads[i].types);
+      for (let i = 0; i < getBreads.length; i++) {
+        getBreadTypes.push(getBreads[i].types);
+
+        console.log(getBreadTypes[i]);
         console.log([i] + ' ' + getBreadTypes[i]); // it prints
-        // return [i] + getBreadTypes[i]; // it prints
+        // return [i] + getBreadTypes[i];
+      }
+      for (let i = 0; i < getBreads.length; i++) {
+        console.log(getBreads[i].name);
+
+        const breadCardHTML = `        
+        <div class="bread__card">
+          <h5 class="${getBreads[i].name}">
+          ${
+            getBreads[i].name[0].toUpperCase() + getBreads[i].name.slice(1)
+          }</h5>
+          <img src="images/bread_pineapple_x1.webp" />
+          <div class="bread__card-type">
+            <p class="bread_type cheese">Cheese</p>
+            <p class="bread_type glutenfree">Gluten Free</p>
+            <p class="bread_type glutenfree">Chocolate</p>
+            <p class="bread_type glutenfree">Gluten Free</p>
+            <p class="bread_type glutenfree">Gluten Free</p>
+          </div>
+          <div class="bread__card-icon">
+            <svg class="icon icon-flickr">
+              <use href="images/sprite.svg#icon-flickr"></use>
+            </svg>
+          </div>
+        </div>`;
+        console.log((breadCard.innerHTML = breadCardHTML));
       }
     };
-    returnOneArrayTypesforEachBread();
 
+    // for (let i = 0; i < allShopsArray.length; i++) {
+    //   getShopName += `<li> ${allShopsArray[i].shopName} </li>`;
+    //   document.getElementById('shops_nameList').innerHTML = getShopName;
+    //   // console.log(allShopsArray[i].shopName);
+
+    returnOneArrayTypesforEachBread();
+    console.log(getBreadTypes);
+    // getBreadTypes.forEach(element, index);
+    // for (let i = 0; i < getBreadTypes.length; i++) {}
     // Restablishing json objects information
-    allBreads = {
-      name: allBreads.name,
-      imageURL: allBreads.imageURL,
-      types: allBreads.types,
+
+    // for (let i = 0; i < getBreads.length; i++) {
+    //   console.log(getBreads[i]);
+    // }
+
+    getBreads = {
+      name: getBreads.name,
+      imageURL: getBreads.imageURL,
+      types: getBreads.types,
     };
-    // console.log(allBreads[0].types); // error
+    console.log(getBreads);
+
+    const allSlides = document.querySelectorAll('.carousel_slide');
+    const createDots = function () {
+      allSlides.forEach(function (_, i) {
+        dotContainer.insertAdjacentHTML(
+          'beforeend',
+          `<button class="dots-dot" data-slide="${i}"></button>`
+        );
+      });
+    };
+    // console.log(getBreads[0].types); // error
 
     // 2 Generate HTML with the object info:
-
-    const HTML = `        
-    <div class="bread__card">
-      <h5>${allBreads.name}</h5>
-      <img src="${allBreads.imageURL}" />
-      <div class="bread__card-type">
-        <p class="bread_type cheese">Cheese</p>
-        <p class="bread_type glutenfree">Gluten Free</p>
-        <p class="bread_type chocolate">Chocolate</p>
-        <p class="bread_type noeggs">No Eggs</p>
-        <p class="bread_type glutenfree">Gluten Free</p>
-      </div>
-      <div class="bread__card-icon">
-        <svg class="icon icon-flickr">
-          <use href="images/sprite.svg#icon-flickr"></use>
-        </svg>
-      </div>
-    </div>`;
 
     // Logic for shops cards
     // If odds apply html right
@@ -63,30 +98,6 @@ fetch('data_breads.json', {
     //   document.getElementById('shops_closeList').innerHTML = getCloseHr;
     // }
     // ------------------------- SAMPLE
-
-    for (let i = 0; i < allBreads.length; i++) {
-      // console.log(` You are at ${allShopsArray[i]} shop`); // Useless. returns You are at [object Object] shop
-    }
-
-    /*
-       const res = await fetch(
-      `https://forkify-api.herokuapp.com/api/v2/recipes/${id}`
-    );
-        const data = await res.json();
-        // let { recipe } = data.data;
-        let recipe = data.data.recipe;
-        recipe = {
-          id: recipe.id,
-          title: recipe.title,
-          publisher: recipe.publisher,
-          sourceUrl: recipe.source_url,
-          image: recipe.image_url,
-          servings: recipe.servings,
-          cookingTime: recipe.cooking_time,
-          ingredients: recipe.ingredients,
-        };
-        console.log(recipe);
-    */
   });
 
 // --------------------------------------------------------------------------

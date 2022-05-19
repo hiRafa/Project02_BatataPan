@@ -1,0 +1,75 @@
+const breadCard = document.querySelectorAll('.bread__card');
+
+fetch('data_breads.json', {
+  /* second option inside curly brackets is to send data, delete data, post data back into the database*/
+})
+  .then(resp => resp.json()) // generates a promise
+  .then(breadsData => {
+    let getBreads = breadsData.allBreads;
+    console.log(getBreads);
+
+    const getBreadTypes = [];
+    const returnOneArrayTypesforEachBread = function () {
+      for (let i = 0; i < getBreads.length; i++) {
+        getBreadTypes.push(getBreads[i].types);
+
+        console.log(getBreadTypes[i]);
+        console.log([i] + ' ' + getBreadTypes[i]); // it prints
+        // return [i] + getBreadTypes[i];
+      }
+
+      const eachBreadName = '';
+      const eachBreadNameSplit = eachBreadName.split(' ');
+      for (let i = 0; i < getBreadTypes.length; i++) {
+        const eachBreadName = getBreads[i].name;
+        const eachBreadNameSplit = eachBreadName.split(' ');
+        const iterateOverEachWord = function (category) {
+          for (let i = 0; i < category.lenght; i++) {
+            category[i] = category[i][0].toUpperCase() + category[i].substr(1);
+          }
+        };
+      }
+      // ${eachBreadName}
+      const breadCardHTML = `        
+        <div class="bread__card">
+          <h5 class="">
+          ${
+            getBreads[i].name[0].toUpperCase() + getBreads[i].name.slice(1)
+          }</h5>
+          <img src="images/bread_pineapple_x1.webp" />
+          <div class="bread__card-type">
+            <p class="bread_type cheese">Cheese</p>
+            <p class="bread_type glutenfree">Gluten Free</p>
+            <p class="bread_type glutenfree">Chocolate</p>
+            <p class="bread_type glutenfree">Gluten Free</p>
+            <p class="bread_type glutenfree">Gluten Free</p>
+          </div>
+          <div class="bread__card-icon">
+            <svg class="icon icon-flickr">
+              <use href="images/sprite.svg#icon-flickr"></use>
+            </svg>
+          </div>
+        </div>`;
+
+      console.log((breadCard.innerHTML = breadCardHTML));
+    };
+    returnOneArrayTypesforEachBread();
+    console.log(getBreadTypes);
+  });
+
+getBreads = {
+  name: getBreads.name,
+  imageURL: getBreads.imageURL,
+  types: getBreads.types,
+};
+console.log(getBreads);
+
+const allSlides = document.querySelectorAll('.carousel_slide');
+const createDots = function () {
+  allSlides.forEach(function (_, i) {
+    dotContainer.insertAdjacentHTML(
+      'beforeend',
+      `<button class="dots-dot" data-slide="${i}"></button>`
+    );
+  });
+};

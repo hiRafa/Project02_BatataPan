@@ -14,6 +14,11 @@
       "name": "boule",
       "imageURL": "bread_sakura_x1.webp",
       "types": ["plain", "lactose free", "no milk"]
+    },
+    {
+      "name": "chocolate",
+      "imageURL": "bread_sakura_x1.webp",
+      "types": ["sweet", "chocholate", "no meat"]
     }
   ]
 }
