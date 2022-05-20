@@ -1,4 +1,12 @@
-const breadCard = document.querySelectorAll('.bread__card');
+const sectionBread = document.querySelector('.section__breads');
+
+// 2 Generate HTML with the object info:
+
+// Logic for shops cards
+// If odds apply html right
+// if even apply html left.
+// use arrays as they are separetely or access the info as objects?
+// like this:
 
 fetch('data_breads.json', {
   /* second option inside curly brackets is to send data, delete data, post data back into the database*/
@@ -8,19 +16,65 @@ fetch('data_breads.json', {
     let getBreads = breadsData.allBreads;
     console.log(getBreads);
 
+    let getEachBreadName = ' ';
+    let stringfyBreadName = [];
+    let splitBreadName = ' ';
+    let formatBreadName = [];
+
     const getBreadTypes = [];
+
     const returnOneArrayTypesforEachBread = function () {
       for (let i = 0; i < getBreads.length; i++) {
-        getBreadTypes.push(getBreads[i].types);
+        //breads length would always be the total amount of objects in the data json file.
 
-        console.log(getBreadTypes[i]);
-        console.log([i] + ' ' + getBreadTypes[i]); // it prints
-        // return [i] + getBreadTypes[i];
+        // ------------- Organize Bread Names
+        getEachBreadName = getBreads[i].name;
+
+        console.log(getEachBreadName); // return each name from allBreads object in strings. for each loop
+        splitBreadName = getEachBreadName.split(' ');
+        console.log(splitBreadName); // return array with name separated in items.  for each loop
+        for (let i = 0; i < splitBreadName.length; i++) {
+          splitBreadName[i] =
+            splitBreadName[i].charAt(0).toUpperCase() +
+            splitBreadName[i].slice(1);
+          console.log(splitBreadName);
+        }
+        formatBreadName.push(splitBreadName.join(' '));
+        console.log(formatBreadName);
+
+        // for (let i = 0; i < splitBreadName.length; i++) {
+        //   console.log(splitBreadName[i]);
+        //   splitBreadName.forEach(
+        //     element =>
+        //       // console.log(element[0].toUpperCase() + element.slice(1))
+        //       (formatBreadName +=
+        //         element[0].toUpperCase() + element.slice(1) + ' ')
+        //     // formatBreadName.push(`${element[0].toUpperCase()}${element.slice(1)}`);
+        //     // console.log(formatBreadName);
+        //   );
       }
-      for (let i = 0; i < getBreads.length; i++) {
-        console.log(getBreads[i].name);
+      console.log(formatBreadName);
 
-        const breadCardHTML = `        
+      /*do not use splitBreadName[i]*/ // console.log(splitBreadName[i]); // return the 0 word from array 0, return 1 word from array 1,
+      /* // It doesnt work
+        // firstLetterUpperCase = splitBreadName[i].toUpperCase();
+        // console.log(firstLetterUpperCase);
+        */
+
+      // // ------------- Organize Image URL
+
+      // // ---------- Organize Bread Types
+      // getBreadTypes.push(getBreads[i].types);
+      // console.log(getBreadTypes[i]);
+      // console.log([i] + ' ' + getBreadTypes[i]); // it prints
+      // return [i] + getBreadTypes[i];
+    };
+    console.log(getEachBreadName);
+
+    for (let i = 0; i < getBreads.length; i++) {
+      // console.log(getBreads[i].name);
+
+      const breadCardHTML = `        
         <div class="bread__card">
           <h5 class="${getBreads[i].name}">
           ${
@@ -40,14 +94,10 @@ fetch('data_breads.json', {
             </svg>
           </div>
         </div>`;
-        console.log((breadCard.innerHTML = breadCardHTML));
-      }
-    };
-
-    // for (let i = 0; i < allShopsArray.length; i++) {
-    //   getShopName += `<li> ${allShopsArray[i].shopName} </li>`;
-    //   document.getElementById('shops_nameList').innerHTML = getShopName;
-    //   // console.log(allShopsArray[i].shopName);
+      // console.log(breadCardHTML);
+      // sectionBread.innerHTML = breadCardHTML; // wrong, because it replaces the same card with different info showing only the last info
+      // sectionBread.innerHTML += breadCardHTML;
+    }
 
     returnOneArrayTypesforEachBread();
     console.log(getBreadTypes);
@@ -59,31 +109,7 @@ fetch('data_breads.json', {
     //   console.log(getBreads[i]);
     // }
 
-    getBreads = {
-      name: getBreads.name,
-      imageURL: getBreads.imageURL,
-      types: getBreads.types,
-    };
-    console.log(getBreads);
-
-    const allSlides = document.querySelectorAll('.carousel_slide');
-    const createDots = function () {
-      allSlides.forEach(function (_, i) {
-        dotContainer.insertAdjacentHTML(
-          'beforeend',
-          `<button class="dots-dot" data-slide="${i}"></button>`
-        );
-      });
-    };
     // console.log(getBreads[0].types); // error
-
-    // 2 Generate HTML with the object info:
-
-    // Logic for shops cards
-    // If odds apply html right
-    // if even apply html left.
-    // use arrays as they are separetely or access the info as objects?
-    // like this:
 
     // ------------------------- SAMPLE
     // for (let i = 0; i < allShopsArray.length; i++) {

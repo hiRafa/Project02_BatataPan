@@ -73,3 +73,34 @@ const createDots = function () {
     );
   });
 };
+
+
+const returnOneArrayTypesforEachBread = function () {
+    for (let i = 0; i < getBreads.length; i++) {
+      //breads length would always be the total amount of objects in the data json file.
+      //Bread Names
+      getEachBreadName.push(getBreads[i].name);
+      // splitBreadName = getEachBreadName.split(' ');
+      console.log(getEachBreadName); // return each bread name in a array
+      // console.log(splitBreadName); // return array with name separated in items.  for each loop
+
+      // console.log(splitBreadName[i]); // return the 0 word from array 0, return 1 word from array 1,
+
+      // firstLetterUpperCase = splitBreadName[i].toUpperCase();
+      // console.log(firstLetterUpperCase);
+
+      // // Bread Types
+      // getBreadTypes.push(getBreads[i].types);
+      // console.log(getBreadTypes[i]);
+      // console.log([i] + ' ' + getBreadTypes[i]); // it prints
+      // return [i] + getBreadTypes[i];
+    }
+    console.log(getEachBreadName);
+    console.log(splitBreadName);
+    splitBreadName.forEach(
+      (element, index) =>
+        // console.log(element[0].toUpperCase() + element.slice(1))
+        formatBreadName.push(element[0].toUpperCase() + element.slice(1)),
+
+      console.log(formatBreadName)
+    );

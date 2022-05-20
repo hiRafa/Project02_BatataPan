@@ -3,7 +3,9 @@
     {
       "name": "potato bread",
       "imageURL": "images/bread_pineapple_x1.webp",
-      "types": ["cheese", "gluten free", "potato", "no eggs"]
+      "types": ["cheese", "gluten free", "potato", "no eggs"],
+      "description": "awdawdwadawd awd awd gergew f3 1 4r1241 412 41",
+      "price": "270"
     },
     {
       "name": "sakura bread",
