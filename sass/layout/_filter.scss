@@ -6,7 +6,9 @@
   padding: 10vh 0 2rem;
   overflow: hidden;
 
-  // Shops Page
+  // ------------------
+  // ------- Shops Page
+  // ------------------
   &-1top {
     color: var(--color-1);
     background-color: var(--color-1-darkest);
@@ -48,7 +50,9 @@
     }
   }
 
-  // Bread Page
+  // ------------------
+  // ------- Bread Page
+  // ------------------
   &__bread {
     @include flex_column;
     background-color: var(--color-white);
@@ -97,28 +101,49 @@
       width: 100%;
       background-color: var(--color-1-darkest);
     }
+  }
+}
 
-    .checkbox__container {
+.checkbox {
+  &__title {
+    margin: 0.5rem;
+    width: 20rem;
+  }
+
+  &__option {
+    color: var(--color-1-darkest);
+    background-color: var(--color-1);
+    text-align: left;
+    padding: 0.2rem;
+    margin: 0.5rem;
+    input {
+      width: 3rem;
+      height: 1.2rem;
+    }
+    label {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+
+      &:hover {
+        cursor: pointer;
+        color: var(--color-white);
+      }
+    }
+    &-title {
+      width: 100%;
+      font-size: 2.5rem;
+      color: var(--color-1);
+      background-color: var(--color-1-darkest);
+      &:hover {
+        color: var(--color-black);
+      }
+      span {
+        margin-left: 1rem;
+      }
       button {
-        min-width: 260px;
-        width: 25%;
         &:last-child {
           margin-bottom: 2rem;
-        }
-      }
-      &_option {
-        background-color: var(--color-1);
-        text-align: left;
-        padding: 0.2rem;
-        margin: 0.5rem;
-        input {
-          width: 2rem;
-          height: 1.2rem;
-        }
-        label {
-          // to make the label ocupy the whole button space and be clickable.
-          display: inline-block;
-          width: 100%;
         }
       }
     }

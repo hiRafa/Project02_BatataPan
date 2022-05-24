@@ -1,37 +1,112 @@
 .section {
+  padding: var(--padding) 0;
   &__news {
     background-color: var(--bg_color-lowTransparency-0);
     width: 100%;
-    padding: var(--padding) 0;
 
     &_container {
-      @include flex_column;
       @include inner_container($height-100);
+      @include flex_column;
       background-color: var(--bg_color-lowTransparency-1);
-      padding: calc(var(--padding) - 0.5rem) 0;
+      padding: calc(var(--padding) + 1rem) 2rem;
       overflow: hidden;
+      justify-items: space-around;
     }
     &_title {
       @include p_title;
       min-height: 0; // to avoid overflowing
     }
   }
+
   &__gallery {
-    background-color: var(--color-white);
-    height: 800px;
+    @include flex_column;
+    height: 100%;
+    width: 100%;
+    margin: 0px auto;
+    padding: 2rem 1rem;
+    gap: 1rem;
+    img {
+      width: 40rem;
+      min-width: 30rem;
+      max-width: 100%;
+      height: 40rem;
+    }
+    .gallery {
+      &_img_01,
+      &_img_02,
+      &_img_08,
+      &_img_09,
+      &_img_10,
+      &_img_11 {
+        display: none;
+      }
+    }
+
+    @include respond($tablet-port) {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      background-color: var(--color-white);
+      width: 100%;
+      img {
+        min-width: 10rem;
+        width: 100%;
+        height: 100%;
+      }
+      button {
+        width: 80%;
+        padding: 1rem;
+      }
+      .gallery {
+        &_img_01,
+        &_img_02,
+        &_img_08,
+        &_img_09,
+        &_img_10,
+        &_img_11 {
+          display: block;
+        }
+        &_img_05 {
+          // 2x2
+          grid-row: 1 / span 2;
+          grid-column: 5 / span 2;
+        }
+        &_img_06 {
+          // 2x2
+          grid-row: 2 / span 2;
+          grid-column: 1 / span 2;
+        }
+        &-button {
+          // 2x1
+          grid-row: 2 / span 1;
+          grid-column: 3 / span 2;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+    @include respond($tablet-desktop) {
+      width: 85%;
+    }
+    @include respond($desktop-big) {
+      width: 115rem;
+    }
   }
 }
 
 .click_scroll {
   width: 16rem;
   max-width: 100%;
-  &_toNews:hover {
-    cursor: pointer;
-  }
+
+  &_toNews:hover,
   &_toGallery:hover {
     cursor: pointer;
+    color: var(--color-white);
   }
-  &:active {
-    color: blue;
+  &_toNews:active,
+  &_toGallery:active {
+    cursor: pointer;
+    color: var(--color-black);
   }
 }

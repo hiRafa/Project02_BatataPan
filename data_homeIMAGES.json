@@ -1,0 +1,14 @@
+{
+  "randomBreadImages": [
+    { "imageURL": "gallery_img_01" },
+    { "imageURL": "gallery_img_02" },
+    { "imageURL": "gallery_img_03" },
+    { "imageURL": "gallery_img_04" },
+    { "imageURL": "gallery_img_05" },
+    { "imageURL": "gallery_img_06" },
+    { "imageURL": "gallery_img_07" },
+    { "imageURL": "gallery_img_08" },
+    { "imageURL": "gallery_img_09" },
+    { "imageURL": "gallery_img_10" }
+  ]
+}

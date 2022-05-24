@@ -76,16 +76,26 @@
       <div class="filter filter__bread">
         <div class="filter__bread-top"><h4>Our Breads</h4></div>
         <div class="filter__bread-center">
+          
           <div class="filter__bread-center left">
-            <div><h5>Allergies</h5></div>
+            <div class="checkbox__container checkbox__title">
+              <button class="checkbox__option checkbox__option-title">
+                <label for="allergies" data-filter="allergies">
+                  <input type="checkbox" id="allergies" name="allergies" />
+                  <span>Allergies</span>
+                </label>
+              </button>
+            </div>
+
             <div class="checkbox__container">
-              <button class="checkbox__container_option">
+              <button class="checkbox__option">
                 <label for="glutenfree" data-filter="glutenfree">
                   <input type="checkbox" id="glutenfree" name="glutenfree" />
                   Gluten Free</label
                 >
+                <!--// to make the label ocupy the whole button space and be clickable.-->
               </button>
-              <button class="checkbox__container_option">
+              <button class="checkbox__option">
                 <label for="lactosefree">
                   <input type="checkbox" id="lactosefree" name="lactosefree" />
                   Lactose Free</label
@@ -95,28 +105,36 @@
           </div>
 
           <div class="filter__bread-center center">
-            <div><h5>Flavors</h5></div>
+            <div class="checkbox__container checkbox__title">
+              <button class="checkbox__option checkbox__option-title">
+                <label for="flavors" data-filter="flavors">
+                  <input type="checkbox" id="flavors" name="flavors" />
+                  Flavors
+                </label>
+              </button>
+            </div>
+
             <div class="checkbox__container">
-              <button class="checkbox__container_option">
+              <button class="checkbox__option">
                 <label for="plain" data-filter="plain">
                   <input type="checkbox" id="plain" name="plain" />
                   Plain</label
                 >
               </button>
 
-              <button class="checkbox__container_option">
+              <button class="checkbox__option">
                 <label for="bacon">
                   <input type="checkbox" id="bacon" name="bacon" />
                   Bacon</label
                 >
               </button>
-              <button class="checkbox__container_option">
+              <button class="checkbox__option">
                 <label for="cheese">
                   <input type="checkbox" id="cheese" name="cheese" />
                   Cheese</label
                 >
               </button>
-              <button class="checkbox__container_option">
+              <button class="checkbox__option">
                 <label for="sausage">
                   <input type="checkbox" id="sausage" name="sausage" />
                   Sausage</label
@@ -126,23 +144,31 @@
           </div>
 
           <div class="filter__bread-center center">
-            <div><h5>Sweets</h5></div>
+            <div class="checkbox__container checkbox__title">
+              <button class="checkbox__option checkbox__option-title">
+                <label for="sweets" data-filter="sweets">
+                  <input type="checkbox" id="sweets" name="sweets" />
+                  Sweets
+                </label>
+              </button>
+            </div>
+
             <div class="checkbox__container">
-              <button class="checkbox__container_option">
+              <button class="checkbox__option">
                 <label for="chocolate">
                   <input type="checkbox" id="chocolate" name="chocolate" />
                   Chocolate</label
                 >
               </button>
 
-              <button class="checkbox__container_option">
+              <button class="checkbox__option">
                 <label for="fruits">
                   <input type="checkbox" id="fruits" name="fruits" />
                   Fruits</label
                 >
               </button>
 
-              <button class="checkbox__container_option">
+              <button class="checkbox__option">
                 <label for="cream">
                   <input type="checkbox" id="cream" name="cream" />
                   Cream</label
@@ -152,22 +178,29 @@
           </div>
 
           <div class="filter__bread-center right">
-            <div><h5>No Animals</h5></div>
-
-            <div class="checkbox__container">
-              <button class="checkbox__container_option">
-                <label for="eggsfree" data-filter="eggsfree">
-                  <input type="checkbox" id="eggsfree" name="eggsfree" />
-                  Eggs Free
+            <div class="checkbox__container checkbox__title">
+              <button class="checkbox__option checkbox__option-title">
+                <label for="noanimals" data-filter="noanimals">
+                  <input type="checkbox" id="noanimals" name="noanimals" />
+                  No Animals
                 </label>
               </button>
-              <button class="checkbox__container_option">
+            </div>
+
+            <div class="checkbox__container">
+              <button class="checkbox__option">
+                <label for="eggsfree" data-filter="eggsfree">
+                  <input type="checkbox" id="eggsfree" name="eggsfree" />
+                  <span> Eggs Free </span>
+                </label>
+              </button>
+              <button class="checkbox__option">
                 <label for="milkfree">
                   <input type="checkbox" id="milkfree" name="milkfree" />
                   Milk Free</label
                 >
               </button>
-              <button class="checkbox__container_option">
+              <button class="checkbox__option">
                 <label for="meatfree">
                   <input type="checkbox" id="meatfree" name="meatfree" />
                   Meat Free</label
@@ -181,13 +214,13 @@
           <div><h5>Specials</h5></div>
 
           <div class="checkbox__container">
-            <button class="checkbox__container_option">
+            <button class="checkbox__option">
               <label class="seasonal" data-filter="seasonal">
                 <input type="checkbox" id="seasonal" name="seasonal" />
                 Seasonal
               </label>
             </button>
-            <button class="checkbox__container_option">
+            <button class="checkbox__option">
               <label for="frozen">
                 <input type="checkbox" id="frozen" name="frozen" />
                 Frozen</label
@@ -201,68 +234,7 @@
     </header>
 
     <main>
-      <section class="section section__breads">
-        <!-- <div class="bread__card">
-          <h5>Potato Bread</h5>
-          <img src="images/bread_pineapple_x1.webp" />
-          <div class="bread__card-type">
-            <p class="bread_type cheese">Cheese</p>
-            <p class="bread_type glutenfree">Gluten Free</p>
-            <p class="bread_type glutenfree">Gluten Free</p>
-            <p class="bread_type glutenfree">Gluten Free</p>
-            <p class="bread_type glutenfree">Gluten Free</p>
-          </div>
-          <div class="bread__card-icon">
-            <svg class="icon icon-flickr">
-              <use href="images/sprite.svg#icon-flickr"></use>
-            </svg>
-          </div>
-        </div>
-
-        <div class="bread__card"></div>
-
-        <div class="bread__card">
-          <h5>Potato Bread</h5>
-          <img src="images/bread_pineapple_x1.webp" />
-          <div class="bread__card-type">
-            <p class="bread_type cheese">Cheese</p>
-            <p class="bread_type glutenfree">Gluten Free</p>
-            <p class="bread_type glutenfree">Gluten Free</p>
-            <p class="bread_type glutenfree">Gluten Free</p>
-            <p class="bread_type glutenfree">Gluten Free</p>
-          </div>
-          <div class="bread__card-icon">
-            <svg class="icon icon-flickr">
-              <use href="images/sprite.svg#icon-flickr"></use>
-            </svg>
-          </div>
-        </div>
-
-        <div class="bread__card"></div>
-        <div class="bread__card"></div>
-        <div class="bread__card">
-          <h5>Plain Bread</h5>
-          <img src="images/bread_pineapple_x1.webp" />
-          <div class="bread__card-type">
-            <p class="bread_type cheese">Cheese</p>
-            <p class="bread_type glutenfree">Gluten Free</p>
-            <p class="bread_type glutenfree">Chocolate</p>
-            <p class="bread_type glutenfree">Gluten Free</p>
-            <p class="bread_type glutenfree">Gluten Free</p>
-          </div>
-          <div class="bread__card-icon">
-            <svg class="icon icon-flickr">
-              <use href="images/sprite.svg#icon-flickr"></use>
-            </svg>
-          </div>
-        </div>
-        <div class="bread__card"></div>
-        <div class="bread__card"></div>
-        <div class="bread__card"></div>
-        <div class="bread__card"></div>
-        <div class="bread__card"></div>
-        <div class="bread__card"></div> -->
-      </section>
+      <section class="section section__breads"></section>
     </main>
 
     <footer class="footer">

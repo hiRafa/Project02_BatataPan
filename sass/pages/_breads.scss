@@ -19,39 +19,73 @@
 // }
 
 .bread__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   color: var(--color-white);
-  height: 500px;
-  width: 300px;
+  height: var(--card-height);
+  width: var(--card-width);
   background-color: var(--color-1-darkest);
   border-radius: 20px;
   padding: 0.5rem;
   &:hover {
     cursor: pointer;
+    color: var(--color-black);
+    background-color: var(--bg_color-lowTransparency-2);
+  }
+  &:active {
+    color: var(--color-black);
+    background-color: var(--bg_color-lowTransparency-0);
   }
 
-  h5 {
-    height: 10%;
+  &_name {
+    height: 7%;
     margin: 0.5rem;
+    font-size: 2.5rem;
+    overflow: hidden;
   }
-  img {
-    height: 40%;
+  &_img {
+    height: calc(var(--card-height) * 0.5);
+    width: calc(var(--card-height) * 0.5);
     margin: 1rem;
   }
-  div {
-  }
-  p {
-    background-color: var(--color-1);
-    margin: 0.5rem 2rem;
-  }
-  &-type {
-    max-height: 40%;
+  &_type {
+    height: 30%;
+    // max-height: 40%;
+    width: 90%;
     overflow: hidden;
-
-    @include respond($tablet-desktop) {
-      max-height: 30%;
+    p {
+      background-color: var(--color-1-medium);
+      margin: 0.5rem 2rem;
+      font-size: 2rem;
     }
   }
-  &-icon {
-    height: 10%;
+
+  @include respond($tablet-port) {
+    height: calc(var(--card-height) * 1.1); // + 80px
+    width: calc(var(--card-width) * 1.1); // + 60px;
+    &_img {
+      height: calc(var(--card-height) * 0.55);
+      width: calc(var(--card-height) * 0.55);
+    }
+    &_type {
+      height: 30%;
+    }
+  }
+  @include respond($tablet-desktop) {
+    height: calc(var(--card-height) * 1.2); // + 80px
+    width: calc(var(--card-width) * 1.2); // + 60px;
+  }
+  @include respond($desktop-big) {
+    height: 640px;
+    width: 420px;
+    &_name {
+      height: 9%;
+    }
+    &_img {
+      height: calc(var(--card-height) * 0.65);
+      width: calc(var(--card-height) * 0.65);
+    }
   }
 }

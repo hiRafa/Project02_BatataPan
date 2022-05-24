@@ -4,138 +4,8 @@ const filter_tokyo = document.querySelector('.tokyo');
 const sectionShopsHTML = document.querySelector('.section__shops');
 const filterOption = document.querySelector('.filter');
 
-// // Creating HTML section
-// const renderShops = function (parentElement) {
-//   markup = `
-//     <div class="shop shop-left tokyo">
-//         <div class="shop__info">
-//             <p>Tokyo</p>
-//             <p>
-//                 Hours: 8:00 ~ 20:00<br />
 
-//                 <a href="https://goo.gl/maps/koGmZFq93JYPCN3N7" target="”_blank”">
-//                 << Map >></a
-//                 >
-//             </p>
-//         </div>
-//         <div class="shop__image">
-//             <img src="images/bakery01_LQ.jpg" />
-//         </div>
-//     </div>
-
-//     <div class="shop shop-right kinshicho" >
-//         <div class="shop__image">
-//             <img src="images/bakery02_LQ.jpg" />
-//         </div>
-//         <div class="shop__info">
-//             <p>Kinshicho</p>
-//             <p>
-//             Hours: 8:00 ~ 20:00<br />
-//             <a href="https://goo.gl/maps/koGmZFq93JYPCN3N7" target="”_blank”">
-//             << Map >></a
-//             >
-//             </p>
-//         </div>
-//     </div>
-
-//     <div class="shop shop-left tachikawa" value="tachikawa">
-//         <div class="shop__info">
-//             <p>Tachikawa</p>
-//             <p>
-//                 Hours: 8:00 ~ 20:00<br />
-
-//                 <a href="https://goo.gl/maps/koGmZFq93JYPCN3N7" target="”_blank”">
-//                 << Map >></a
-//                 >
-//             </p>
-//         </div>
-//         <div class="shop__image">
-//             <img src="images/bakery01_LQ.jpg" />
-//         </div>
-//     </div>
-
-//     <div class="shop shop-right shinagawa" >
-//       <div class="shop__image">
-//           <img src="images/bakery02_LQ.jpg" />
-//       </div>
-//       <div class="shop__info">
-//           <p>Shinagawa</p>
-//           <p>
-//           Hours: 8:00 ~ 20:00<br />
-//           <a href="https://goo.gl/maps/koGmZFq93JYPCN3N7" target="”_blank”">
-//           << Map >></a
-//           >
-//           </p>
-//       </div>
-//     </div>
-
-//     <div class="shop shop-left yokohama">
-//         <div class="shop__info">
-//             <p>Yokohama</p>
-//             <p>
-//                 Hours: 8:00 ~ 20:00<br />
-
-//                 <a href="https://goo.gl/maps/koGmZFq93JYPCN3N7" target="”_blank”">
-//                 << Map >></a
-//                 >
-//             </p>
-//         </div>
-//         <div class="shop__image">
-//             <img src="images/bakery01_LQ.jpg" />
-//         </div>
-//     </div>
-
-//     <div class="shop shop-right funabashi" >
-//         <div class="shop__image">
-//             <img src="images/bakery02_LQ.jpg" />
-//         </div>
-//         <div class="shop__info">
-//             <p>Funabashi</p>
-//             <p>
-//             Hours: 8:00 ~ 20:00<br />
-//             <a href="https://goo.gl/maps/koGmZFq93JYPCN3N7" target="”_blank”">
-//             << Map >></a
-//             >
-//             </p>
-//         </div>
-//     </div>
-
-//     <div class="shop shop-left fujimino" >
-//         <div class="shop__info">
-//             <p>Fujimino</p>
-//             <p>
-//                 Hours: 8:00 ~ 20:00<br />
-
-//                 <a href="https://goo.gl/maps/koGmZFq93JYPCN3N7" target="”_blank”">
-//                 << Map >></a
-//                 >
-//             </p>
-//         </div>
-//         <div class="shop__image">
-//             <img src="images/bakery01_LQ.jpg" />
-//         </div>
-//     </div>
-
-//     <div class="shop shop-right saitama" >
-//       <div class="shop__image">
-//           <img src="images/bakery02_LQ.jpg" />
-//       </div>
-//       <div class="shop__info">
-//           <p>Saitama</p>
-//           <p>
-//           Hours: 8:00 ~ 20:00<br />
-//           <a href="https://goo.gl/maps/koGmZFq93JYPCN3N7" target="”_blank”">
-//           << Map >></a
-//           >
-//           </p>
-//       </div>
-//     </div>
-//     `;
-//   parentElement.innerHTML = '';
-//   parentElement.insertAdjacentHTML('afterbegin', markup);
-// };
-
-fetch('data.json', {
+fetch('data_shops.json', {
   /* second option inside curly brackets is to send data, delete data, post data back into the database*/
 })
   .then(resp => resp.json()) // generates a promise
@@ -148,20 +18,6 @@ fetch('data.json', {
     let getCloseHr = [];
     const getAddressLink = [];
 
-    // ------------------------- SAMPLE
-    // for (let i = 0; i < allShopsArray.length; i++) {
-    //   getShopName += `<li> ${allShopsArray[i].shopName} </li>`;
-    //   document.getElementById('shops_nameList').innerHTML = getShopName;
-    //   // console.log(allShopsArray[i].shopName);
-
-    //   getOpenHr += `<li> ${allShopsArray[i].openHr} </li>`;
-    //   document.getElementById('shops_openList').innerHTML = getOpenHr;
-
-    //   getCloseHr += `<li> ${allShopsArray[i].closeHr} </li>`;
-    //   document.getElementById('shops_closeList').innerHTML = getCloseHr;
-    // }
-    // ------------------------- SAMPLE
-
     for (let i = 0; i < allShopsArray.length; i++) {
       getShopName.push(allShopsArray[i].shopName);
       getOpenHr.push(allShopsArray[i].openHr);
@@ -171,32 +27,11 @@ fetch('data.json', {
       console.log(getAddressLink[i]);
     }
 
-    console.log(` You are at ${getShopName} shop`);
-    console.log(getShopName);
-    console.log(getOpenHr);
-    console.log(getCloseHr);
-    console.log(getAddressLink);
-
-    // Logic for shops cards
-    // If odds apply html right
-    // if even apply html left.
-    // use arrays as they are separetely or access the info as objects?
-    // like this:
-    /*
-        // let { recipe } = data.data;
-        let recipe = data.data.recipe;
-        recipe = {
-          id: recipe.id,
-          title: recipe.title,
-          publisher: recipe.publisher,
-          sourceUrl: recipe.source_url,
-          image: recipe.image_url,
-          servings: recipe.servings,
-          cookingTime: recipe.cooking_time,
-          ingredients: recipe.ingredients,
-        };
-        console.log(recipe);
-    */
+    // console.log(` You are at ${getShopName} shop`);
+    // console.log(getShopName);
+    // console.log(getOpenHr);
+    // console.log(getCloseHr);
+    // console.log(getAddressLink);
   });
 
 // --------------------------------------------------------------------------

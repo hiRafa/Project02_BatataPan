@@ -19,8 +19,12 @@
   --bg_color-lowTransparency-1: rgba(255, 193, 77, 0.4);
   --bg_color-lowTransparency-2: rgba(255, 193, 77, 0.7);
   --padding: 4rem;
+  --p_font-size: 1.6rem;
 
   --border-radius: 20px;
+
+  --card-height: 480px;
+  --card-width: 300px;
 }
 
 * {
@@ -54,6 +58,8 @@ html {
   }
   color: var(--color-1-darkest);
   scroll-behavior: smooth; // replaces JS coding and makes it more simple
+  // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Nunito', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 //balancing the font size in case the user changes the base pixels from 16px to any other value
@@ -63,10 +69,17 @@ body {
   // I see your confusion.  Well, actually the *  universal selector targets all types of elements; it is not the root css selector.
   // When we set box-sizing to inherit on all types of elements, we are basically saying that we want the box-sizing to inherit whatever the parent's box-sizing is.
   // Since we set the box-sizing property to border-box on the <body>  element (which is one of the document's top-most nodes), the property is effectively passed on to all child / grandchild elements.
-
   font-size: 1.6rem; // 16/10
+  p {
+    font-size: calc(var(--p_font-size) * 1.5);
+    font-weight: 500;
+  }
   @include respond($tablet-desktop) {
     font-size: 1.23rem; // 16/13
+    p {
+      font-size: calc(var(--p_font-size) * 1.6);
+      font-weight: 500;
+    }
   }
   @include respond($desktop-big) {
     font-size: 1rem; // 16/16
@@ -76,12 +89,9 @@ body {
 //setting font size for everything else
 @for $i from 1 through 6 {
   h#{7 - $i} {
-    font-size: $i * 1.6rem;
+    font-size: $i + 1.6rem;
+    font-weight: $i * 100 + 300;
   }
-}
-
-p {
-  font-size: 2.5rem;
 }
 
 a {
@@ -123,3 +133,5 @@ li {
 .lazy-img {
   filter: blur(50px);
 }
+
+

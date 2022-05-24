@@ -2,25 +2,40 @@
   "allBreads": [
     {
       "name": "potato bread",
-      "imageURL": "images/bread_pineapple_x1.webp",
+      "imageURL": "bread_pineapple_x1",
       "types": ["cheese", "gluten free", "potato", "no eggs"],
       "description": "awdawdwadawd awd awd gergew f3 1 4r1241 412 41",
       "price": "270"
     },
     {
       "name": "sakura bread",
-      "imageURL": "bread_sakura_x1.webp",
+      "imageURL": "bread_sakura_x1",
       "types": ["sweet", "seasonal", "anko"]
     },
     {
       "name": "boule",
-      "imageURL": "bread_sakura_x1.webp",
+      "imageURL": "croissant.jpg",
       "types": ["plain", "lactose free", "no milk"]
     },
     {
       "name": "chocolate",
-      "imageURL": "bread_sakura_x1.webp",
-      "types": ["sweet", "chocholate", "no meat"]
+      "imageURL": "bread_zucchini_x1",
+      "types": ["sweet", "chocolate", "no meat"]
+    },
+    {
+      "name": "ban ap bee",
+      "imageURL": "chocolate_cookie_x1",
+      "types": ["secret", "myterious", "no meat"]
+    },
+    {
+      "name": "croissant",
+      "imageURL": "bread_french_x1",
+      "types": ["plain"]
+    },
+    {
+      "name": "chocolate poundcake",
+      "imageURL": "bread_french_x1",
+      "types": ["plain"]
     }
   ]
 }

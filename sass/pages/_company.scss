@@ -52,6 +52,9 @@
   //button container
   &__button__container {
     @include flex_row;
+    button {
+      width: 30%;
+    }
   }
   //content container
   &__content {
