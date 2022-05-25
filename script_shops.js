@@ -4,7 +4,6 @@ const filter_tokyo = document.querySelector('.tokyo');
 const sectionShopsHTML = document.querySelector('.section__shops');
 const filterOption = document.querySelector('.filter');
 
-
 fetch('data_shops.json', {
   /* second option inside curly brackets is to send data, delete data, post data back into the database*/
 })
@@ -39,7 +38,7 @@ fetch('data_shops.json', {
 // --------------------------------------------------------------------------
 const filterOptionsContainer = document.querySelector('.filter-bottom');
 const filterShopsBtn = document.querySelectorAll('.filter__button');
-const shops = document.querySelectorAll('.shop');
+const shopCards = document.querySelectorAll('.shop');
 
 filterOptionsContainer.addEventListener('click', e => {
   const filterOption = e.target;
@@ -54,7 +53,7 @@ filterOptionsContainer.addEventListener('click', e => {
     selectedShop.style.display = 'flex';
     filterOption.classList.add('filter__button-active');
   };
-  shops.forEach(selectedShop => {
+  shopCards.forEach(selectedShop => {
     if (dataFilterButton === 'all') {
       showShopAndActiveButton(selectedShop); // DRY
       // selectedShop.style.display = 'flex';

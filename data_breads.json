@@ -1,40 +1,70 @@
 {
+  "filterWords": [
+    {
+      "main": "allergies",
+      "sub": ["gluten free", "lactose free"],
+      "toDisplay": ["Gluten Free", "Lactose Free"]
+    },
+    {
+      "main": "flavors",
+      "sub": ["plain", "bacon", "cheese", "sausage"],
+      "toDisplay": ["Plain", "Bacon", "Cheese", "Sausage"]
+    },
+    {
+      "main": "sweets",
+      "sub": ["chocolate", "fruits", "cream"],
+      "toDisplay": ["Chocolate", "Fruits", "Cream"]
+    },
+    {
+      "main": "noanimals",
+      "sub": ["noeggs", "nomilk", "nomeat"],
+      "toDisplay": ["No Eggs", "No Milk", "No Meat", "No Cheese"]
+    }
+  ],
+
   "allBreads": [
     {
-      "name": "potato bread",
+      "breadName": "potato bread",
       "imageURL": "bread_pineapple_x1",
+      "bigCategory": "allergies, flavors, noanimals",
       "types": ["cheese", "gluten free", "potato", "no eggs"],
       "description": "awdawdwadawd awd awd gergew f3 1 4r1241 412 41",
       "price": "270"
     },
     {
-      "name": "sakura bread",
+      "breadName": "sakura bread",
       "imageURL": "bread_sakura_x1",
-      "types": ["sweet", "seasonal", "anko"]
+      "bigCategory": "sweetss, noanimals, specials",
+      "types": ["sweets", "seasonal", "anko"]
     },
     {
-      "name": "boule",
+      "breadName": "boule",
       "imageURL": "croissant.jpg",
+      "bigCategory": "flavors, noanimals, lactosefree",
       "types": ["plain", "lactose free", "no milk"]
     },
     {
-      "name": "chocolate",
+      "breadName": "chocolate",
       "imageURL": "bread_zucchini_x1",
-      "types": ["sweet", "chocolate", "no meat"]
+      "bigCategory": "sweetss, noanimals, nomeat",
+      "types": ["sweets", "chocolate", "no meat"]
     },
     {
-      "name": "ban ap bee",
+      "breadName": "ban ap bee",
       "imageURL": "chocolate_cookie_x1",
+      "bigCategory": "sweetss, noanimals, nomeat",
       "types": ["secret", "myterious", "no meat"]
     },
     {
-      "name": "croissant",
+      "breadName": "croissant",
       "imageURL": "bread_french_x1",
+      "bigCategory": "sweetss, noanimals, nomeat",
       "types": ["plain"]
     },
     {
-      "name": "chocolate poundcake",
+      "breadName": "chocolate poundcake",
       "imageURL": "bread_french_x1",
+      "bigCategory": "sweetss, noanimals, nomeat",
       "types": ["plain"]
     }
   ]

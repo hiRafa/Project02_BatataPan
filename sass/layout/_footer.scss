@@ -9,6 +9,7 @@
     @include flex_column;
     text-align: center;
     padding: 2rem;
+    gap: 20px;
     &_logo {
       height: 7rem;
       flex: 20%;

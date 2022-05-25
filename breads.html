@@ -26,10 +26,17 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- External Libraries ( AOS library)-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="sass/main.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- JS -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js"></script> -->
     <script defer src="scriptBatata.js"></script>
     <script defer src="script_breads.js"></script>
   </head>
@@ -62,11 +69,11 @@
       </nav>
     </div>
 
-    <header class="header">
+    <header class="header-breads_shops">
       <div>
         <picture>
           <img
-            class="header__bg header__bg-shops"
+            class="header__bg header__bg-breads_shops"
             src="images/bakery_bg01.webp"
             alt="bread background"
           />
@@ -75,156 +82,108 @@
 
       <div class="filter filter__bread">
         <div class="filter__bread-top"><h4>Our Breads</h4></div>
+        <!--  <div>
+          <input type="checkbox" id="chocolate" checked />
+          <label for="chocolate">chocolate</label>
+        </div>
+        <div>
+          <input type="checkbox" id="lactosefree" checked />
+          <label for="lactosefree">lactose free</label>
+        </div>
+        <div>
+          <input type="checkbox" id="sweets" checked />
+          <label for="sweets">sweets</label>
+        </div>
+        <div>
+          <input type="checkbox" id="allergies" checked />
+          <label for="allergies">awawadw</label>
+        </div>
+        <ul>
+          <li class="allergies"><a href="https://alphons.io">alphons.io</a></li>
+          <li class="allergies chocolate">
+            <a href="https://google.com">google.com</a>
+          </li>
+          <li class="sweets chocolate">
+            <a href="https://facebook.com">facebook.com</a>
+          </li>
+          <li class="chocolate">
+            <a href="https://twitter.com">twitter.com</a>
+          </li>
+          <li class="chocolate">
+            <a href="https://mozilla.org">mozilla.org</a>
+          </li>
+          <li class="lactosefree">
+            <a href="https://wikipedia.org">wikipedia.org</a>
+          </li>
+          <li class="lactosefree">
+            <a href="https://slither.io">slither.io</a>
+          </li>
+        </ul>
+        -->
+
         <div class="filter__bread-center">
-          
           <div class="filter__bread-center left">
             <div class="checkbox__container checkbox__title">
               <button class="checkbox__option checkbox__option-title">
-                <label for="allergies" data-filter="allergies">
-                  <input type="checkbox" id="allergies" name="allergies" />
-                  <span>Allergies</span>
-                </label>
+                <input type="checkbox" id="allergies" />
+                <!-- checked -->
+                <label for="allergies"> Allergies </label>
               </button>
             </div>
 
-            <div class="checkbox__container">
-              <button class="checkbox__option">
-                <label for="glutenfree" data-filter="glutenfree">
-                  <input type="checkbox" id="glutenfree" name="glutenfree" />
-                  Gluten Free</label
-                >
-                <!--// to make the label ocupy the whole button space and be clickable.-->
-              </button>
-              <button class="checkbox__option">
-                <label for="lactosefree">
-                  <input type="checkbox" id="lactosefree" name="lactosefree" />
-                  Lactose Free</label
-                >
-              </button>
-            </div>
+            <div class="checkbox__container" id="allergies__container"></div>
           </div>
 
           <div class="filter__bread-center center">
             <div class="checkbox__container checkbox__title">
               <button class="checkbox__option checkbox__option-title">
-                <label for="flavors" data-filter="flavors">
-                  <input type="checkbox" id="flavors" name="flavors" />
-                  Flavors
-                </label>
+                <input type="checkbox" id="flavors" />
+                <!-- checked -->
+                <label for="flavors"> Flavors </label>
               </button>
             </div>
 
-            <div class="checkbox__container">
-              <button class="checkbox__option">
-                <label for="plain" data-filter="plain">
-                  <input type="checkbox" id="plain" name="plain" />
-                  Plain</label
-                >
-              </button>
-
-              <button class="checkbox__option">
-                <label for="bacon">
-                  <input type="checkbox" id="bacon" name="bacon" />
-                  Bacon</label
-                >
-              </button>
-              <button class="checkbox__option">
-                <label for="cheese">
-                  <input type="checkbox" id="cheese" name="cheese" />
-                  Cheese</label
-                >
-              </button>
-              <button class="checkbox__option">
-                <label for="sausage">
-                  <input type="checkbox" id="sausage" name="sausage" />
-                  Sausage</label
-                >
-              </button>
-            </div>
+            <div class="checkbox__container" id="flavors__container"></div>
           </div>
 
           <div class="filter__bread-center center">
             <div class="checkbox__container checkbox__title">
               <button class="checkbox__option checkbox__option-title">
-                <label for="sweets" data-filter="sweets">
-                  <input type="checkbox" id="sweets" name="sweets" />
-                  Sweets
-                </label>
+                <input type="checkbox" id="sweets" />
+                <!-- checked -->
+                <label for="sweets"> Sweets </label>
               </button>
             </div>
 
-            <div class="checkbox__container">
-              <button class="checkbox__option">
-                <label for="chocolate">
-                  <input type="checkbox" id="chocolate" name="chocolate" />
-                  Chocolate</label
-                >
-              </button>
-
-              <button class="checkbox__option">
-                <label for="fruits">
-                  <input type="checkbox" id="fruits" name="fruits" />
-                  Fruits</label
-                >
-              </button>
-
-              <button class="checkbox__option">
-                <label for="cream">
-                  <input type="checkbox" id="cream" name="cream" />
-                  Cream</label
-                >
-              </button>
-            </div>
+            <div class="checkbox__container" id="sweets__container"></div>
           </div>
 
           <div class="filter__bread-center right">
             <div class="checkbox__container checkbox__title">
               <button class="checkbox__option checkbox__option-title">
-                <label for="noanimals" data-filter="noanimals">
-                  <input type="checkbox" id="noanimals" name="noanimals" />
-                  No Animals
-                </label>
+                <input type="checkbox" id="noanimals" />
+                <!-- checked -->
+                <label for="noanimals"> No Animals </label>
               </button>
             </div>
 
-            <div class="checkbox__container">
-              <button class="checkbox__option">
-                <label for="eggsfree" data-filter="eggsfree">
-                  <input type="checkbox" id="eggsfree" name="eggsfree" />
-                  <span> Eggs Free </span>
-                </label>
-              </button>
-              <button class="checkbox__option">
-                <label for="milkfree">
-                  <input type="checkbox" id="milkfree" name="milkfree" />
-                  Milk Free</label
-                >
-              </button>
-              <button class="checkbox__option">
-                <label for="meatfree">
-                  <input type="checkbox" id="meatfree" name="meatfree" />
-                  Meat Free</label
-                >
-              </button>
-            </div>
+            <div class="checkbox__container" id="noanimals__container"></div>
           </div>
         </div>
 
         <div class="filter__bread-bottom">
           <div><h5>Specials</h5></div>
 
-          <div class="checkbox__container">
+          <div class="checkbox__container specials__container">
             <button class="checkbox__option">
-              <label class="seasonal" data-filter="seasonal">
-                <input type="checkbox" id="seasonal" name="seasonal" />
-                Seasonal
-              </label>
+              <input type="checkbox" id="seasonal" />
+              <!-- checked -->
+              <label for="seasonal"> Seasonal </label>
             </button>
             <button class="checkbox__option">
-              <label for="frozen">
-                <input type="checkbox" id="frozen" name="frozen" />
-                Frozen</label
-              >
+              <input type="checkbox" id="frozen" />
+              <!-- checked -->
+              <label for="frozen"> Frozen </label>
             </button>
           </div>
         </div>
@@ -234,7 +193,7 @@
     </header>
 
     <main>
-      <section class="section section__breads"></section>
+      <section class="section__breads"></section>
     </main>
 
     <footer class="footer">
@@ -264,5 +223,6 @@
         </h6>
       </div>
     </footer>
+    <script src="script_breads_filter.js"></script>
   </body>
 </html>

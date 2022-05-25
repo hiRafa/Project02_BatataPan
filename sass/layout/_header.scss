@@ -1,7 +1,7 @@
 .header {
   height: 100vh;
-  &-shops {
-    height: 80vh;
+  &-breads_shops {
+    height: 75vh;
   }
 
   &__bg {
@@ -14,8 +14,8 @@
     opacity: 0.5;
     background-color: var(--bg_color-lowTransparency-0);
     filter: saturate(0.8), brightness(-1), opacity(0.2);
-    &-shops {
-      height: 90vh;
+    &-breads_shops {
+      height: 80vh;
     }
   }
 

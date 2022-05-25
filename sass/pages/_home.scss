@@ -11,6 +11,7 @@
       padding: calc(var(--padding) + 1rem) 2rem;
       overflow: hidden;
       justify-items: space-around;
+      gap: 20px;
     }
     &_title {
       @include p_title;

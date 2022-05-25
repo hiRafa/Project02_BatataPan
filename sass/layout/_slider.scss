@@ -11,7 +11,6 @@
   transition: all 0.5s;
   @include respond($tablet-port) {
     width: 55rem;
-    height: 45rem;
   }
   /* IN THE END */
 
@@ -26,6 +25,7 @@
     justify-content: flex-start;
     h5 {
       width: 100%;
+      padding-top: 1rem;
     }
     p {
       height: 7%;
@@ -39,7 +39,7 @@
         width: 80%;
       }
       img {
-        width: 60%;
+        width: 50%;
         height: 70%;
       }
     }
