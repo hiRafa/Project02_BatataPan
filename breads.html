@@ -36,7 +36,10 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- JS -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js"></script> -->
+    <script
+      type="text/javascript"
+      src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"
+    ></script>
     <script defer src="scriptBatata.js"></script>
     <script defer src="script_breads.js"></script>
   </head>
@@ -81,53 +84,23 @@
       </div>
 
       <div class="filter filter__bread">
-        <div class="filter__bread-top"><h4>Our Breads</h4></div>
-        <!--  <div>
-          <input type="checkbox" id="chocolate" checked />
-          <label for="chocolate">chocolate</label>
+        <div class="filter__bread-top">
+          <button
+            class="checkbox__option-title checkbox__option checkbox__option-active"
+            data-filter="all"
+          >
+            <h4>Our Breads</h4>
+          </button>
         </div>
-        <div>
-          <input type="checkbox" id="lactosefree" checked />
-          <label for="lactosefree">lactose free</label>
-        </div>
-        <div>
-          <input type="checkbox" id="sweets" checked />
-          <label for="sweets">sweets</label>
-        </div>
-        <div>
-          <input type="checkbox" id="allergies" checked />
-          <label for="allergies">awawadw</label>
-        </div>
-        <ul>
-          <li class="allergies"><a href="https://alphons.io">alphons.io</a></li>
-          <li class="allergies chocolate">
-            <a href="https://google.com">google.com</a>
-          </li>
-          <li class="sweets chocolate">
-            <a href="https://facebook.com">facebook.com</a>
-          </li>
-          <li class="chocolate">
-            <a href="https://twitter.com">twitter.com</a>
-          </li>
-          <li class="chocolate">
-            <a href="https://mozilla.org">mozilla.org</a>
-          </li>
-          <li class="lactosefree">
-            <a href="https://wikipedia.org">wikipedia.org</a>
-          </li>
-          <li class="lactosefree">
-            <a href="https://slither.io">slither.io</a>
-          </li>
-        </ul>
-        -->
 
         <div class="filter__bread-center">
           <div class="filter__bread-center left">
             <div class="checkbox__container checkbox__title">
-              <button class="checkbox__option checkbox__option-title">
-                <input type="checkbox" id="allergies" />
-                <!-- checked -->
-                <label for="allergies"> Allergies </label>
+              <button
+                class="filter__button checkbox__option"
+                data-filter="allergies"
+              >
+                Allergies
               </button>
             </div>
 
@@ -135,11 +108,12 @@
           </div>
 
           <div class="filter__bread-center center">
-            <div class="checkbox__container checkbox__title">
-              <button class="checkbox__option checkbox__option-title">
-                <input type="checkbox" id="flavors" />
-                <!-- checked -->
-                <label for="flavors"> Flavors </label>
+            <div class="checkbox__container checkbox__title flavors">
+              <button
+                class="filter__button checkbox__option"
+                data-filter="flavors"
+              >
+                Flavors
               </button>
             </div>
 
@@ -148,10 +122,11 @@
 
           <div class="filter__bread-center center">
             <div class="checkbox__container checkbox__title">
-              <button class="checkbox__option checkbox__option-title">
-                <input type="checkbox" id="sweets" />
-                <!-- checked -->
-                <label for="sweets"> Sweets </label>
+              <button
+                class="filter__button checkbox__option"
+                data-filter="sweets"
+              >
+                Sweets
               </button>
             </div>
 
@@ -159,33 +134,27 @@
           </div>
 
           <div class="filter__bread-center right">
-            <div class="checkbox__container checkbox__title">
-              <button class="checkbox__option checkbox__option-title">
-                <input type="checkbox" id="noanimals" />
-                <!-- checked -->
-                <label for="noanimals"> No Animals </label>
+            <div class="checkbox__container checkbox__title noanimals">
+              <button
+                class="filter__button checkbox__option"
+                data-filter="noanimals"
+              >
+                No Animals
               </button>
             </div>
-
             <div class="checkbox__container" id="noanimals__container"></div>
           </div>
         </div>
 
         <div class="filter__bread-bottom">
-          <div><h5>Specials</h5></div>
+          <button
+            class="filter__button checkbox__option"
+            data-filter="specials"
+          >
+            Specials
+          </button>
 
-          <div class="checkbox__container specials__container">
-            <button class="checkbox__option">
-              <input type="checkbox" id="seasonal" />
-              <!-- checked -->
-              <label for="seasonal"> Seasonal </label>
-            </button>
-            <button class="checkbox__option">
-              <input type="checkbox" id="frozen" />
-              <!-- checked -->
-              <label for="frozen"> Frozen </label>
-            </button>
-          </div>
+          <div class="checkbox__container" id="specials__container"></div>
         </div>
 
         <div class="filter__bread-empty"></div>
@@ -223,6 +192,5 @@
         </h6>
       </div>
     </footer>
-    <script src="script_breads_filter.js"></script>
   </body>
 </html>

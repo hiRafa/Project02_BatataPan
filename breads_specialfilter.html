@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Batata Bakery</title>
+    <!-- Extra METAS to help with Search Engines -->
+    <meta
+      name="description"
+      content="Check our stores and breads we have! We also have amazing seasonal breads"
+    />
+    <!-- The following metas are when sharing a link on FB (example) it shows title, description and image -->
+    <meta property="og:title" content="Batata Bakery!" />
+    <meta
+      property="og:description"
+      content="Breads from all over the world and tasty seasonal breads! Sour dough breads also available!"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://" />
+    <meta property="og:url" content="https/ified.com" />
+    <!-- FONTs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- External Libraries ( AOS library)-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="sass/main.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- JS -->
+    <script
+      type="text/javascript"
+      src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"
+    ></script>
+    <script defer src="scriptBatata.js"></script>
+    <script defer src="script_specialfilter.js"></script>
+  </head>
+
+  <body>
+    <div class="navi">
+      <input type="checkbox" class="navi__checkbox" id="nav-toggle" />
+      <label for="nav-toggle" class="navi__button">
+        <span class="navi__menuIcon">&nbsp;</span>
+      </label>
+      <div class="navi__bg">&nbsp;</div>
+      <nav class="navi__nav">
+        <ul class="navi__ul">
+          <li class="navi__li">
+            <a class="navi__a" href="index.html">Home & News</a>
+          </li>
+          <li class="navi__li">
+            <a class="navi__a" href="#">Breads</a>
+          </li>
+          <li class="navi__li">
+            <a class="navi__a" href="shops.html">Shops</a>
+          </li>
+          <li class="navi__li">
+            <a class="navi__a" href="company.html">Company</a>
+          </li>
+        </ul>
+        <a href="#"
+          ><img class="navi__logo" src="images/Untitled-1.png" />&nbsp;</a
+        >
+      </nav>
+    </div>
+
+    <header class="header-breads_shops">
+      <div>
+        <picture>
+          <img
+            class="header__bg header__bg-breads_shops"
+            src="images/bakery_bg01.webp"
+            alt="bread background"
+          />
+        </picture>
+      </div>
+
+      <div class="filter filter__bread">
+        <div class="filter__bread-top"><h4>Our Breads</h4></div>
+        <!--  <div>
+          <input type="checkbox" id="chocolate" checked />
+          <label for="chocolate">chocolate</label>
+        </div>
+        <div>
+          <input type="checkbox" id="lactosefree" checked />
+          <label for="lactosefree">lactose free</label>
+        </div>
+        <div>
+          <input type="checkbox" id="sweets" checked />
+          <label for="sweets">sweets</label>
+        </div>
+        <div>
+          <input type="checkbox" id="allergies" checked />
+          <label for="allergies">awawadw</label>
+        </div>
+        <ul>
+          <li class="allergies"><a href="https://alphons.io">alphons.io</a></li>
+          <li class="allergies chocolate">
+            <a href="https://google.com">google.com</a>
+          </li>
+          <li class="sweets chocolate">
+            <a href="https://facebook.com">facebook.com</a>
+          </li>
+          <li class="chocolate">
+            <a href="https://twitter.com">twitter.com</a>
+          </li>
+          <li class="chocolate">
+            <a href="https://mozilla.org">mozilla.org</a>
+          </li>
+          <li class="lactosefree">
+            <a href="https://wikipedia.org">wikipedia.org</a>
+          </li>
+          <li class="lactosefree">
+            <a href="https://slither.io">slither.io</a>
+          </li>
+        </ul>
+        -->
+
+        <!-- <div class="filter__bread-center">
+          <div class="filter__bread-center left">
+            <div class="checkbox__container checkbox__title">
+              <button class="checkbox__option checkbox__option-title allergies">
+                <label for="allergies" class="allergies">
+                  <input type="checkbox" class="allergies" id="allergies"/>
+                  Allergies
+                </label>
+              </button>
+            </div>
+
+            <div class="checkbox__container" id="allergies__container"></div>
+          </div>
+
+          <div class="filter__bread-center center">
+            <div class="checkbox__container checkbox__title flavors">
+              <button class="checkbox__option checkbox__option-title">
+                <label for="flavors" class="flavors">
+                  <input type="checkbox" class="flavors" />
+
+                  Flavors
+                </label>
+              </button>
+            </div>
+
+            <div class="checkbox__container" id="flavors__container"></div>
+          </div>
+
+          <div class="filter__bread-center center">
+            <div class="checkbox__container checkbox__title">
+              <button class="checkbox__option checkbox__option-title sweets">
+                <label for="sweets" class="sweets">
+                  <input type="checkbox" class="sweets" />
+
+                  Sweets
+                </label>
+              </button>
+            </div>
+
+            <div class="checkbox__container" id="sweets__container"></div>
+          </div>
+
+          <div class="filter__bread-center right">
+            <div class="checkbox__container checkbox__title noanimals">
+              <button class="checkbox__option checkbox__option-title">
+                <label for="noanimals" class="noanimals">
+                  <input type="checkbox" class="noanimals" />
+                  No Animals
+                </label>
+              </button>
+            </div>
+
+            <div class="checkbox__container" id="noanimals__container"></div>
+          </div>
+        </div>
+
+        <div class="filter__bread-bottom">
+          <div><h5>Specials</h5></div>
+
+          <div class="checkbox__container specials__container">
+            <button class="checkbox__option">
+              <input type="checkbox" id="seasonal" />
+       
+              <label for="seasonal"> Seasonal </label>
+            </button>
+            <button class="checkbox__option frozen">
+              <label for="frozen" class="frozen">
+                <input type="checkbox" class="frozen" />
+            
+                Frozen
+              </label>
+            </button>
+          </div>
+        </div> -->
+
+        <div class="filter__bread-center">
+          <div class="filter__bread-center left">
+            <div class="checkbox__container checkbox__title">
+              <button class="checkbox__option checkbox__option-title allergies">
+                <input type="checkbox" class="allergies" />
+                <label for="allergies" class="allergies"> Allergies </label>
+              </button>
+            </div>
+
+            <div class="checkbox__container" id="allergies__container"></div>
+          </div>
+
+          <div class="filter__bread-center center">
+            <div class="checkbox__container checkbox__title flavors">
+              <button class="checkbox__option checkbox__option-title">
+                <label for="flavors" class="flavors">
+                  <input type="checkbox" class="flavors" />
+
+                  Flavors
+                </label>
+              </button>
+            </div>
+
+            <div class="checkbox__container" id="flavors__container"></div>
+          </div>
+
+          <div class="filter__bread-center center">
+            <div class="checkbox__container checkbox__title">
+              <button class="checkbox__option checkbox__option-title sweets">
+                <input type="checkbox" class="sweets" />
+                <label for="sweets" class="sweets"> Sweets </label>
+              </button>
+            </div>
+
+            <div class="checkbox__container" id="sweets__container"></div>
+          </div>
+
+          <div class="filter__bread-center right">
+            <div class="checkbox__container checkbox__title noanimals">
+              <button class="checkbox__option checkbox__option-title">
+                <label for="noanimals" class="noanimals">
+                  <input type="checkbox" class="noanimals" />
+                  No Animals
+                </label>
+              </button>
+            </div>
+            <div class="checkbox__container" id="noanimals__container"></div>
+          </div>
+        </div>
+
+        <div class="filter__bread-bottom">
+          <div><h5>Specials</h5></div>
+
+          <div class="checkbox__container specials__container">
+            <button class="checkbox__option">
+              <input type="checkbox" id="seasonal" name="id" name="seasonal" />
+
+              <label for="seasonal"> Seasonal </label>
+            </button>
+            <button class="checkbox__option frozen">
+              <label for="frozen" class="frozen">
+                <input type="checkbox" class="frozen" name="frozen" />
+
+                Frozen
+              </label>
+            </button>
+          </div>
+        </div>
+
+        <div class="filter__bread-empty"></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section__breads"></section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__flex">
+        <div class="footer__flex_left footer__grid">
+          <h6>Follow us</h6>
+          <br />
+          <div class="footer__flex_left_icons">
+            <a href="#"
+              ><svg class="icon-socialmedia">
+                <use href="images/sprite.svg#icon-instagram"></use></svg
+            ></a>
+            <a href="#"
+              ><svg class="icon-socialmedia">
+                <use href="images/sprite.svg#icon-youtube"></use></svg
+            ></a>
+          </div>
+        </div>
+        <a href="#"
+          ><img
+            class="footer__flex_logo"
+            src="images/Untitled-1.png"
+          />&nbsp;</a
+        >
+        <h6 class="footer__flex_right">
+          &copy; Batata Bakery All Rights Reserved.
+        </h6>
+      </div>
+    </footer>
+    <script src="script_breads_filter.js"></script>
+  </body>
+</html>

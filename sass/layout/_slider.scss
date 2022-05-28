@@ -9,11 +9,6 @@
   min-height: 100%;
   overflow: hidden;
   transition: all 0.5s;
-  @include respond($tablet-port) {
-    width: 55rem;
-  }
-  /* IN THE END */
-
   &_slide {
     @include flex_column;
     position: absolute;
@@ -34,13 +29,17 @@
       width: 90%;
       justify-self: flex-end;
     }
-    @include respond($tablet-port) {
+  }
+  @include respond($tablet-desktop) {
+    width: 50rem;
+    height: 30rem;
+    &_slide {
       h5 {
         width: 80%;
       }
       img {
         width: 50%;
-        height: 70%;
+        height: 80%;
       }
     }
   }
@@ -50,7 +49,6 @@
   @include slider_buttons;
   z-index: 1;
   font-family: inherit;
-  min-width: 8rem;
   font-size: 3.25rem;
   margin: 1rem 2rem;
 }

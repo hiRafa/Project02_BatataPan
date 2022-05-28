@@ -69,9 +69,57 @@ html {
   font-family: 'Nunito', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html h6 {
+  font-size: 2.6rem;
+  font-weight: 400;
+}
+
+html h5 {
+  font-size: 3.6rem;
+  font-weight: 500;
+}
+
+html h4 {
+  font-size: 4.6rem;
+  font-weight: 600;
+}
+
+html h3 {
+  font-size: 5.6rem;
+  font-weight: 700;
+}
+
+html h2 {
+  font-size: 6.6rem;
+  font-weight: 800;
+}
+
+html h1 {
+  font-size: 7.6rem;
+  font-weight: 900;
+}
+
 @media only screen and (min-width: 56.25em) {
   html {
     font-size: 81.25%;
+  }
+  html h6 {
+    font-size: 2rem;
+  }
+  html h5 {
+    font-size: 3rem;
+  }
+  html h4 {
+    font-size: 4rem;
+  }
+  html h3 {
+    font-size: 5rem;
+  }
+  html h2 {
+    font-size: 6rem;
+  }
+  html h1 {
+    font-size: 7rem;
   }
 }
 
@@ -107,36 +155,6 @@ body p {
   body {
     font-size: 1rem;
   }
-}
-
-h6 {
-  font-size: 2.6rem;
-  font-weight: 400;
-}
-
-h5 {
-  font-size: 3.6rem;
-  font-weight: 500;
-}
-
-h4 {
-  font-size: 4.6rem;
-  font-weight: 600;
-}
-
-h3 {
-  font-size: 5.6rem;
-  font-weight: 700;
-}
-
-h2 {
-  font-size: 6.6rem;
-  font-weight: 800;
-}
-
-h1 {
-  font-size: 7.6rem;
-  font-weight: 900;
 }
 
 a {
@@ -326,7 +344,7 @@ button {
       grid-template-columns: 1fr;
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
-  padding: 10vh 0 2rem;
+  padding: 8vh 0 2rem;
   overflow: hidden;
 }
 
@@ -473,11 +491,24 @@ button {
 
 .filter__bread-bottom {
   border-top: 3px solid var(--color-1-darkest);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
   margin-bottom: 1rem;
   width: 100%;
 }
 
-.filter__bread-bottom .specials__container {
+.filter__bread-bottom #specials__container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -503,10 +534,10 @@ button {
 
 .checkbox__title {
   margin: 0.5rem;
-  width: 30rem;
+  width: 28rem;
 }
 
-@media only screen and (min-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
   .checkbox__title {
     width: 20rem;
   }
@@ -516,7 +547,7 @@ button {
   color: var(--color-1-darkest);
   background-color: var(--color-1);
   text-align: left;
-  padding: 0.2rem;
+  padding: 0.5rem 1rem;
   margin: 0.5rem;
   width: 240px;
   display: -webkit-box;
@@ -552,13 +583,12 @@ button {
 
 .checkbox__option-title {
   width: 100%;
-  font-size: 2.5rem;
-  color: var(--color-1);
-  background-color: var(--color-1-darkest);
+  font-size: 4rem;
 }
 
-.checkbox__option-title span {
-  margin-left: 1rem;
+.checkbox__option-active {
+  background-color: var(--color-1-darkest);
+  color: var(--color-1-highLight);
 }
 
 .navi__logo {
@@ -925,13 +955,6 @@ button {
   overflow: hidden;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  /* IN THE END */
-}
-
-@media only screen and (min-width: 37.5em) {
-  .carousel {
-    width: 55rem;
-  }
 }
 
 .carousel_slide {
@@ -977,13 +1000,17 @@ button {
   justify-self: flex-end;
 }
 
-@media only screen and (min-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .carousel {
+    width: 50rem;
+    height: 30rem;
+  }
   .carousel_slide h5 {
     width: 80%;
   }
   .carousel_slide img {
     width: 50%;
-    height: 70%;
+    height: 80%;
   }
 }
 
@@ -992,7 +1019,6 @@ button {
   border-radius: 50%;
   z-index: 1;
   font-family: inherit;
-  min-width: 8rem;
   font-size: 3.25rem;
   margin: 1rem 2rem;
 }
@@ -1149,6 +1175,19 @@ button {
   }
 }
 
+.bread-active {
+  display: block;
+}
+
+.bread-hidden {
+  display: none;
+}
+
+.no_results {
+  color: red;
+  padding: 4rem 1rem;
+}
+
 .section {
   padding: var(--padding) 0;
 }
@@ -1228,6 +1267,11 @@ button {
   display: none;
 }
 
+.section__gallery .button__more {
+  width: 100%;
+  padding: 1rem;
+}
+
 @media only screen and (min-width: 37.5em) {
   .section__gallery {
     display: -ms-grid;
@@ -1243,10 +1287,6 @@ button {
     min-width: 10rem;
     width: 100%;
     height: 100%;
-  }
-  .section__gallery button {
-    width: 80%;
-    padding: 1rem;
   }
   .section__gallery .gallery_img_01, .section__gallery .gallery_img_02, .section__gallery .gallery_img_08, .section__gallery .gallery_img_09, .section__gallery .gallery_img_10, .section__gallery .gallery_img_11 {
     display: block;

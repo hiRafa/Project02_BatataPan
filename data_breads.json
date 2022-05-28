@@ -2,7 +2,7 @@
   "filterWords": [
     {
       "main": "allergies",
-      "sub": ["gluten free", "lactose free"],
+      "sub": ["glutenfree", "lactosefree"],
       "toDisplay": ["Gluten Free", "Lactose Free"]
     },
     {
@@ -19,6 +19,11 @@
       "main": "noanimals",
       "sub": ["noeggs", "nomilk", "nomeat"],
       "toDisplay": ["No Eggs", "No Milk", "No Meat", "No Cheese"]
+    },
+    {
+      "main": "specials",
+      "sub": ["seasonal", "frozen"],
+      "toDisplay": ["Seasonal", "Frozen"]
     }
   ],
 
@@ -26,7 +31,7 @@
     {
       "breadName": "potato bread",
       "imageURL": "bread_pineapple_x1",
-      "bigCategory": "allergies, flavors, noanimals",
+      "bigCategory": "allergies, flavors, noanimals, noeggs",
       "types": ["cheese", "gluten free", "potato", "no eggs"],
       "description": "awdawdwadawd awd awd gergew f3 1 4r1241 412 41",
       "price": "270"
@@ -34,7 +39,7 @@
     {
       "breadName": "sakura bread",
       "imageURL": "bread_sakura_x1",
-      "bigCategory": "sweetss, noanimals, specials",
+      "bigCategory": "sweets, noanimals, specials",
       "types": ["sweets", "seasonal", "anko"]
     },
     {
@@ -46,25 +51,25 @@
     {
       "breadName": "chocolate",
       "imageURL": "bread_zucchini_x1",
-      "bigCategory": "sweetss, noanimals, nomeat",
+      "bigCategory": "sweets, noanimals, nomeat",
       "types": ["sweets", "chocolate", "no meat"]
     },
     {
       "breadName": "ban ap bee",
       "imageURL": "chocolate_cookie_x1",
-      "bigCategory": "sweetss, noanimals, nomeat",
+      "bigCategory": "sweets, noanimals, nomeat",
       "types": ["secret", "myterious", "no meat"]
     },
     {
       "breadName": "croissant",
       "imageURL": "bread_french_x1",
-      "bigCategory": "sweetss, noanimals, nomeat",
+      "bigCategory": "noanimals, nomeat",
       "types": ["plain"]
     },
     {
       "breadName": "chocolate poundcake",
       "imageURL": "bread_french_x1",
-      "bigCategory": "sweetss, noanimals, nomeat",
+      "bigCategory": "sweets, noanimals, nomeat",
       "types": ["plain"]
     }
   ]

@@ -47,11 +47,23 @@
 
 //setting general fontsize based on screens. Also responding to zooming in and out
 html {
+  @for $i from 1 through 6 {
+    h#{7 - $i} {
+      font-size: $i + 1.6rem;
+      font-weight: $i * 100 + 300;
+    }
+  }
+
   // This defines what 1rem is
   font-size: 62.5%; //1 rem = 10px; 10px/16px
 
   @include respond($tablet-desktop) {
     font-size: 81.25%; //1 rem = 13px; 13px/16px
+    @for $i from 1 through 6 {
+      h#{7 - $i} {
+        font-size: $i + 1rem;
+      }
+    }
   }
   @include respond($desktop-big) {
     font-size: 100%; //  1rem = 16px; 16px/16px
@@ -87,12 +99,6 @@ body {
 }
 
 //setting font size for everything else
-@for $i from 1 through 6 {
-  h#{7 - $i} {
-    font-size: $i + 1.6rem;
-    font-weight: $i * 100 + 300;
-  }
-}
 
 a {
   text-decoration: none;
@@ -133,5 +139,3 @@ li {
 .lazy-img {
   filter: blur(50px);
 }
-
-
