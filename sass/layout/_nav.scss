@@ -77,8 +77,8 @@
       background-size: 250%;
       color: var(--color-white);
       display: inline-block; // allows margins/paddings and width and height and does not add a line-break after the element, so the element can sit next to other elements.
-      font-size: 3rem;
-      font-weight: 300;
+      font-size: 4rem;
+      font-weight: 500;
       padding: 1rem 2rem;
       text-decoration: none;
       text-transform: uppercase;
@@ -120,6 +120,22 @@
       top: 8px;
     }
   } // icon end
+  @include respond($tablet-desktop) {
+    &__menuIcon {
+      margin-top: calc(var(--nav-size) / 2);
+      &,
+      &::before,
+      &::after {
+        width: calc(var(--nav-size) - (var(--nav-size) / 3.5));
+      }
+      &::before {
+        top: calc(var(--nav-size) / -5);
+      }
+      &::after {
+        top: calc(var(--nav-size) / 5);
+      }
+    }
+  }
 
   // icon animation
   &__button:hover &__menuIcon::before {

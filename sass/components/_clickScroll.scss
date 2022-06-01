@@ -1,0 +1,21 @@
+.click_scroll {
+  width: 100%;
+  padding: 3rem 0 0;
+  scroll-behavior: smooth;
+  @include respond($tablet-desktop) {
+    width: 30%;
+  }
+  p {
+    font-size: 5rem;
+  }
+  &_breads {
+    padding: 0;
+    p {
+      font-size: 3rem;
+    }
+
+    @include respond($tablet-desktop) {
+      display: none;
+    }
+  }
+}

@@ -92,11 +92,11 @@ fetch('data_breads.json', {
             ',',
             ' '
           )} ${getBreads[i].types.join(' ')}">
-            <h5 class="bread__card_name ${getBreads[i].breadName.replaceAll(
+            <p class="bread__card_name ${getBreads[i].breadName.replaceAll(
               ' ',
               '_'
             )}">
-            ${formatedBreadName[i]}</h5>
+            ${formatedBreadName[i]}</p>
             <img class="bread__card_img "src="images/${
               getBreads[i].imageURL
             }.webp" />
@@ -142,7 +142,7 @@ fetch('data_breads.json', {
 
         // // ----- Main Array
         arrayMainWords.push(getFilterWords[i].main);
-        // // ----- Sub Array
+        // // ----- Sub Abutton__breadsrray
         // console.log(getFilterWords[i].sub.join(' '));
         for (let j = 0; j < getFilterWords.length; j++) {
           arraySubWords.push(getFilterWords[i].sub[j]);
@@ -159,7 +159,7 @@ fetch('data_breads.json', {
           ''
         );
         const createFilterHTML = `
-        <button class="checkbox__option ${allergiesSubFilterFormated}" data-filter="${allergiesSubFilterFormated}">
+        <button class="button__breads ${allergiesSubFilterFormated}" data-filter="${allergiesSubFilterFormated}">
           ${getFilterWords[0].toDisplay[j]} 
         </button>`;
         allergiesContainer.innerHTML += ('afterend', createFilterHTML);
@@ -168,7 +168,7 @@ fetch('data_breads.json', {
       for (let j = 0; j < getSubFilter[1].length; j++) {
         const flavorsSubFilterFormated = getSubFilter[1][j].replaceAll(' ', '');
         const createFilterHTML = `
-        <button class="checkbox__option ${flavorsSubFilterFormated}" data-filter="${flavorsSubFilterFormated}">
+        <button class="button__breads ${flavorsSubFilterFormated}" data-filter="${flavorsSubFilterFormated}">
           ${getFilterWords[1].toDisplay[j]}
         </button>`;
         flavorsContainer.innerHTML += ('afterend', createFilterHTML);
@@ -177,7 +177,7 @@ fetch('data_breads.json', {
       for (let j = 0; j < getSubFilter[2].length; j++) {
         const sweetsSubFilterFormated = getSubFilter[2][j].replaceAll(' ', '');
         const createFilterHTML = `
-        <button class="checkbox__option ${sweetsSubFilterFormated}" data-filter="${sweetsSubFilterFormated}">
+        <button class="button__breads ${sweetsSubFilterFormated}" data-filter="${sweetsSubFilterFormated}">
           ${getFilterWords[2].toDisplay[j]}
         </button>`;
         sweetsContainer.innerHTML += ('afterend', createFilterHTML);
@@ -189,7 +189,7 @@ fetch('data_breads.json', {
           ''
         );
         const createFilterHTML = `
-        <button class="checkbox__option ${noAnimalsSubFilterFormated}" data-filter="${noAnimalsSubFilterFormated}">
+        <button class="button__breads ${noAnimalsSubFilterFormated}" data-filter="${noAnimalsSubFilterFormated}">
           ${getFilterWords[3].toDisplay[j]}
         </button>`;
         noanimalsContainer.innerHTML += ('afterend', createFilterHTML);
@@ -198,7 +198,7 @@ fetch('data_breads.json', {
       for (let j = 0; j < getSubFilter[4].length; j++) {
         const specialsSubFilter = getSubFilter[4][j].replaceAll(' ', '');
         const createFilterHTML = `
-        <button class="checkbox__option ${specialsSubFilter}" data-filter="${specialsSubFilter}">
+        <button class="button__breads ${specialsSubFilter}" data-filter="${specialsSubFilter}">
           ${getFilterWords[4].toDisplay[j]}
         </button>`;
         specialsContainer.innerHTML += ('afterend', createFilterHTML);
@@ -209,7 +209,7 @@ fetch('data_breads.json', {
     const filterOptionsContainer = document.querySelector(
       '.header-breads_shops'
     );
-    const filterShopsBtn = document.querySelectorAll('.checkbox__option');
+    const filterShopsBtn = document.querySelectorAll('.button__breads');
     const shopCards = document.querySelectorAll('.bread__card');
 
     filterOptionsContainer.addEventListener('click', e => {
@@ -217,15 +217,13 @@ fetch('data_breads.json', {
       const dataFilterButton = e.target.dataset.filter;
       console.log(dataFilterButton);
       // Clear class shop-active
-      filterShopsBtn.forEach(t =>
-        t.classList.remove('checkbox__option-active')
-      );
+      filterShopsBtn.forEach(t => t.classList.remove('button__breads-active'));
 
       // Start adding class shop-active according to selection
       // DRY
       const showShopAndActiveButton = function (selectedShop) {
         selectedShop.style.display = 'flex';
-        filterOption.classList.add('checkbox__option-active');
+        filterOption.classList.add('button__breads-active');
       };
       shopCards.forEach(selectedShop => {
         if (dataFilterButton === undefined) {

@@ -81,11 +81,18 @@ const sliderFunction = function () {
       console.log('dot');
       // const slide = e.target.dataset.slide;
       const { slide } = e.target.dataset;
-      // currentSlide = +e.target.dataset.slide;
+      currentSlide = +e.target.dataset.slide;
+      activateDot(currentSlide);
       goToSlide(slide);
-      activateDot(slide);
     }
   });
+
+  // allSlides.forEach(
+  //   (eachSlide => {
+  // if(eachSlide.style.transition === translateX(0%)) {
+  //   currentSlide.style.transition
+  // }
+  // }))
 };
 sliderFunction();
 console.log(sliderFunction);

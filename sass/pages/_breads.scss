@@ -59,9 +59,11 @@
       background-color: var(--color-1-medium);
       margin: 0.5rem 2rem;
       font-size: 2rem;
+      font-weight: 600;
     }
   }
 
+  // Cards height and width
   @include respond($tablet-port) {
     height: calc(var(--card-height) * 1.1); // + 80px
     width: calc(var(--card-width) * 1.1); // + 60px;
@@ -88,17 +90,4 @@
       width: calc(var(--card-height) * 0.65);
     }
   }
-}
-
-.bread-active {
-  display: block;
-}
-
-.bread-hidden {
-  display: none;
-}
-
-.no_results {
-  color: red;
-  padding: 4rem 1rem;
 }

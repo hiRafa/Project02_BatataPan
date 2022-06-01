@@ -18,57 +18,103 @@ fetch('data_shops.json', {
     const getAddressLink = [];
 
     for (let i = 0; i < allShopsArray.length; i++) {
-      getShopName.push(allShopsArray[i].shopName);
-      getOpenHr.push(allShopsArray[i].openHr);
-      getCloseHr.push(allShopsArray[i].closeHr);
-      getAddressLink.push(allShopsArray[i].address);
+      // getShopName.push(allShopsArray[i].shopName);
+      // getOpenHr.push(allShopsArray[i].openHr);
+      // getCloseHr.push(allShopsArray[i].closeHr);
+      // getAddressLink.push(allShopsArray[i].address);
       // console.log(` You are at ${allShopsArray[i]} shop`); // Useless. returns You are at [object Object] shop
-      console.log(getAddressLink[i]);
+      // console.log(getAddressLink[i]);
+
+      // ------------------------------------
+      // -------- Creating Shop Cards
+      const ifLeftOrRight = function () {
+        if (i % 2 === 0) {
+          // for (i % 2 === 0; i < allShopsArray.length; i++) {
+          sectionShopsHTML.innerHTML += `
+        <div class="shop shop-left ${allShopsArray[i].shopName.toLowerCase()}">
+          <div class="shop__info">
+            <p class="shop__info-title">${allShopsArray[i].shopName}</p>
+            <p class="shop__info-body">
+              Hours: ${allShopsArray[i].openHr} ~ ${allShopsArray[i].closeHr}
+              <br />
+              <a href="${
+                allShopsArray[i].address
+              }" class="a_color-1" target="”_blank”">
+                  << Map >></a>
+            </p>
+          </div>
+          <div class="shop__image">
+            <img src="images/${allShopsArray[i].imageURL}.jpg" />
+          </div>
+        </div>
+        `;
+        }
+        if (i % 2 !== 0) {
+          // for (i % 2 !== 0; i < allShopsArray.length; i++) {
+          sectionShopsHTML.innerHTML += `
+        <div class="shop shop-right ${allShopsArray[i].shopName.toLowerCase()}">
+          <div class="shop__image">
+            <img src="images/${allShopsArray[i].imageURL}.jpg" />
+          </div>
+          <div class="shop__info">
+            <p class="shop__info-title">${allShopsArray[i].shopName}</p>
+            <p class="shop__info-body">
+              Hours: ${allShopsArray[i].openHr} ~ ${allShopsArray[i].closeHr}
+              <br/>
+              <a href="${
+                allShopsArray[i].address
+              }" class="a_color-1" target="”_blank”">
+                << Map >></a>
+            </p>
+          </div>
+        </div>
+        `;
+        }
+      };
+
+      ifLeftOrRight();
     }
 
-    // console.log(` You are at ${getShopName} shop`);
-    // console.log(getShopName);
-    // console.log(getOpenHr);
-    // console.log(getCloseHr);
-    // console.log(getAddressLink);
+    // --------------------------------------------------------------------------
+    // ------------------ FILTER FUNCTION
+    // --------------------------------------------------------------------------
+    const filterOptionsContainer = document.querySelector('.filter-bottom');
+    const filterShopsBtn = document.querySelectorAll('.filter__button');
+    const shopCards = document.querySelectorAll('.shop');
+
+    filterOptionsContainer.addEventListener('click', e => {
+      const filterOption = e.target;
+      const dataFilterButton = e.target.dataset.filter;
+
+      // ----------  Clear class shop-active
+      filterShopsBtn.forEach(t => t.classList.remove('filter__button-active'));
+
+      // ----------  Start adding class shop-active according to selection
+
+      // DRY
+      const showShopAndActiveButton = function (selectedShop) {
+        selectedShop.style.display = 'flex';
+        filterOption.classList.add('filter__button-active');
+      };
+
+      shopCards.forEach(selectedShop => {
+        if (dataFilterButton === 'all') {
+          showShopAndActiveButton(selectedShop); // DRY
+          // selectedShop.style.display = 'flex';
+          // filterOption.classList.add('shop-active');
+        } else {
+          if (selectedShop.classList.contains(dataFilterButton)) {
+            showShopAndActiveButton(selectedShop); // DRY
+            // selectedShop.style.display = 'flex';
+            // filterOption.classList.add('shop-active');
+          } else {
+            selectedShop.style.display = 'none';
+          }
+        }
+        console.log(selectedShop);
+      });
+    });
   });
-
-// --------------------------------------------------------------------------
-// ------------------ FILTER
-// --------------------------------------------------------------------------
-const filterOptionsContainer = document.querySelector('.filter-bottom');
-const filterShopsBtn = document.querySelectorAll('.filter__button');
-const shopCards = document.querySelectorAll('.shop');
-
-filterOptionsContainer.addEventListener('click', e => {
-  const filterOption = e.target;
-  const dataFilterButton = e.target.dataset.filter;
-
-  // Clear class shop-active
-  filterShopsBtn.forEach(t => t.classList.remove('filter__button-active'));
-
-  // Start adding class shop-active according to selection
-  // DRY
-  const showShopAndActiveButton = function (selectedShop) {
-    selectedShop.style.display = 'flex';
-    filterOption.classList.add('filter__button-active');
-  };
-  shopCards.forEach(selectedShop => {
-    if (dataFilterButton === 'all') {
-      showShopAndActiveButton(selectedShop); // DRY
-      // selectedShop.style.display = 'flex';
-      // filterOption.classList.add('shop-active');
-    } else {
-      if (selectedShop.classList.contains(dataFilterButton)) {
-        showShopAndActiveButton(selectedShop); // DRY
-        // selectedShop.style.display = 'flex';
-        // filterOption.classList.add('shop-active');
-      } else {
-        selectedShop.style.display = 'none';
-      }
-    }
-  });
-});
 
 // --------------------------------------------------------------------------
 //----------------------- Filter Original BACK UP (by Zino, Ewomazino Akpareva)

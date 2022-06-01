@@ -5,12 +5,12 @@
 @import 'base/base'; //includes typrography
 
 //components
+@import 'components/clickScroll';
 @import 'components/animations';
 @import 'components/button';
 @import 'components/icons';
 
 //layout
-@import 'layout/sections';
 @import 'layout/filter';
 @import 'layout/nav';
 @import 'layout/footer';

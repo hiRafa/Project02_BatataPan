@@ -1,9 +1,6 @@
 .footer {
   background-color: var(--color-1-lowSaturation);
   height: 100%;
-  // @include respond($tablet-port) {
-  //   height: 15%;
-  // }
   &__flex {
     @include inner_container($height-100);
     @include flex_column;
@@ -18,9 +15,6 @@
     @include respond($tablet-port) {
       @include flex_row;
       flex-wrap: nowrap;
-      align-items: center;
-      justify-content: center;
-
       justify-content: space-between;
       &_left,
       &_right {

@@ -1,6 +1,6 @@
 $tablet-port: 600px; //for only column grids
 $tablet-desktop: 900px;
-// $desktop: 1200px;
+$desktop: 1200px; // only for bread filter
 $desktop-big: 1800px;
 
 @mixin respond($breakpoint) {
@@ -35,6 +35,7 @@ $height-100: 100%;
   width: 1200px;
   max-width: 100%;
   margin: 0 auto;
+
   @include respond($desktop-big) {
     width: 70vw;
   }
@@ -56,13 +57,6 @@ $height-100: 100%;
   justify-content: center;
 }
 
-@mixin hoverForFilterButtons {
-  &:hover {
-    cursor: pointer;
-    color: var(--color-white);
-  }
-}
-
 @mixin absoluteCenter {
   position: absolute;
   top: 50vh;
@@ -77,6 +71,10 @@ $height-100: 100%;
   width: 60px;
   border-radius: 50%;
   position: fixed;
+  @include respond($tablet-desktop) {
+    height: var(--nav-size);
+    width: var(--nav-size);
+  }
 }
 
 @mixin p_title {
@@ -97,10 +95,11 @@ $height-100: 100%;
 }
 
 @mixin tab__content-size-padding {
-  font-size: 2rem;
+  font-size: 3rem;
   padding: 0.5rem 1.5rem;
   @include respond($tablet-port) {
     padding: 1.5rem;
+    font-size: 2.5rem;
   }
 }
 

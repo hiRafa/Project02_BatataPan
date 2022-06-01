@@ -6,8 +6,11 @@
     width: 5rem;
     height: 5rem;
     margin: 1rem;
+    &_breads {
+      width: 3rem;
+      margin: 0;
+    }
   }
-
   &-socialmedia {
     width: 4rem;
     height: 3rem;

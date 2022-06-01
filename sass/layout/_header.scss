@@ -1,24 +1,28 @@
 .header {
   height: 100vh;
-  &-breads_shops {
-    height: 75vh;
-  }
+  background-color: var(--bg_color-lowTransparency-0);
 
+  &-breads_shops {
+    height: 80vh;
+  }
+  &__company {
+    padding: 3rem;
+  }
   &__bg {
     position: absolute;
     z-index: -1;
     height: 100vh;
     width: 100vw;
-    min-width: 800px;
+    min-width: 300px;
     left: 0;
-    opacity: 0.5;
-    background-color: var(--bg_color-lowTransparency-0);
-    filter: saturate(0.8), brightness(-1), opacity(0.2);
+    opacity: 0.4;
+
     &-breads_shops {
       height: 80vh;
     }
   }
 
+  // ------- HOME only
   &__container {
     @include flex_column;
     @include inner_container($height-100);
@@ -30,10 +34,6 @@
     &_logo {
       width: 100%;
       max-width: 20rem;
-    }
-    &_h1 {
-      gap: 1rem;
-      @include moveInLeft;
     }
   }
 }

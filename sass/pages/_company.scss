@@ -1,10 +1,5 @@
-.company {
-  &__header {
-    padding: 3rem;
-  }
-  &__grid {
-    @include grid1-2;
-  }
+.company__grid {
+  @include grid1-2;
 }
 
 // Company SECTIONS background, size, etc.
@@ -17,17 +12,18 @@
     height: 1000px;
     background-color: var(--color-1-darkest);
     padding: 3rem;
-    color: var(--color-1-highLight);
     height: inherit;
 
     form {
       width: 100%;
-      padding: 5rem 10rem;
+      padding: 5rem 3rem;
       background: #fff;
       box-shadow: 0 2px 5px #ccc;
+      @include respond($tablet-port) {
+        padding: 5rem 10rem;
+      }
     }
     input {
-      width: 70%;
       padding: 5px;
       border: 1px solid #ccc;
       border-radius: 3px;
@@ -49,11 +45,14 @@
 
 /* OPERATIONS */
 .tab {
-  //button container
   &__button__container {
-    @include flex_row;
     button {
+      min-width: 300px;
       width: 30%;
+    }
+    @include flex_column;
+    @include respond($tablet-port) {
+      @include flex_row;
     }
   }
   //content container
@@ -62,9 +61,12 @@
     padding: 2.5rem 7rem 6.5rem 7rem;
 
     &__container {
-      text-align: start;
+      text-align: center;
       justify-content: center;
       padding: 0 2rem 2rem;
+      @include respond($tablet-port) {
+        text-align: start;
+      }
     }
 
     &-active {
@@ -97,57 +99,68 @@
 
 .question {
   padding: 3rem 0 1rem;
-  color: var(--color-1-darkest);
+  font-weight: 600;
+  font-size: 3.5rem;
   &-answer {
-    @include flex_row;
+    @include flex_column;
+    @include respond($tablet-desktop) {
+      @include flex_row;
+    }
   }
   &-answer label {
     display: block;
     padding: 0 2rem 1rem 0;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    color: var(--color-1-highLight);
   }
   &-answer input {
     width: auto;
   }
+  &-comment {
+    font-size: 2rem;
+  }
 }
 
-.form__table {
-  .display {
-    &__phone {
-      font-size: 2.5rem;
+.display {
+  &__phone {
+    font-size: 2.5rem;
 
-      @include respond($tablet-port) {
-        display: none;
-      }
-      select {
-        padding: 7px 0;
-        border-radius: 3px;
-        border: 1px solid #ccc;
-        background: transparent;
-        margin: 1rem 0 3rem;
-      }
-    }
-    &__tablet-desktop {
+    @include respond($tablet-port) {
       display: none;
-      @include respond($tablet-port) {
-        width: 80%;
-        display: grid;
-        justify-content: center;
-        margin: 0 auto;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-      }
-      .first-col {
-        text-align: left;
-      }
-      div {
-        padding: 1rem 1rem;
-        border-bottom: 1px solid #ccc;
-        font-size: 2rem;
-        font-weight: 400;
-        input {
-          text-align: center;
-        }
+    }
+    select {
+      width: 20rem;
+      font-size: 2rem;
+      padding: 7px 0;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      background: transparent;
+      margin: 1rem 0 3rem;
+    }
+    &_options {
+      font-size: 3rem;
+    }
+  }
+  &__tablet-desktop {
+    display: none;
+    @include respond($tablet-port) {
+      width: 80%;
+      display: grid;
+      justify-content: center;
+      margin: 0 auto;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+    }
+    .first-col {
+      text-align: left;
+    }
+    div {
+      padding: 1rem 1rem;
+      border-bottom: 1px solid #ccc;
+      font-size: 2rem;
+      font-weight: 400;
+      input {
+        text-align: center;
       }
     }
   }

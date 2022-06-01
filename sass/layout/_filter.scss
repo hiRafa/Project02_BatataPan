@@ -4,8 +4,75 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  padding: 8vh 0 2rem;
-  overflow: hidden;
+  padding: 10vh 0 2rem;
+  @include respond($tablet-desktop) {
+    padding: 2vh 0;
+  }
+
+  // ------------------------------------------------------
+  // -------  Bread Page
+  // ------------------------------------------------------
+
+  &__title-container {
+    margin: 0.5rem;
+  }
+
+  &__bread {
+    @include flex_column;
+    background-color: var(--color-white);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    height: 75vh;
+    overflow: scroll; // change
+    @include respond($desktop) {
+      overflow: hidden;
+    }
+    @include respond($desktop-big) {
+      width: 1600px;
+    }
+
+    h5 {
+      padding: 1rem;
+    }
+    &-top {
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    &-center {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap; // change
+
+      @include respond($desktop) {
+        flex-wrap: nowrap;
+      }
+
+      .left,
+      .center,
+      .right {
+        @include flex_column;
+        @include border-top;
+        margin-bottom: 1rem;
+      }
+    }
+    &-bottom {
+      @include border-top;
+      @include flex_column;
+      margin-bottom: 1rem;
+      width: 100%;
+      padding: 0.5rem;
+      #specials__container {
+        @include flex_row;
+      }
+    }
+    &-empty {
+      // empty space to create more filter options
+      height: 30vh;
+      width: 100%;
+      background-color: var(--color-1-darkest);
+    }
+  }
 
   // ------------------
   // ------- Shops Page
@@ -13,7 +80,7 @@
   &-1top {
     color: var(--color-1);
     background-color: var(--color-1-darkest);
-    padding: 2rem;
+    padding: 1.5rem;
     border-top-left-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
   }
@@ -32,13 +99,16 @@
     }
   }
   &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     padding: 2rem;
     font-size: 3rem;
+    height: 100%;
     @include respond($tablet-port) {
-      padding: 3rem;
+      padding: 2.5rem;
     }
-
     &:hover {
       color: var(--color-1);
     }
@@ -46,111 +116,9 @@
       background: var(--bg_color-lowTransparency-2);
     }
     &-active {
+      color: var(--color-1);
       background-color: var(--color-1-darkest);
-      color: var(--color-1-highLight);
-    }
-  }
-
-  // ------------------------------------------------------
-  // -------  Bread Page
-  // ------------------------------------------------------
-  &__bread {
-    @include flex_column;
-    background-color: var(--color-white);
-    border-bottom-left-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
-    height: 75vh;
-    overflow: scroll; // change
-    @include respond($tablet-desktop) {
-      overflow: hidden;
-    }
-
-    h5 {
-      padding: 1rem;
-    }
-    &-top {
-      margin-bottom: 1rem;
-    }
-    &-center {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      flex-wrap: wrap; // change
-      width: 100%;
-      @include respond($tablet-desktop) {
-        flex-wrap: nowrap;
-        width: 100%;
-      }
-
-      .left,
-      .center,
-      .right {
-        @include flex_column;
-        @include border-top;
-        margin-bottom: 1rem;
-      }
-    }
-    &-bottom {
-      @include border-top;
-      @include flex_column;
-      margin-bottom: 1rem;
-      width: 100%;
-
-      #specials__container {
-        @include flex_row;
-      }
-    }
-    &-empty {
-      // empty space to create more filter options
-      height: 30vh;
-      width: 100%;
-      background-color: var(--color-1-darkest);
-    }
-  }
-}
-
-.checkbox {
-  &__title {
-    margin: 0.5rem;
-    width: 28rem;
-    @include respond($tablet-desktop) {
-      width: 20rem;
-    }
-  }
-
-  &__option {
-    color: var(--color-1-darkest);
-    background-color: var(--color-1);
-    text-align: left;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem;
-    width: 240px;
-    display: flex;
-    align-items: center;
-    @include hoverForFilterButtons;
-    input {
-      width: 3rem;
-      height: 1.2rem;
-      margin: auto;
-    }
-    label {
-      width: 100%;
-      height: 100%;
-    }
-    .checkbox__option,
-    input,
-    label {
-      @include hoverForFilterButtons;
-    }
-
-    &-title {
-      width: 100%;
-      font-size: 4rem;
-    }
-
-    &-active {
-      background-color: var(--color-1-darkest);
-      color: var(--color-1-highLight);
+      font-weight: 700;
     }
   }
 }

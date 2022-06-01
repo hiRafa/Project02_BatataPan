@@ -8,7 +8,7 @@
   height: 40rem;
   min-height: 100%;
   overflow: hidden;
-  transition: all 0.5s;
+
   &_slide {
     @include flex_column;
     position: absolute;
@@ -47,6 +47,7 @@
 
 .slider__btn {
   @include slider_buttons;
+  width: 80px;
   z-index: 1;
   font-family: inherit;
   font-size: 3.25rem;
@@ -64,9 +65,16 @@
     width: 2rem;
     min-width: 0;
     margin-right: 3rem;
-    transition: all 0.5s;
+    transition: all 0.2s;
     /* Only necessary when overlying images */
     /* box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.7); */
+    &:hover {
+      cursor: pointer;
+      background-color: var(--color-1);
+    }
+    &:active {
+      background-color: var(--color-1-darkest);
+    }
   }
 
   &-dot:last-child {

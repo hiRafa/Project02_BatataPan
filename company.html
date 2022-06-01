@@ -26,6 +26,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <!-- CSS -->
     <link rel="stylesheet" href="sass/main.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -62,7 +66,7 @@
       </nav>
     </div>
 
-    <header class="company__header">
+    <header class="header__company">
       <h2>Company</h2>
       <br />
       <p>株式会社 BATATA Bakery の会社概要についてのご紹介です。</p>
@@ -80,19 +84,21 @@
               <svg>
                 <use href="images/sprite.svg#icon-bookmarks"></use>
               </svg>
+            
               Info
             </button>
             <button class=" button button__tab--2 button__tab" data-tab="2">
               <svg>
                 <use href="images/sprite.svg#icon-bookmarks"></use>
               </svg>
+            <br>
               Recruit
             </button>
             <button class="button button__tab--3 button__tab" data-tab="3">
               <svg>
                 <use href="images/sprite.svg#icon-bookmarks"></use>
               </svg>
-              Partnerships
+              Partners
             </button>
           </div>
 
@@ -185,11 +191,18 @@
                 </div>
               </div>
             </div>
+
           </div>
+          <a class="click_scroll click_scroll_toNews" href="#form">
+            <p>Form</p>
+            <svg class="icon icon-circle-down">
+              <use href="images/sprite.svg#icon-circle-down"></use>
+            </svg>
+          </a>
         </div>
       </section>
 
-      <section class="section section_form">
+      <section class="section section_form" id="form">
           <form action="/">
             <h4>Website Feedback Form</h4>
             <p class="question">Is this the first time you have visited the website?</p>
@@ -268,10 +281,11 @@
               <label><input type="radio" value="none" name="likelihood" /> Maybe</label>
               <label><input type="radio" value="none" name="likelihood" /> Not at all</label>
             </div>
-            <p class="question">Please add any comments you have for improving the website. We welcome suggestions on specific areas for improvements, features you would like to see added to the site, and examples of what you consider good websites.</p>
+            <p class="question">Please add any comments you have for improving the website.</p>
+            <span class="question-comment"> (We welcome suggestions on specific areas for improvements, features you would like to see added to the site, and examples of what you consider good websites). </span>
             <textarea rows="5"></textarea>
             <div class="btn-block">
-              <button type="submit" href="company.html">Send</button>
+              <button class="button" type="submit" href="company.html">Send</button>
 
       </section>
     </main>
@@ -301,7 +315,6 @@
         <h6 class="footer__flex_right">
           &copy; Batata Bakery All Rights Reserved.
         </h6>
-        
       </div>
     </footer>
 

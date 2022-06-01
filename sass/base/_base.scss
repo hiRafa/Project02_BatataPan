@@ -18,10 +18,15 @@
   --bg_color-lowTransparency-0: rgba(255, 193, 77, 0.1);
   --bg_color-lowTransparency-1: rgba(255, 193, 77, 0.4);
   --bg_color-lowTransparency-2: rgba(255, 193, 77, 0.7);
+
   --padding: 4rem;
   --p_font-size: 1.6rem;
 
   --border-radius: 20px;
+
+  --animation-all: all 0.4s;
+
+  --nav-size: 100px;
 
   --card-height: 480px;
   --card-width: 300px;
@@ -45,15 +50,26 @@
   color: var(--color-1-medium);
 }
 
+*:hover {
+  transition: var(--animation-all);
+}
+
 //setting general fontsize based on screens. Also responding to zooming in and out
 html {
+  color: var(--color-1-darkest);
+  scroll-behavior: smooth; // replaces JS coding and makes it more simple
+  font-family: 'Nunito', Tahoma, Geneva, Verdana, sans-serif;
+
   @for $i from 1 through 6 {
     h#{7 - $i} {
-      font-size: $i + 1.6rem;
-      font-weight: $i * 100 + 300;
+      // h1 = 6
+      font-size: $i + 1.6rem; // h1 = 6 + 1.6
+      font-weight: $i * 100 + 400; // h1 = 6* 100 + 400
     }
   }
-
+  h6 {
+    font-weight: 600;
+  }
   // This defines what 1rem is
   font-size: 62.5%; //1 rem = 10px; 10px/16px
 
@@ -68,10 +84,6 @@ html {
   @include respond($desktop-big) {
     font-size: 100%; //  1rem = 16px; 16px/16px
   }
-  color: var(--color-1-darkest);
-  scroll-behavior: smooth; // replaces JS coding and makes it more simple
-  // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-family: 'Nunito', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 //balancing the font size in case the user changes the base pixels from 16px to any other value
@@ -81,16 +93,15 @@ body {
   // I see your confusion.  Well, actually the *  universal selector targets all types of elements; it is not the root css selector.
   // When we set box-sizing to inherit on all types of elements, we are basically saying that we want the box-sizing to inherit whatever the parent's box-sizing is.
   // Since we set the box-sizing property to border-box on the <body>  element (which is one of the document's top-most nodes), the property is effectively passed on to all child / grandchild elements.
-  font-size: 1.6rem; // 16/10
+  font-size: var(--p_font-size); // 16/10  1.6rem
   p {
-    font-size: calc(var(--p_font-size) * 1.5);
-    font-weight: 500;
+    font-size: calc(var(--p_font-size) * 1.5); // 2.4rem
+    font-weight: 600;
   }
   @include respond($tablet-desktop) {
     font-size: 1.23rem; // 16/13
     p {
-      font-size: calc(var(--p_font-size) * 1.6);
-      font-weight: 500;
+      font-size: calc(var(--p_font-size) * 2); // 3.2rem
     }
   }
   @include respond($desktop-big) {
@@ -102,10 +113,30 @@ body {
 
 a {
   text-decoration: none;
-
   &:link,
   &:visited {
     color: currentColor;
+  }
+  &:hover {
+    cursor: pointer;
+    color: var(--color-1);
+  }
+  &:focus {
+    cursor: pointer;
+    color: var(--color-white);
+  }
+  &:active {
+    cursor: pointer;
+    color: var(--color-1-lowSaturation);
+  }
+}
+.a_color-1 {
+  &:link,
+  &:visited {
+    color: var(--color-1-highLight);
+  }
+  &:hover {
+    color: var(--color-white);
   }
 }
 
@@ -115,6 +146,13 @@ svg {
 
 li {
   list-style: none;
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+  -webkit-transform: scale(2);
+  transform: scale(2);
+  margin-right: 0.5em;
 }
 
 // Background and container for body elements except footer and nav

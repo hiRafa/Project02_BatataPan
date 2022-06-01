@@ -3,6 +3,8 @@
   height: 100%;
   background-color: var(--color-white);
   padding: 4rem 0;
+  gap: 50px;
+  overflow: hidden;
 }
 
 .shop {
@@ -11,42 +13,47 @@
   color: white;
   height: 400px;
   background-color: var(--color-1-darkest);
-  text-align: left;
+  @include respond($tablet-desktop) {
+    height: 500px;
+  }
 
   &-left {
-    margin-left: 80vh;
+    text-align: left;
+    margin-left: 90vh;
     @include respond($tablet-desktop) {
-      margin-left: 50vh;
+      margin-left: 60vh;
     }
   }
   &-right {
-    margin-right: 80vh;
+    text-align: right;
+    margin-right: 90vh;
     @include respond($tablet-desktop) {
-      margin-left: 50vh;
+      margin-left: 20vh;
     }
   }
 
   &__info {
-    height: 100%;
-    width: 250px;
-    @include respond($tablet-port) {
-      width: 400px;
+    height: 70%;
+    min-width: 270px;
+    max-width: 100%;
+    @include respond($tablet-desktop) {
+      height: 100%;
+      width: 450px;
     }
 
-    a {
-      color: var(--color-1-highLight);
-      &:hover {
-        color: var(--color-white);
-      }
-      &:active {
-        color: var(--color-1-lowSaturation);
-      }
+    &-title {
+      font-size: calc(var(--p_font-size) * 2.5); // 4
     }
-    p,
-    h5 {
+
+    &-body {
+      font-size: calc(var(--p_font-size) * 2); // 3.2
+    }
+
+    p {
       padding: 2rem;
     }
   }
+
   &__image {
     height: 100%;
     min-width: 800px;
@@ -54,6 +61,10 @@
       height: 100%;
       width: 100%;
       min-width: 500px;
+    }
+
+    @include respond($tablet-desktop) {
+      min-width: 1000px;
     }
   }
 }

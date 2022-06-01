@@ -26,6 +26,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- External Libraries ( AOS library)-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -86,75 +90,89 @@
       <div class="filter filter__bread">
         <div class="filter__bread-top">
           <button
-            class="checkbox__option-title checkbox__option checkbox__option-active"
+            class="button__breads button__pagetitle button__breads-active"
             data-filter="all"
           >
-            <h4>Our Breads</h4>
+            Our Breads
           </button>
         </div>
 
         <div class="filter__bread-center">
           <div class="filter__bread-center left">
-            <div class="checkbox__container checkbox__title">
+            <div class="filter__container filter__title-container">
               <button
-                class="filter__button checkbox__option"
+                class="button__breads button__breads-title"
                 data-filter="allergies"
               >
                 Allergies
               </button>
             </div>
 
-            <div class="checkbox__container" id="allergies__container"></div>
+            <div class="filter__container" id="allergies__container"></div>
+
+            <a class="click_scroll click_scroll_breads" href="#flavors">
+              <p>Scroll Down</p>
+              <svg class="icon icon-circle-down icon-circle-down_breads">
+                <use href="images/sprite.svg#icon-circle-down"></use>
+              </svg>
+            </a>
           </div>
 
-          <div class="filter__bread-center center">
-            <div class="checkbox__container checkbox__title flavors">
+          <div class="filter__bread-center center" id="flavors">
+            <div class="filter__container filter__title-container flavors">
               <button
-                class="filter__button checkbox__option"
+                class="button__breads button__breads-title"
                 data-filter="flavors"
               >
                 Flavors
               </button>
             </div>
 
-            <div class="checkbox__container" id="flavors__container"></div>
+            <div class="filter__container" id="flavors__container"></div>
           </div>
 
           <div class="filter__bread-center center">
-            <div class="checkbox__container checkbox__title">
+            <div class="filter__container filter__title-container">
               <button
-                class="filter__button checkbox__option"
+                class="button__breads button__breads-title"
                 data-filter="sweets"
               >
                 Sweets
               </button>
             </div>
 
-            <div class="checkbox__container" id="sweets__container"></div>
+            <div class="filter__container" id="sweets__container"></div>
+
+            <a class="click_scroll click_scroll_breads" href="#noanimals">
+              <p>Scroll Down</p>
+              <svg class="icon icon-circle-down icon-circle-down_breads">
+                <use href="images/sprite.svg#icon-circle-down"></use>
+              </svg>
+            </a>
           </div>
 
-          <div class="filter__bread-center right">
-            <div class="checkbox__container checkbox__title noanimals">
+          <div class="filter__bread-center right" id="noanimals">
+            <div class="filter__container filter__title-container noanimals">
               <button
-                class="filter__button checkbox__option"
+                class="button__breads button__breads-title"
                 data-filter="noanimals"
               >
                 No Animals
               </button>
             </div>
-            <div class="checkbox__container" id="noanimals__container"></div>
+            <div class="filter__container" id="noanimals__container"></div>
           </div>
         </div>
 
         <div class="filter__bread-bottom">
           <button
-            class="filter__button checkbox__option"
+            class="button__breads button__breads-title"
             data-filter="specials"
           >
             Specials
           </button>
 
-          <div class="checkbox__container" id="specials__container"></div>
+          <div class="filter__container" id="specials__container"></div>
         </div>
 
         <div class="filter__bread-empty"></div>
