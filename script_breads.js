@@ -212,7 +212,7 @@ fetch('data_breads.json', {
     const filterShopsBtn = document.querySelectorAll('.button__breads');
     const shopCards = document.querySelectorAll('.bread__card');
 
-    filterOptionsContainer.addEventListener('click', e => {
+    filterOptionsContainer.addEventListener('touchstart', e => {
       const filterOption = e.target;
       const dataFilterButton = e.target.dataset.filter;
       console.log(dataFilterButton);
