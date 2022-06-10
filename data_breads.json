@@ -44,7 +44,7 @@
     },
     {
       "breadName": "boule",
-      "imageURL": "croissant.jpg",
+      "imageURL": "bakery_bg03",
       "bigCategory": "flavors, noanimals, lactosefree",
       "types": ["plain", "lactose free", "no milk"]
     },
