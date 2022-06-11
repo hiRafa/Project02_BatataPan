@@ -1,10 +1,11 @@
 .filter {
   @include inner_container($height-custom);
   width: 1400px;
+  max-width: 95%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  padding: 10vh 0 2rem;
+
   @include respond($tablet-desktop) {
     padding: 2vh 0;
   }
@@ -22,8 +23,11 @@
     background-color: var(--color-white);
     border-bottom-left-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
-    height: 75vh;
+    height: 65vh;
     overflow: scroll; // change
+    @include respond($tablet-desktop) {
+      height: 75vh;
+    }
     @include respond($desktop) {
       overflow: hidden;
     }

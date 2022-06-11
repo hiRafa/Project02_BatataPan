@@ -159,27 +159,27 @@ fetch('data_breads.json', {
           ''
         );
         const createFilterHTML = `
-        <button class="button__breads ${allergiesSubFilterFormated}" data-filter="${allergiesSubFilterFormated}">
-          ${getFilterWords[0].toDisplay[j]} 
-        </button>`;
+        <a href="#section__breads"> <button class="button__breads ${allergiesSubFilterFormated}" data-filter="${allergiesSubFilterFormated}">
+          ${getFilterWords[0].toDisplay[j]}
+        </button> </a> `;
         allergiesContainer.innerHTML += ('afterend', createFilterHTML);
       }
 
       for (let j = 0; j < getSubFilter[1].length; j++) {
         const flavorsSubFilterFormated = getSubFilter[1][j].replaceAll(' ', '');
         const createFilterHTML = `
-        <button class="button__breads ${flavorsSubFilterFormated}" data-filter="${flavorsSubFilterFormated}">
-          ${getFilterWords[1].toDisplay[j]}
-        </button>`;
+        <a href="#section__breads"> <button class="button__breads ${flavorsSubFilterFormated}" data-filter="${flavorsSubFilterFormated}" href="#section__breads">
+          ${getFilterWords[1].toDisplay[j]} 
+        </button> </a>`;
         flavorsContainer.innerHTML += ('afterend', createFilterHTML);
       }
 
       for (let j = 0; j < getSubFilter[2].length; j++) {
         const sweetsSubFilterFormated = getSubFilter[2][j].replaceAll(' ', '');
         const createFilterHTML = `
-        <button class="button__breads ${sweetsSubFilterFormated}" data-filter="${sweetsSubFilterFormated}">
-          ${getFilterWords[2].toDisplay[j]}
-        </button>`;
+        <a href="#section__breads"> <button class="button__breads ${sweetsSubFilterFormated}" data-filter="${sweetsSubFilterFormated}" href="#section__breads">
+          ${getFilterWords[2].toDisplay[j]} 
+        </button> </a>`;
         sweetsContainer.innerHTML += ('afterend', createFilterHTML);
       }
 
@@ -189,18 +189,18 @@ fetch('data_breads.json', {
           ''
         );
         const createFilterHTML = `
-        <button class="button__breads ${noAnimalsSubFilterFormated}" data-filter="${noAnimalsSubFilterFormated}">
-          ${getFilterWords[3].toDisplay[j]}
-        </button>`;
+        <a href="#section__breads"> <button class="button__breads ${noAnimalsSubFilterFormated}" data-filter="${noAnimalsSubFilterFormated}" href="#section__breads">
+          ${getFilterWords[3].toDisplay[j]} 
+        </button> </a>`;
         noanimalsContainer.innerHTML += ('afterend', createFilterHTML);
       }
 
       for (let j = 0; j < getSubFilter[4].length; j++) {
         const specialsSubFilter = getSubFilter[4][j].replaceAll(' ', '');
         const createFilterHTML = `
-        <button class="button__breads ${specialsSubFilter}" data-filter="${specialsSubFilter}">
-          ${getFilterWords[4].toDisplay[j]}
-        </button>`;
+        <a href="#section__breads"> <button class="button__breads ${specialsSubFilter}" data-filter="${specialsSubFilter}" href="#section__breads">
+          ${getFilterWords[4].toDisplay[j]} 
+        </button> </a>`;
         specialsContainer.innerHTML += ('afterend', createFilterHTML);
       }
     };

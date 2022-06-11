@@ -31,21 +31,21 @@
     {
       "breadName": "potato bread",
       "imageURL": "bread_pineapple_x1",
-      "bigCategory": "allergies, flavors, noanimals, noeggs",
-      "types": ["cheese", "gluten free", "potato", "no eggs"],
+      "bigCategory": "allergies, flavors, noanimals, noeggs, frozen",
+      "types": ["cheese", "gluten free", "potato", "no eggs", "frozen"],
       "description": "awdawdwadawd awd awd gergew f3 1 4r1241 412 41",
       "price": "270"
     },
     {
       "breadName": "sakura bread",
       "imageURL": "bread_sakura_x1",
-      "bigCategory": "sweets, noanimals, specials",
-      "types": ["sweets", "seasonal", "anko"]
+      "bigCategory": "sweets, noanimals, specials, cream",
+      "types": ["sweets", "seasonal", "anko", "cream"]
     },
     {
       "breadName": "boule",
       "imageURL": "bakery_bg03",
-      "bigCategory": "flavors, noanimals, lactosefree",
+      "bigCategory": "flavors, noanimals, lactosefree, nomilk",
       "types": ["plain", "lactose free", "no milk"]
     },
     {
@@ -57,20 +57,20 @@
     {
       "breadName": "ban ap bee",
       "imageURL": "chocolate_cookie_x1",
-      "bigCategory": "sweets, noanimals, nomeat",
-      "types": ["secret", "myterious", "no meat"]
+      "bigCategory": "bacon, glutenfree, nomeat",
+      "types": ["bacon", "gluten free", "no meat"]
     },
     {
       "breadName": "croissant",
       "imageURL": "bread_french_x1",
-      "bigCategory": "noanimals, nomeat",
-      "types": ["plain"]
+      "bigCategory": "noanimals, nomeat, sausage",
+      "types": ["plain", "sausage"]
     },
     {
       "breadName": "chocolate poundcake",
       "imageURL": "bread_french_x1",
-      "bigCategory": "sweets, noanimals, nomeat",
-      "types": ["plain"]
+      "bigCategory": "fruits, noanimals, nomeat",
+      "types": ["fruits"]
     }
   ]
 }

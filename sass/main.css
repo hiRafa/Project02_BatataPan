@@ -77,32 +77,32 @@ html {
 }
 
 html h6 {
-  font-size: 2.6rem;
+  font-size: 2.2rem;
   font-weight: 500;
 }
 
 html h5 {
-  font-size: 3.6rem;
+  font-size: 3.2rem;
   font-weight: 600;
 }
 
 html h4 {
-  font-size: 4.6rem;
+  font-size: 4.2rem;
   font-weight: 700;
 }
 
 html h3 {
-  font-size: 5.6rem;
+  font-size: 5.2rem;
   font-weight: 800;
 }
 
 html h2 {
-  font-size: 6.6rem;
+  font-size: 6.2rem;
   font-weight: 900;
 }
 
 html h1 {
-  font-size: 7.6rem;
+  font-size: 7.2rem;
   font-weight: 1000;
 }
 
@@ -462,13 +462,13 @@ button {
   max-width: 100%;
   margin: 0 auto;
   width: 1400px;
+  max-width: 95%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
-  padding: 10vh 0 2rem;
 }
 
 @media only screen and (min-width: 112.5em) {
@@ -504,8 +504,14 @@ button {
   background-color: var(--color-white);
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
-  height: 75vh;
+  height: 65vh;
   overflow: scroll;
+}
+
+@media only screen and (min-width: 56.25em) {
+  .filter__bread {
+    height: 75vh;
+  }
 }
 
 @media only screen and (min-width: 75em) {
@@ -967,7 +973,13 @@ button {
 }
 
 .header-breads_shops {
-  height: 80vh;
+  height: 70vh;
+}
+
+@media only screen and (min-width: 56.25em) {
+  .header-breads_shops {
+    height: 80vh;
+  }
 }
 
 .header__company {
@@ -978,9 +990,7 @@ button {
   position: absolute;
   z-index: -1;
   height: 100vh;
-  width: 100vw;
-  min-width: 500px;
-  max-width: 100vw;
+  width: 100%;
   left: 0;
   opacity: 0.4;
 }

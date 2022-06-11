@@ -63,7 +63,7 @@ html {
   @for $i from 1 through 6 {
     h#{7 - $i} {
       // h1 = 6
-      font-size: $i + 1.6rem; // h1 = 6 + 1.6
+      font-size: $i + 1.2rem; // h1 = 6 + 1.6
       font-weight: $i * 100 + 400; // h1 = 6* 100 + 400
     }
   }
